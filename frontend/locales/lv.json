@@ -1,0 +1,29 @@
+{
+  "Index": {
+    "firstDesc": "The Raccoons ir studentu kopiena, kas piesaista jauniešus, kuri vēlas pilnveidoties, nodrošinot viņiem vidi, kur pētīt, mācīties, veidot un radīt. Vispārējas zināšanas par STEM (dabas zinātnes un tehnoloģijas) prasmēm kļūst arvien svarīgākas gandrīz visās jomās.",
+    "secondDesc": "The Raccoons komanda sniedz pieredzi jauniešiem ar jebkādu zināšanu līmeni, cenšoties veicināt ziņkārību attiecībā uz tehnoloģijām un izpēti. Lai sasniegtu mērķus, The Raccoons veido meistarklases par STEM un tehnoloģiju tēmām, organizē hakatonus, kā arī veido un dalās ar tiešsaistes saturu, kas palīdz izzināt tehnoloģiju nozares plašās iespējas.",
+    "aboutUs": "Mēs esam studentu organizācija, ar lielu interesi par jaunākajām tehnoloģijām un zinātni. Ticam, ka tehnoloģijas ir jāiepazīst visiem neatkarīgi no nozares tāpēc esam radījuši dažāda veida aktivitātes, kas ļauj iepazīt tehnoloģijas un zinātni labāk, izmēģināt roku programmēšanā.",
+    "hackathons": "48h pasākums, kura laikā studenti sadalās komandās un strādā pie kādas savas jaunas mājaslapas izveides, aplikācijas vai spēles. Hakatona laikā norisinās arī darbnīcas, kurās var apgūt programmēšanu un pasākuma laikā pielietot jauniegūtās zināšanas.",
+    "workshops": "Darbnīcas par programmēšanas pamatiem, dažādiem datorikas principiem, kā piemēram, datorredzi un mašīnmācīšanos..",
+    "stories": "Iedvesmojoši stāsti no izstrādātājiem, zinātniekiem un tehnoloģiju uzņēmumu vadītājiem par to, kā izpaužas viņu ikdiena šajā vidē un kā viņi līdz tam nonāca."
+  },
+  "Buttons": {
+    "stories": "Stāsti",
+    "hackathon2023": "Hakatons 2023 (EN)"
+  },
+  "Links": {
+    "hackathon2022": "Ieskaties 2022. gada hakatonā"
+  },
+  "NavLinks": {
+    "home": "Sākums",
+    "events": "Pasākumi",
+    "stories": "Stāsti"
+  },
+  "Image": {
+    "aboutUs": "/images/lv/par-mums.webp",
+    "friends": "/images/lv/draugi.webp",
+    "hackathons": "/images/lv/hakatoni.webp",
+    "stories": "/images/lv/stasti.webp",
+    "workshops": "/images/lv/darbnicas.webp"
+  }
+}

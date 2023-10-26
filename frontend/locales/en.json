@@ -1,0 +1,29 @@
+{
+  "Index": {
+    "firstDesc": "The Raccoons is a student community that empowers youngsters who are eager to learn by providing an environment for them to explore, learn, build, and create. A general knowledge of STEM (science, technology, engineering, and mathematics) skills is becoming increasingly important.",
+    "secondDesc": "The Raccoons team aims to bring an experience for students with any level of knowledge, that would inspire them about technology and research. In order to achieve this we develop lecture cycles on the themes of STEM and technology, organize hackathons, and also create and share online content that helps to learn more about the various fields in technology. ",
+    "aboutUs": "We are a student organization with a keen interest in the latest technology and science. We believe that technology should be known to everyone, regardless of industry, so we have created different types of activities that allow you to get to know technology and science better, try your hand at programming.",
+    "hackathons": "A 48-hour event during which a student splits into teams and works on creating a new website, application or game. Workshops also take place during the hackathon, where you can learn programming and apply the newly acquired knowledge during the event.",
+    "workshops": "Workshops on the basics of programming, various computer principles, such as computer vision and machine learning.",
+    "stories": "Inspiring stories from developers, scientists and technology executives about how their daily lives in this environment are and how they got there."
+  },
+  "Buttons": {
+    "stories": "Stories",
+    "hackathon2023": "Hackathon 2023"
+  },
+  "Links": {
+    "hackathon2022": "Take a look at hackathon 2022"
+  },
+  "NavLinks": {
+    "home": "Home",
+    "events": "Events",
+    "stories": "Stories"
+  },
+  "Image": {
+    "aboutUs": "/images/en/about-us.webp",
+    "friends": "/images/en/friends.webp",
+    "hackathons": "/images/en/hackathons.webp",
+    "stories": "/images/en/stories.webp",
+    "workshops": "/images/en/workshops.webp"
+  }
+}
