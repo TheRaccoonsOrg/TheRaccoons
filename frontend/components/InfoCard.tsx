@@ -1,8 +1,7 @@
 import { InfoCardProps } from "@/types";
 import Image from "next/image";
-import { Button } from "./ui/button";
 import Link from "next/link";
-import { RobotoFont } from "@/lib/fonts";
+import GreenButton from "./green-button";
 
 const InfoCard = (props: InfoCardProps) => {
   return (
@@ -13,16 +12,12 @@ const InfoCard = (props: InfoCardProps) => {
         width={props.width}
         height={props.height}
       />
-      <p className={`text-lg my-5 ${RobotoFont.className}`}>{props.text}</p>
+      <p className="text-lg my-5">{props.text}</p>
       {props.buttonText && props.buttonHref ? (
-        <Button
-          className="bg-[#36f8a7] rounded-full text-background font-bold min-w-[100px]"
-          asChild
-        >
-          <Link href={props.buttonHref} className="font-bold">
-            {props.buttonText}
-          </Link>
-        </Button>
+        <GreenButton
+          buttonText={props.buttonText}
+          buttonHref={props.buttonHref}
+        />
       ) : null}
       {props.linkText && props.linkHref ? (
         <Link

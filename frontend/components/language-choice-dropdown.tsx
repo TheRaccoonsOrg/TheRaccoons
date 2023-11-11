@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";
@@ -10,8 +8,9 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import LinkWithRef from "next-intl/link";
+
 import { BiWorld } from "react-icons/bi";
+import LinkWithRef from "next-intl/link";
 export function LanguageChoiceDropDownMenu() {
   return (
     <DropdownMenu>

@@ -24,3 +24,11 @@ export interface InfoCardProps {
   linkText?: string;
   linkHref?: string;
 }
+
+interface EventCardProps {
+  title: string;
+  buttonText: string;
+  buttonLink: string;
+  cardImage?: string;
+  show: boolean;
+}

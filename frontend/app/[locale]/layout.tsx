@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import "../globals.css";
 import { siteConfig } from "@/config/site";
 import { NextIntlClientProvider } from "next-intl";
+import { Analytics } from "@vercel/analytics/react";
 import { InterFont } from "@/lib/fonts";
 
 const locales = ["en", "lv"];
@@ -39,6 +40,7 @@ export default function LocaleLayout({
           className={`${InterFont.className} flex min-h-screen flex-col bg-background text-primary`}
         >
           {children}
+          <Analytics />
         </body>
       </NextIntlClientProvider>
     </html>

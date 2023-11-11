@@ -8,6 +8,8 @@ export const infoSectionData = [
   },
   {
     title: "workshops",
+    buttonText: "workshops",
+    buttonHref: "/events/workshop2023",
   },
   {
     title: "stories",

@@ -50,6 +50,9 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        hotgreen: "#36f8a7",
+        "purple-br": "#9562da",
+        "purple-md": "#230c40",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -69,6 +72,10 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      fontFamily: {
+        raccoons: ["TheRaccoonsRegular", "sans-serif"],
+        worksans: ["WorkSans-Regular", "sans-serif"],
       },
     },
   },

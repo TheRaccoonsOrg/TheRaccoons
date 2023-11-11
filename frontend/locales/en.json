@@ -9,7 +9,18 @@
   },
   "Buttons": {
     "stories": "Stories",
-    "hackathon2023": "Hackathon 2023"
+    "hackathon2023": "Hackathon 2023",
+    "workshops": "Workshops"
+  },
+  "Events": {
+    "hackathon2023-title": "Hackathon 2023",
+    "hackathon2023": "Explore Hackathon 2023",
+    "hackathon2022-title": "Hackathon 2022",
+    "hackathon2022": "Explore Hackathon 2022",
+    "workshop2023-title": "Workshop 2023",
+    "workshop2023": "Explore Workshop 2023",
+    "hackathon2023-old-title": "Hackathon 2023 OLD",
+    "hackathon2023-old": "Explore Hackathon 2023 OLD"
   },
   "Links": {
     "hackathon2022": "Take a look at hackathon 2022"

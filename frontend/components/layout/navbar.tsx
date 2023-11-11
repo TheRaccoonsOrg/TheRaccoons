@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { LanguageChoiceDropDownMenu } from "../language-choice-dropdown";
 
 import { Button } from "../ui/button";
+import Link from "next/link";
 interface NavbarProps {
   navLinks: {
     route: string;

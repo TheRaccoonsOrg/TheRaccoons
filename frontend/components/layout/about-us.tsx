@@ -1,4 +1,3 @@
-import { RobotoFont } from "@/lib/fonts";
 import { InfoCardProps } from "@/types";
 import Image from "next/image";
 
@@ -8,11 +7,7 @@ const AboutUs = (props: InfoCardProps) => {
       <div className="w-[350px] md:w-[400px]">
         <Image src={props.imagePath} alt="Image" width={1000} height={1000} />
       </div>
-      <p
-        className={`w-[350px] md:w-[500px] mt-4 text-lg ${RobotoFont.className}`}
-      >
-        {props.text}
-      </p>
+      <p className="w-[350px] md:w-[500px] mt-4 text-lg ">{props.text}</p>
     </div>
   );
 };

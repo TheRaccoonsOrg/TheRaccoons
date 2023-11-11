@@ -1,4 +1,3 @@
-import { RobotoFont } from "@/lib/fonts";
 import Image from "next/image";
 
 interface HeroHeaderProps {
@@ -10,7 +9,7 @@ interface HeroHeaderProps {
 const HeroHeader = (props: HeroHeaderProps) => {
   return (
     <header
-      className={`flex flex-col justify-center items-center md:flex-row gap-x-10 ${RobotoFont.className}`}
+      className={`flex flex-col justify-center items-center md:flex-row gap-x-10 `}
     >
       <div className="w-[350px] sm:w-[400px] md:w-[400px] text-lg">
         <p>{props.firstDesc}</p>
