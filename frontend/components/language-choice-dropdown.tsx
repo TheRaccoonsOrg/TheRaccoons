@@ -13,7 +13,7 @@ import { BiWorld } from 'react-icons/bi';
 import LinkWithRef from 'next-intl/link';
 export function LanguageChoiceDropDownMenu() {
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" className="border-0">
           <BiWorld size={20} />
