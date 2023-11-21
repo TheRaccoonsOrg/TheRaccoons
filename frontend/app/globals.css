@@ -75,8 +75,8 @@
 }
 
 @font-face {
-  font-family: "TheRaccoonsRegular";
-  src: url("/fonts/TheRaccoonsRegular.ttf") format("truetype");
+  font-family: 'TheRaccoonsRegular';
+  src: url('/fonts/TheRaccoonsRegular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

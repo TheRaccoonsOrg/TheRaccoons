@@ -1,21 +1,15 @@
-import React from "react";
-import { EventCardProps } from "@/types";
-import GreenButton from "./green-button";
-import Image from "next/image";
+import React from 'react';
+import { EventCardProps } from '@/types';
+import GreenButton from './green-button';
+import Image from 'next/image';
 
 const EventCard = (props: EventCardProps) => {
   return props.show ? (
-    <div className="w-[400px] min-h-[300px] border-purple-br  border-2 bg-purple-md rounded-lg m-3 flex flex-col justify-center items-center p-5">
-      <h2 className="text-4xl font-raccoons">{props.title}</h2>
+    <div className="m-3 flex min-h-[300px]  w-[400px] flex-col items-center justify-center rounded-lg border-2 border-purple-br bg-purple-md p-5">
+      <h2 className="font-raccoons text-4xl">{props.title}</h2>
 
       {props.cardImage ? (
-        <Image
-          priority
-          src={props.cardImage}
-          width={300}
-          height={200}
-          alt="Image from event"
-        />
+        <Image priority src={props.cardImage} width={300} height={200} alt="Image from event" />
       ) : null}
       <GreenButton
         buttonStyles="rounded-lg mt-7"

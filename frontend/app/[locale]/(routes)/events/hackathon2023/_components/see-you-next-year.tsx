@@ -1,9 +1,9 @@
-import Image from "next/image";
-import GreenButton from "@/components/green-button";
+import Image from 'next/image';
+import GreenButton from '@/components/green-button';
 const SeeYouNextYear = () => {
   return (
     <div className="flex flex-col items-center">
-      <h2 className="font-raccoons text-3xl md:text-5xl  text-hotgreen my-10 ">
+      <h2 className="my-10 font-raccoons text-3xl  text-hotgreen md:text-5xl ">
         See You next year!
       </h2>
       <Image
@@ -12,9 +12,7 @@ const SeeYouNextYear = () => {
         height={421}
         alt="Photo from the event"
       />
-      <p className="text-hotgreen my-5">
-        YOU CAN FIND MORE PICTURES FROM THE EVENT BELOW
-      </p>
+      <p className="my-5 text-hotgreen">YOU CAN FIND MORE PICTURES FROM THE EVENT BELOW</p>
       <GreenButton
         buttonStyles="min-w-[200px]"
         buttonHref="https://photos.app.goo.gl/4LfM9CetZzthEywJ6"

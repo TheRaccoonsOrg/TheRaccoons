@@ -1,16 +1,11 @@
-import Image from "next/image";
-import { communityPartners, partnerImages } from "../_data/partner-images";
-import Link from "next/link";
+import Image from 'next/image';
+import { communityPartners, partnerImages } from '../_data/partner-images';
+import Link from 'next/link';
 
 const Partners = () => {
   return (
-    <div className="flex flex-col items-center my-10">
-      <Image
-        src="/images/en/main-org-LUSP.webp"
-        width={780}
-        height={152}
-        alt="Main Organizer"
-      />
+    <div className="my-10 flex flex-col items-center">
+      <Image src="/images/en/main-org-LUSP.webp" width={780} height={152} alt="Main Organizer" />
       <Image
         className="mt-6"
         src="/images/hackathon2023/dots.webp"
@@ -25,14 +20,9 @@ const Partners = () => {
         height={141}
         alt="Partners"
       />
-      <div className="max-w-[750px] flex flex-wrap  justify-center items-center gap-5">
+      <div className="flex max-w-[750px] flex-wrap  items-center justify-center gap-5">
         {partnerImages.map((item, index) => (
-          <Link
-            key={index}
-            href={item.linkHref}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <Link key={index} href={item.linkHref} rel="noopener noreferrer" target="_blank">
             <Image
               className="mt-6"
               src={item.imagePath}
@@ -50,16 +40,11 @@ const Partners = () => {
         height={103}
         alt="Community Partners"
       />
-      <div className="flex flex-wrap  justify-center items-center gap-5">
+      <div className="flex flex-wrap  items-center justify-center gap-5">
         {communityPartners.map((item, index) => (
-          <Link
-            key={index}
-            href={item.linkHref}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <Link key={index} href={item.linkHref} rel="noopener noreferrer" target="_blank">
             <Image
-              className="mt-6 w-auto h-[50px]"
+              className="mt-6 h-[50px] w-auto"
               src={item.imagePath}
               width={item.width}
               height={item.height}

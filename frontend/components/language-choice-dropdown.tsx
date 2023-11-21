@@ -1,16 +1,16 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu';
 
-import { BiWorld } from "react-icons/bi";
-import LinkWithRef from "next-intl/link";
+import { BiWorld } from 'react-icons/bi';
+import LinkWithRef from 'next-intl/link';
 export function LanguageChoiceDropDownMenu() {
   return (
     <DropdownMenu>

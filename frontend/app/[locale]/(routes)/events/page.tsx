@@ -1,13 +1,13 @@
-import { useTranslations } from "next-intl";
-import EventCard from "@/components/event-card";
-import { eventsList } from "@/config/available-pages";
+import { useTranslations } from 'next-intl';
+import EventCard from '@/components/event-card';
+import { eventsList } from '@/config/available-pages';
 
 const EventsPage = () => {
-  const t = useTranslations("Events");
+  const t = useTranslations('Events');
 
   return (
     <div>
-      <div className="flex flex-wrap justify-center items-center ">
+      <div className="flex flex-wrap items-center justify-center ">
         {eventsList.map((item, index) => (
           <EventCard
             cardImage={item.cardImage}

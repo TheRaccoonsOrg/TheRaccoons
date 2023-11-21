@@ -1,12 +1,12 @@
-import Image from "next/image";
-import GreenButton from "@/components/green-button";
+import Image from 'next/image';
+import GreenButton from '@/components/green-button';
 
 const Header = () => {
   return (
     <div className="mt-20 flex flex-col items-center">
       <div>
         <Image
-          className="w-full md:w-[1100px] hidden md:block"
+          className="hidden w-full md:block md:w-[1100px]"
           src="/images/hackathon2023/raccoons_apply_2023.webp"
           alt="Hackathon2023"
           width={971}
@@ -14,7 +14,7 @@ const Header = () => {
           priority
         />
         <Image
-          className="w-full block md:hidden"
+          className="block w-full md:hidden"
           src="/images/hackathon2023/raccoons_apply_2023-sm.webp"
           alt="Hackathon2023"
           width={560}
@@ -26,7 +26,7 @@ const Header = () => {
         buttonHref="https://raccoons-2023.devpost.com/project-gallery"
         buttonText="All submissions"
       />
-      <div className="flex flex-col items-center text-center mt-4">
+      <div className="mt-4 flex flex-col items-center text-center">
         <p>The event has ended!</p>
         <p className="text-hotgreen">
           Thank you to everyone who participated and to all the partners!
