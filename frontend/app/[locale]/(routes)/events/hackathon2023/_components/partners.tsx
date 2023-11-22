@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Partners = () => {
   return (
-    <div className="my-10 flex flex-col items-center">
+    <div className="flex flex-col items-center my-10">
       <Image src="/images/en/main-org-LUSP.webp" width={780} height={152} alt="Main Organizer" />
       <Image
         className="mt-6"

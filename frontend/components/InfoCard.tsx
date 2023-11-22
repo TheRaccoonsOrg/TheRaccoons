@@ -5,14 +5,14 @@ import GreenButton from './green-button';
 
 const InfoCard = (props: InfoCardProps) => {
   return (
-    <div className="mb-3 flex w-[350px] flex-col items-start justify-center md:w-[300px]">
+    <div className="w-[350px] md:w-[300px] flex flex-col justify-center items-start mb-3">
       <Image src={props.imagePath} alt={props.alt} width={props.width} height={props.height} />
-      <p className="my-5 text-lg">{props.text}</p>
+      <p className="text-lg my-5">{props.text}</p>
       {props.buttonText && props.buttonHref ? (
         <GreenButton buttonText={props.buttonText} buttonHref={props.buttonHref} />
       ) : null}
       {props.linkText && props.linkHref ? (
-        <Link href={props.linkHref} className="mt-2 text-[#36f8a7] hover:underline">
+        <Link href={props.linkHref} className="text-[#36f8a7] hover:underline mt-2">
           {props.linkText}
         </Link>
       ) : null}

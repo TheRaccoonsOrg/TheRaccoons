@@ -1,11 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import { siteConfig } from '@/config/site';
-import { useEffect, useState } from 'react';
 import { LanguageChoiceDropDownMenu } from '../language-choice-dropdown';
 
-import Link from 'next/link';
 import { Button } from '../ui/button';
+import Link from 'next/link';
 interface NavbarProps {
   navLinks: {
     route: string;
@@ -18,14 +18,6 @@ export default function Navbar({ navLinks }: NavbarProps) {
   const handleClick = async () => {
     setNavbar(false);
   };
-
-  useEffect(() => {
-    if (navbar) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-  }, [navbar]);
 
   return (
     <header className="mb-20 flex justify-center ">
@@ -69,7 +61,7 @@ export default function Navbar({ navLinks }: NavbarProps) {
         </div>
 
         <div
-          className={`absolute inset-x-0 z-10 m-auto justify-self-center rounded-md border bg-background p-4 md:static md:flex md:border-none md:p-0${
+          className={`relative left-0 right-0 z-10 m-auto justify-self-center rounded-md border bg-background p-4 md:static md:flex md:border-none md:p-0 ${
             navbar ? 'block' : 'hidden'
           }`}
           style={{ width: '100%', maxWidth: '16rem' }}>

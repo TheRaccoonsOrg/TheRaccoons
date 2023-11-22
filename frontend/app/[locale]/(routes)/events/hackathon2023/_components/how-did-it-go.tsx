@@ -3,8 +3,9 @@ import Link from 'next/link';
 
 const HowDidItGo = () => {
   return (
-    <div className="flex max-w-[1000px] flex-col items-center">
-      <h2 className="mt-10 font-raccoons text-4xl text-purple-br md:text-5xl">How did it go?</h2>
+    <div className="flex flex-col items-center max-w-[1000px]">
+      <h2 className="font-raccoons text-purple-br text-4xl md:text-5xl mt-10">How did it go?</h2>
+
       <div className="flex flex-col items-center md:flex-row">
         <div className=" gap-y-5 ">
           <div>

@@ -2,8 +2,8 @@ import React from 'react';
 
 const Winners = () => {
   return (
-    <div className="mt-20 flex max-w-[1000px] flex-col items-center">
-      <h2 className="font-raccoons text-4xl text-purple-br md:text-5xl ">Winners</h2>
+    <div className="flex flex-col items-center mt-20 max-w-[1000px]">
+      <h2 className="font-raccoons text-purple-br text-4xl md:text-5xl ">Winners</h2>
       <p>
         Together with the help of mentors and organizers, 32 teams managed to build real solutions
         in 48 hours under one of the chosen challenges:{' '}

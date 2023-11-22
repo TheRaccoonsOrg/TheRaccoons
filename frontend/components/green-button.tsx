@@ -13,7 +13,7 @@ const GreenButton = ({
 }) => {
   return (
     <Button
-      className={`min-w-[100px] rounded-full bg-hotgreen font-bold text-background ${buttonStyles}`}
+      className={`bg-hotgreen rounded-full text-background font-bold min-w-[100px] ${buttonStyles}`}
       asChild>
       <Link href={buttonHref} className="font-bold">
         {buttonText}

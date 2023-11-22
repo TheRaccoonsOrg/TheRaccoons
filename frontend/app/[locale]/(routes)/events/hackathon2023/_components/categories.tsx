@@ -5,7 +5,7 @@ const Categories = () => {
     <div className="mt-10 grid max-w-[1000px] grid-cols-1 gap-10 md:grid-cols-2 tss">
       {challengeCategories.map((item, index) => (
         <div key={index}>
-          <h2 className="font-raccoons text-2xl text-hotgreen">{item.categorieName}</h2>
+          <h2 className="font-raccoons text-hotgreen text-2xl">{item.categorieName}</h2>
           {item.position.map((item, index) => (
             <div key={index}>
               <h3 className="mt-2 text-purple-br">{item.title}</h3>

@@ -8,8 +8,8 @@ interface HeroHeaderProps {
 }
 const HeroHeader = (props: HeroHeaderProps) => {
   return (
-    <header className={`flex flex-col items-center justify-center gap-x-10 md:flex-row `}>
-      <div className="w-[350px] text-lg sm:w-[400px] md:w-[400px]">
+    <header className={`flex flex-col justify-center items-center md:flex-row gap-x-10 `}>
+      <div className="w-[350px] sm:w-[400px] md:w-[400px] text-lg">
         <p>{props.firstDesc}</p>
         <br />
         <p>{props.secondDesc}</p>
