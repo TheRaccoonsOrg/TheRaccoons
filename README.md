@@ -55,6 +55,7 @@ Briefly describe the purpose and context of the changes.
 - [ ] Changes have been tested locally.
 - [ ] Documentation has been updated (if applicable).
 - [ ] Code has been reviewed by peers.
+```
 
 ## Getting Help
 
