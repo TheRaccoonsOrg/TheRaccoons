@@ -3,7 +3,7 @@ import GreenButton from '@/components/green-button';
 const SeeYouNextYear = () => {
   return (
     <div className="flex flex-col items-center">
-      <h2 className="font-raccoons text-3xl md:text-5xl  text-hotgreen my-10 ">
+      <h2 className="my-10 font-raccoons text-3xl  text-hotgreen md:text-5xl ">
         See You next year!
       </h2>
       <Image

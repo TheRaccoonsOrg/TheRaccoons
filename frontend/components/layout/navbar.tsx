@@ -21,16 +21,16 @@ export default function Navbar({ navLinks }: NavbarProps) {
 
   return (
     <header className="mb-20 flex justify-center ">
-      <nav className="fixed top-0 left-0 bg-background w-full  md:flex md:items-center px-5 md:px-20 gap-x-10">
-        <div className="flex items-center justify-between w-full py-3 md:block md:py-5">
+      <nav className="bg-background fixed left-0 top-0 w-full  gap-x-10 px-5 md:flex md:items-center md:px-20">
+        <div className="flex w-full items-center justify-between py-3 md:block md:py-5">
           <Link href="/" onClick={handleClick}>
             <h1 className="text-2xl font-bold duration-200">{siteConfig.name}</h1>
           </Link>
-          <div className="flex  md:hidden gap-x-2">
+          <div className="flex  gap-x-2 md:hidden">
             <LanguageChoiceDropDownMenu />
 
             <button
-              className="rounded-md p-2 text-primary outline-none focus:border focus:border-primary"
+              className="text-primary focus:border-primary rounded-md p-2 outline-none focus:border"
               aria-label="Hamburger Menu"
               onClick={() => setNavbar(!navbar)}>
               {navbar ? (

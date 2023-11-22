@@ -8,7 +8,7 @@ const InfoSection = () => {
   const tButton = useTranslations('Buttons');
   const tLinks = useTranslations('Links');
   return (
-    <div className="flex flex-col items-center justify-center gap-x-5 md:flex-row md:items-start my-10">
+    <div className="my-10 flex flex-col items-center justify-center gap-x-5 md:flex-row md:items-start">
       {infoSectionData.map((item, index) => (
         <InfoCard
           imagePath={tImage(item.title)}

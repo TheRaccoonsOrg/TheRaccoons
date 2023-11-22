@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const ContactSection = () => {
   return (
-    <div className="flex flex-col justify-center gap-y-4 items-center my-4">
+    <div className="my-4 flex flex-col items-center justify-center gap-y-4">
       <div className="flex flex-row gap-x-2">
         <Link href="https://www.facebook.com/RaccoonsHQ">
           <FaFacebook size={40} />
