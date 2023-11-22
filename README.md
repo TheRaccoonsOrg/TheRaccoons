@@ -55,7 +55,7 @@ Briefly describe the purpose and context of the changes.
 - [ ] Changes have been tested locally.
 - [ ] Documentation has been updated (if applicable).
 - [ ] Code has been reviewed by peers.
-
+```
 ## Getting Help
 
 If you have any questions or need assistance, feel free to [open an issue](https://github.com/mihaildanilov/TheRaccoons/issues).
