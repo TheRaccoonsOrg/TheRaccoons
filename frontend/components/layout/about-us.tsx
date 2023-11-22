@@ -1,5 +1,5 @@
-import { InfoCardProps } from "@/types";
-import Image from "next/image";
+import { InfoCardProps } from '@/types';
+import Image from 'next/image';
 
 const AboutUs = (props: InfoCardProps) => {
   return (

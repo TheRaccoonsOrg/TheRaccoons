@@ -1,12 +1,11 @@
-import GreenButton from "@/components/green-button";
-import Header from "./_components/header";
-import HowDidItGo from "./_components/how-did-it-go";
-import Winners from "./_components/winners";
-import Categories from "./_components/categories";
-import Image from "next/image";
-import SeeYouNextYear from "./_components/see-you-next-year";
-import Partners from "./_components/partners";
-import ContactSection from "@/components/layout/contact-info";
+import GreenButton from '@/components/green-button';
+import Header from './_components/header';
+import HowDidItGo from './_components/how-did-it-go';
+import Winners from './_components/winners';
+import Categories from './_components/categories';
+import SeeYouNextYear from './_components/see-you-next-year';
+import Partners from './_components/partners';
+import ContactSection from '@/components/layout/contact-info';
 
 const Hackathon2022 = () => {
   return (

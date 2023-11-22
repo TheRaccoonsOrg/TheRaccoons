@@ -1,9 +1,9 @@
-import { useTranslations } from "next-intl";
-import EventCard from "@/components/event-card";
-import { eventsList } from "@/config/available-pages";
+import { useTranslations } from 'next-intl';
+import EventCard from '@/components/event-card';
+import { eventsList } from '@/config/available-pages';
 
 const EventsPage = () => {
-  const t = useTranslations("Events");
+  const t = useTranslations('Events');
 
   return (
     <div>

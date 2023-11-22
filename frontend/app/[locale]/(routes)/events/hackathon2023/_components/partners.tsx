@@ -1,16 +1,11 @@
-import Image from "next/image";
-import { communityPartners, partnerImages } from "../_data/partner-images";
-import Link from "next/link";
+import Image from 'next/image';
+import { communityPartners, partnerImages } from '../_data/partner-images';
+import Link from 'next/link';
 
 const Partners = () => {
   return (
     <div className="flex flex-col items-center my-10">
-      <Image
-        src="/images/en/main-org-LUSP.webp"
-        width={780}
-        height={152}
-        alt="Main Organizer"
-      />
+      <Image src="/images/en/main-org-LUSP.webp" width={780} height={152} alt="Main Organizer" />
       <Image
         className="mt-6"
         src="/images/hackathon2023/dots.webp"
@@ -27,12 +22,7 @@ const Partners = () => {
       />
       <div className="max-w-[750px] flex flex-wrap  justify-center items-center gap-5">
         {partnerImages.map((item, index) => (
-          <Link
-            key={index}
-            href={item.linkHref}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <Link key={index} href={item.linkHref} rel="noopener noreferrer" target="_blank">
             <Image
               className="mt-6"
               src={item.imagePath}
@@ -52,12 +42,7 @@ const Partners = () => {
       />
       <div className="flex flex-wrap  justify-center items-center gap-5">
         {communityPartners.map((item, index) => (
-          <Link
-            key={index}
-            href={item.linkHref}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <Link key={index} href={item.linkHref} rel="noopener noreferrer" target="_blank">
             <Image
               className="mt-6 w-auto h-[50px]"
               src={item.imagePath}

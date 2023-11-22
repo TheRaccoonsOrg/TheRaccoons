@@ -1,7 +1,7 @@
-import React from "react";
-import { EventCardProps } from "@/types";
-import GreenButton from "./green-button";
-import Image from "next/image";
+import React from 'react';
+import { EventCardProps } from '@/types';
+import GreenButton from './green-button';
+import Image from 'next/image';
 
 const EventCard = (props: EventCardProps) => {
   return props.show ? (
@@ -9,13 +9,7 @@ const EventCard = (props: EventCardProps) => {
       <h2 className="text-4xl font-raccoons">{props.title}</h2>
 
       {props.cardImage ? (
-        <Image
-          priority
-          src={props.cardImage}
-          width={300}
-          height={200}
-          alt="Image from event"
-        />
+        <Image priority src={props.cardImage} width={300} height={200} alt="Image from event" />
       ) : null}
       <GreenButton
         buttonStyles="rounded-lg mt-7"

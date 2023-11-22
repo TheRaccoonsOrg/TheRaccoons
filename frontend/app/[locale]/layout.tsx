@@ -1,11 +1,11 @@
-import { notFound } from "next/navigation";
-import "../globals.css";
-import { siteConfig } from "@/config/site";
-import { NextIntlClientProvider } from "next-intl";
-import { Analytics } from "@vercel/analytics/react";
-import { InterFont } from "@/lib/fonts";
+import { notFound } from 'next/navigation';
+import '../globals.css';
+import { siteConfig } from '@/config/site';
+import { NextIntlClientProvider } from 'next-intl';
+import { Analytics } from '@vercel/analytics/react';
+import { InterFont } from '@/lib/fonts';
 
-const locales = ["en", "lv"];
+const locales = ['en', 'lv'];
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url.base),
@@ -18,7 +18,7 @@ export const metadata = {
 
   creator: siteConfig.author,
   icons: {
-    icon: "/icon.png",
+    icon: '/icon.png',
   },
 };
 
@@ -37,8 +37,7 @@ export default function LocaleLayout({
     <html lang={locale}>
       <NextIntlClientProvider locale={locale}>
         <body
-          className={`${InterFont.className} flex min-h-screen flex-col bg-background text-primary`}
-        >
+          className={`${InterFont.className} flex min-h-screen flex-col bg-background text-primary`}>
           {children}
           <Analytics />
         </body>

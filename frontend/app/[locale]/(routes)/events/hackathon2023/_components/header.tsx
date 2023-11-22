@@ -1,5 +1,5 @@
-import Image from "next/image";
-import GreenButton from "@/components/green-button";
+import Image from 'next/image';
+import GreenButton from '@/components/green-button';
 
 const Header = () => {
   return (
