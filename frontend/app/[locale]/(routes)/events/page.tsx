@@ -7,7 +7,7 @@ const EventsPage = () => {
 
   return (
     <div>
-      <div className="flex flex-wrap items-center justify-center ">
+      <div className="flex flex-wrap items-center justify-center">
         {eventsList.map((item, index) => (
           <EventCard
             cardImage={item.cardImage}

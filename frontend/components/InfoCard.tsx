@@ -8,14 +8,16 @@ const InfoCard = (props: InfoCardProps) => {
     <div className="w-[350px] md:w-[300px] flex flex-col justify-center items-start mb-3">
       <Image src={props.imagePath} alt={props.alt} width={props.width} height={props.height} />
       <p className="text-lg my-5">{props.text}</p>
-      {props.buttonText && props.buttonHref ? (
-        <GreenButton buttonText={props.buttonText} buttonHref={props.buttonHref} />
-      ) : null}
-      {props.linkText && props.linkHref ? (
-        <Link href={props.linkHref} className="text-[#36f8a7] hover:underline mt-2">
-          {props.linkText}
-        </Link>
-      ) : null}
+      <div className="mx-auto md:mx-0 flex flex-col justify-center items-center md:items-start">
+        {props.buttonText && props.buttonHref ? (
+          <GreenButton buttonText={props.buttonText} buttonHref={props.buttonHref} />
+        ) : null}
+        {props.linkText && props.linkHref ? (
+          <Link href={props.linkHref} className="text-[#36f8a7] hover:underline mt-2">
+            {props.linkText}
+          </Link>
+        ) : null}
+      </div>
     </div>
   );
 };

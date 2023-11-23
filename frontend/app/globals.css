@@ -64,6 +64,9 @@
     --ring: 0 0% 83.1%;
   }
 }
+p {
+  @apply text-lg;
+}
 
 @layer base {
   * {

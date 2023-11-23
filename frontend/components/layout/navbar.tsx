@@ -61,11 +61,11 @@ export default function Navbar({ navLinks }: NavbarProps) {
         </div>
 
         <div
-          className={`relative left-0 right-0 z-10 m-auto justify-self-center rounded-md border bg-background p-4 md:static md:flex md:border-none md:p-0 ${
+          className={`absolute left-0 right-0 z-10 m-auto justify-self-center rounded-md border bg-background p-4 md:static md:flex md:border-none md:p-0 ${
             navbar ? 'block' : 'hidden'
           }`}
           style={{ width: '100%', maxWidth: '16rem' }}>
-          <ul className="flex flex-col items-center space-y-4 text-primary opacity-60 md:flex-row md:space-y-0">
+          <ul className="flex flex-col items-center space-y-4 text-primary  md:flex-row md:space-y-0">
             {navLinks.map((link) => (
               <li key={link.route}>
                 <Button variant="ghost" className="w-full" asChild>

@@ -7,7 +7,7 @@ const AboutUs = (props: InfoCardProps) => {
       <div className="w-[350px] md:w-[400px]">
         <Image src={props.imagePath} alt="Image" width={1000} height={1000} />
       </div>
-      <p className="mt-4 w-[350px] text-lg md:w-[500px] ">{props.text}</p>
+      <p className="mt-4 w-[350px] md:w-[500px] ">{props.text}</p>
     </div>
   );
 };
