@@ -6,7 +6,7 @@ const Header = () => {
     <div className="mt-20 flex flex-col items-center">
       <div>
         <Image
-          className="hidden w-full md:block md:w-[1100px]"
+          className="hidden w-full md:block md:w-[971px]"
           src="/images/hackathon2023/raccoons_apply_2023.webp"
           alt="Hackathon2023"
           width={971}

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Winners = () => {
   return (
-    <div className="flex flex-col items-center mt-20 max-w-[1000px]">
+    <div className="flex flex-col items-center mt-20 max-w-[900px]">
       <h2 className="font-raccoons text-purple-br text-4xl md:text-5xl ">Winners</h2>
       <p>
         Together with the help of mentors and organizers, 32 teams managed to build real solutions

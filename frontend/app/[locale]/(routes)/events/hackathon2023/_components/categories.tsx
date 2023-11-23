@@ -2,7 +2,7 @@ import { challengeCategories } from '../_data/categories';
 
 const Categories = () => {
   return (
-    <div className="mt-10 grid max-w-[1000px] grid-cols-1 gap-10 md:grid-cols-2 tss">
+    <div className="mt-10 grid max-w-[900px] grid-cols-1 gap-10 md:grid-cols-2 tss">
       {challengeCategories.map((item, index) => (
         <div key={index}>
           <h2 className="font-raccoons text-hotgreen text-2xl">{item.categorieName}</h2>
