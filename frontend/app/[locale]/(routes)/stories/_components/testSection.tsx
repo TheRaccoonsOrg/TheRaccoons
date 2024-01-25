@@ -1,3 +1,4 @@
+import TestChoice from './testChoice';
 import TestDescription from './testDescription';
 import TestInstruction from './testInstruction';
 
@@ -6,6 +7,7 @@ const TestSection = () => {
     <div>
       <TestDescription />
       <TestInstruction />
+      <TestChoice />
     </div>
   );
 };
