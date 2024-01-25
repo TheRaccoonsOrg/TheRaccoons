@@ -11,13 +11,13 @@ const Header = () => {
         <p>{t('third')}</p>
       </div>
       <div className="pr-5 md:pr-0">
-        <Image
+        {/* <Image
           className="relative h-5 w-auto top-[235px] md:top-[267px] left-[200px] md:left-[250px] "
           alt="Stories Header Image"
           width={150}
           height={50}
           src={'/images/stories/loading-dots.gif'}
-        />
+        /> */}
         <Image
           className="w-[350px] md:w-[400px]"
           alt="Stories Header"
