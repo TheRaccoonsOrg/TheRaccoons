@@ -82,6 +82,15 @@
           "third": "A good job always pays off and this time is not an exception, so fulfil the test and get your prize!"
         },
         "image": "/images/stories/en/stories-test-en.webp"
+      },
+      "instruction": {
+        "text": {
+          "first": "Watch the lecture.",
+          "second": "Below each lecture, look for a link to the test.",
+          "third": "Before taking the tests, enter information about yourself so that we know who to send prizes to and how to contact you. *",
+          "fourth": "When you're done, wait for the results."
+        },
+        "image": "/images/stories/en/stories-instruction-en.webp"
       }
     }
   }
