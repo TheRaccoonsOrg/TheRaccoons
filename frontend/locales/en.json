@@ -36,5 +36,13 @@
     "hackathons": "/images/en/hackathons.webp",
     "stories": "/images/en/stories.webp",
     "workshops": "/images/en/workshops.webp"
+  },
+  "Stories": {
+    "header": {
+      "first": "With the initiative of The Raccoons, the company Helve in collaboration with RTU and with the support of Tet are running a STEM lecture series with the aim to showcase the variety of exciting and interesting professions in tech and engineering.",
+      "second": "The lecture series will run from the 15th of April till the end of May and will cover a variety of interesting fields and topics. Tune in for the lectures below.",
+      "third": "Until the end of July everyone is invited to test their knowledge here by answering a multiple-choice test. Go to the tests section below to find out how you can fill in the test and compete for the prize.",
+      "image": "/images/stories/en/stories-header-en.webp"
+    }
   }
 }
