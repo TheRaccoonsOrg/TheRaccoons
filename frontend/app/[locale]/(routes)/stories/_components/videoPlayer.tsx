@@ -6,7 +6,7 @@ const VideoPlayer = () => {
   const t = useTranslations('Stories.videoPlayer');
   return (
     <div>
-      <div className="block md:hidden mt-20">
+      <div className="flex flex-col  md:hidden mt-20 items-center">
         <iframe
           width="400"
           height="225"
@@ -15,7 +15,7 @@ const VideoPlayer = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen></iframe>
       </div>
-      <div className="hidden md:block lg:hidden mt-20">
+      <div className="hidden flex-col  md:flex lg:hidden mt-20 items-center">
         <iframe
           width="700"
           height="393"
@@ -41,7 +41,7 @@ const VideoPlayer = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen></iframe>
       </div>
-      <div className="mt-8 lg:mt-16 flex flex-col items-center gap-y-5">
+      <div className="mt-8 lg:mt-16 flex flex-col items-center gap-y-5 mx-10">
         <p className="text-hotgreen text-sm">{t('text')}</p>
         <GreenButton buttonText={t('button')} buttonHref="https://youtu.be/4Zol3FpfkU4" />
       </div>
