@@ -69,6 +69,10 @@
         "left": "FIZIKA & FOTONIKA",
         "right": "ILGTSPĒJĪBA"
       }
+    },
+    "videoPlayer": {
+      "text": "Lai skatītos pārējās lekcijas seko mūsu YouTube kanālam zemāk:",
+      "button": "Youtube stāsti"
     }
   }
 }

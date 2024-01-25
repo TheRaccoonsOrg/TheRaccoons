@@ -1,6 +1,9 @@
+import GreenButton from '@/components/green-button';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 const VideoPlayer = () => {
+  const t = useTranslations('Stories.videoPlayer');
   return (
     <div>
       <div className="block md:hidden mt-20">
@@ -37,6 +40,10 @@ const VideoPlayer = () => {
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen></iframe>
+      </div>
+      <div className="mt-8 lg:mt-16 flex flex-col items-center gap-y-5">
+        <p className="text-hotgreen text-sm">{t('text')}</p>
+        <GreenButton buttonText={t('button')} buttonHref="https://youtu.be/4Zol3FpfkU4" />
       </div>
     </div>
   );

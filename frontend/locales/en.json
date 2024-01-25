@@ -69,6 +69,10 @@
         "left": "PHYSICS AND PHOTONICS",
         "right": "SUSTAINABILITY"
       }
+    },
+    "videoPlayer": {
+      "text": "In order to see our latest lectures please follow our YouTube channel:",
+      "button": "Youtube channel"
     }
   }
 }
