@@ -82,6 +82,15 @@
           "third": "Labs darbs vienmēr tiek novērtēts, un arī šī reize nav izņēmums, tāpēc aizpildi testu un saņem balvu no The Raccoons un draugiem!"
         },
         "image": "/images/stories/lv/stories-test-lv.webp"
+      },
+      "instruction": {
+        "text": {
+          "first": "Noskaties lekciju.",
+          "second": "Zem katras lekcijas meklē saiti uz attiecīgo testu.",
+          "third": "Pirms pildi testu ievadi informāciju par sevi, lai zinām kam sūtīt balvas un kā tevi sakontaktēt.*",
+          "fourth": "Kad esi izpildījis, gaidi rezultātus."
+        },
+        "image": "/images/stories/lv/stories-instruction-lv.webp"
       }
     }
   }
