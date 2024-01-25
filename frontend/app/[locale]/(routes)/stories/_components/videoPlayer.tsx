@@ -30,6 +30,7 @@ const VideoPlayer = () => {
           src={'/images/stories/videoFrame.webp'}
         />
         <iframe
+          className="z-40"
           width="728"
           height="409"
           src="https://www.youtube.com/embed/4Zol3FpfkU4?si=aGZNLuws-vAc-FiQ"
