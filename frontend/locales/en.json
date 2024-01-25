@@ -43,6 +43,32 @@
       "second": "The lecture series will run from the 15th of April till the end of May and will cover a variety of interesting fields and topics. Tune in for the lectures below.",
       "third": "Until the end of July everyone is invited to test their knowledge here by answering a multiple-choice test. Go to the tests section below to find out how you can fill in the test and compete for the prize.",
       "image": "/images/stories/en/stories-header-en.webp"
+    },
+    "columnSection": {
+      "first": {
+        "left": "WEB DEVELOPMENT",
+        "right": "CREATIVE COMPUTING"
+      },
+      "second": {
+        "left": "DATA",
+        "right": "CYBERSECURITY"
+      },
+      "third": {
+        "left": "PRODUCT DEVELOPMENT",
+        "right": "TELECOMMUNICATIONS"
+      },
+      "fourth": {
+        "left": "PRODUCT MANAGEMENT",
+        "right": "AUTOMATION AND PRODUCTION"
+      },
+      "fifth": {
+        "left": "ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING",
+        "right": "MEDICINE AND CHEMISTRY"
+      },
+      "sixth": {
+        "left": "PHYSICS AND PHOTONICS",
+        "right": "SUSTAINABILITY"
+      }
     }
   }
 }
