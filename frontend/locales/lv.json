@@ -91,6 +91,74 @@
           "fourth": "Kad esi izpildījis, gaidi rezultātus."
         },
         "image": "/images/stories/lv/stories-instruction-lv.webp"
+      },
+      "tests": {
+        "first": {
+          "text": "Stāsts par web izstrādi",
+          "buttonText": "Pirmais Tests",
+          "buttonHref": "https://form.typeform.com/to/GvpOqLrs"
+        },
+        "second": {
+          "text": "Stāsts par datiem",
+          "buttonText": "Otrais Tests",
+          "buttonHref": "https://form.typeform.com/to/veSvfNKg"
+        },
+        "third": {
+          "text": "Stāsts par produkta attīstību",
+          "buttonText": "Trešais Tests",
+          "buttonHref": "https://form.typeform.com/to/FRIDbhdq"
+        },
+        "fourth": {
+          "text": "Stāsts par radošo programmēšanu",
+          "buttonText": "Ceturtais Tests",
+          "buttonHref": "https://form.typeform.com/to/J83SOzTP"
+        },
+        "fifth": {
+          "text": "Stāsts par mašīnmācīšanos un kvantu datoriem",
+          "buttonText": "Piektais Tests",
+          "buttonHref": "https://form.typeform.com/to/XDh38vqF"
+        },
+        "sixth": {
+          "text": "Stāsts par fiziku un fotoniku",
+          "buttonText": "Sestais Tests",
+          "buttonHref": "https://form.typeform.com/to/TsL4Rute"
+        },
+        "seventh": {
+          "text": "Stāsts par produkta izstrādi",
+          "buttonText": "Septītais Tests",
+          "buttonHref": "https://form.typeform.com/to/eeysgpC0H"
+        },
+        "eighth": {
+          "text": "Stāsts par kiberdrošību",
+          "buttonText": "Astotais Tests",
+          "buttonHref": "https://form.typeform.com/to/SUBf0dbH"
+        },
+        "ninth": {
+          "text": "Stāsts par ražošana un automātika",
+          "buttonText": "Devītais Tests",
+          "buttonHref": "https://form.typeform.com/to/XF9xGjoy"
+        },
+        "tenth": {
+          "text": "Stāsts par telekomunikācijām",
+          "buttonText": "Desmitais Tests",
+          "buttonHref": "https://form.typeform.com/to/qBLsAhmX"
+        },
+        "eleventh": {
+          "text": "Stāsts par medicīnu un ķīmiju",
+          "buttonText": "Vienpadsmitais Tests",
+          "buttonHref": "https://form.typeform.com/to/H9kz65In"
+        },
+        "twelfth": {
+          "text": "Stāsts par ilgtspējību",
+          "buttonText": "Divpadsmitais Tests",
+          "buttonHref": "https://form.typeform.com/to/T7bAcOTL"
+        }
+      },
+      "disclaimer": {
+        "text": "* Jūsu sniegtie dati tiks izmantoti tikai ERAF līdzfinansētā projekta Nr. 1.1.1.3/18/A/001 \"RTU inovāciju granti studentiem\" ietvaros un mēs vienmēr aizsargāsim Jūsu informāciju un veicam atbilstošus pasākumus, lai nodrošinātu, ka personas datu apstrāde notiek atbilstoši spēkā esošajiem tiesību aktiem par fizisko personu datu apstrādi un aizsardzību. ",
+        "projectLink": "Projekta saite",
+        "privacyPolicy": "Privatuma politika",
+        "dataSafety": "Datu aizsardzības politika"
       }
     }
   }

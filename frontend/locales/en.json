@@ -91,6 +91,75 @@
           "fourth": "When you're done, wait for the results."
         },
         "image": "/images/stories/en/stories-instruction-en.webp"
+      },
+      "tests": {
+        "first": {
+          "text": "Stories on Web development",
+          "buttonText": "First Test",
+          "buttonHref": "https://form.typeform.com/to/GvpOqLrs"
+        },
+        "second": {
+          "text": "Stories on Data",
+          "buttonText": "Second Test",
+          "buttonHref": "https://form.typeform.com/to/veSvfNKg"
+        },
+        "third": {
+          "text": "Stories on Product Design",
+          "buttonText": "Third Test",
+          "buttonHref": "https://form.typeform.com/to/FRIDbhdq"
+        },
+        "fourth": {
+          "text": "Stories on Creative Programming",
+          "buttonText": "Fourth Test",
+          "buttonHref": "https://form.typeform.com/to/J83SOzTP"
+        },
+        "fifth": {
+          "text": "Stories on Machine Learning and Quantum Computers",
+          "buttonText": "Fifth Test",
+          "buttonHref": "https://form.typeform.com/to/XDh38vqF"
+        },
+        "sixth": {
+          "text": "Stories on Physics and Photonics",
+          "buttonText": "Sixth Test",
+          "buttonHref": "https://form.typeform.com/to/TsL4Rute"
+        },
+        "seventh": {
+          "text": "Stories on Product Development",
+          "buttonText": "Seventh Test",
+          "buttonHref": "https://form.typeform.com/to/eeysgpC0H"
+        },
+        "eighth": {
+          "text": "Stories on Cybersecurity",
+          "buttonText": "Eighth Test",
+          "buttonHref": "https://form.typeform.com/to/SUBf0dbH"
+        },
+        "ninth": {
+          "text": "Stories on Prodctuction and Automation",
+          "buttonText": "Ninth Test",
+          "buttonHref": "https://form.typeform.com/to/XF9xGjoy"
+        },
+
+        "tenth": {
+          "text": "Stories on Telecommunications",
+          "buttonText": "Tenth Test",
+          "buttonHref": "https://form.typeform.com/to/qBLsAhmX"
+        },
+        "eleventh": {
+          "text": "Stories about Medicine and Chemistry",
+          "buttonText": "Eleventh Test",
+          "buttonHref": "https://form.typeform.com/to/H9kz65In"
+        },
+        "twelfth": {
+          "text": "Stories on Sustainability",
+          "buttonText": "Twelfth Test",
+          "buttonHref": "https://form.typeform.com/to/T7bAcOTL"
+        }
+      },
+      "disclaimer": {
+        "text": "The data provided by you will be used only for the ERDF co-financed project no. 1.1.1.3/18/A/001 \"RTU Innovation Grants for Students\" and we will always protect your information and take appropriate measures to ensure that the processing of personal data takes place in accordance with the applicable legislation on the processing and protection of personal data. ",
+        "projectLink": "Project Link",
+        "privacyPolicy": "Privacy Policy",
+        "dataSafety": "Data Safety Policy"
       }
     }
   }
