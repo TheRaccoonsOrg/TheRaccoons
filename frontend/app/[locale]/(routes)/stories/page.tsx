@@ -1,5 +1,6 @@
 import ColumnSection from './_components/columnSection';
 import Header from './_components/header';
+import TestSection from './_components/testSection';
 import VideoPlayer from './_components/videoPlayer';
 
 const Stories = () => {
@@ -8,6 +9,7 @@ const Stories = () => {
       <Header />
       <ColumnSection />
       <VideoPlayer />
+      <TestSection />
     </div>
   );
 };

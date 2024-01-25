@@ -73,6 +73,16 @@
     "videoPlayer": {
       "text": "In order to see our latest lectures please follow our YouTube channel:",
       "button": "Youtube channel"
+    },
+    "testSection": {
+      "description": {
+        "text": {
+          "first": "Challenge yourself and test your knowledge!",
+          "second": "Listen to the lectures and afterwards fill out the multiple-choice tests. If you will listen carefully the test will be a piece of pie for you.",
+          "third": "A good job always pays off and this time is not an exception, so fulfil the test and get your prize!"
+        },
+        "image": "/images/stories/en/stories-test-en.webp"
+      }
     }
   }
 }

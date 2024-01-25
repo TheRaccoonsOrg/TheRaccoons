@@ -73,6 +73,16 @@
     "videoPlayer": {
       "text": "Lai skatītos pārējās lekcijas seko mūsu YouTube kanālam zemāk:",
       "button": "Youtube stāsti"
+    },
+    "testSection": {
+      "description": {
+        "text": {
+          "first": "Izaicini sevi un pārbaudi savas zināšanas!",
+          "second": "Pēc lekciju noklausīšanās izpildi testus un noskaidro, cik labi esi izpratis katru no tematiem. Ja lekcijas būsi klausījies uzmanīgi testā, noteikti veiksies labi.",
+          "third": "Labs darbs vienmēr tiek novērtēts, un arī šī reize nav izņēmums, tāpēc aizpildi testu un saņem balvu no The Raccoons un draugiem!"
+        },
+        "image": "/images/stories/lv/stories-test-lv.webp"
+      }
     }
   }
 }
