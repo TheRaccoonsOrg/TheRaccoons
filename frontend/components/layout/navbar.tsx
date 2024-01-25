@@ -21,7 +21,7 @@ export default function Navbar({ navLinks }: NavbarProps) {
 
   return (
     <header className="mb-20 flex justify-center ">
-      <nav className="bg-background fixed left-0 top-0 w-full  gap-x-10 px-5 md:flex md:items-center md:px-20">
+      <nav className="bg-background fixed left-0 top-0 w-full  gap-x-10 px-5 md:flex md:items-center md:px-20 z-50">
         <div className="flex w-full items-center justify-between py-3 md:block md:py-5">
           <Link href="/" onClick={handleClick}>
             <h1 className="text-2xl font-bold duration-200">{siteConfig.name}</h1>
