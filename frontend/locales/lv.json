@@ -160,6 +160,12 @@
         "privacyPolicy": "Privatuma politika",
         "dataSafety": "Datu aizsardzības politika"
       }
+    },
+    "partners": {
+      "main": "/images/stories/lv/partners-lv.webp",
+      "organize": "/images/stories/lv/organize-lv.webp",
+      "support": "/images/stories/lv/support-lv.webp",
+      "friends": "/images/lv/draugi.webp"
     }
   }
 }
