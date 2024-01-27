@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Partners = () => {
   const t = useTranslations('Stories.partners');
   return (
-    <div className="flex flex-col items-center jutify-center mt-10">
+    <div className="flex flex-col items-center jutify-center my-10">
       <Image
         src={t('main')}
         width={1270}
