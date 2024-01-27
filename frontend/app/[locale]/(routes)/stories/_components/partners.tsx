@@ -26,7 +26,7 @@ const Partners = () => {
           width={612}
           height={168}
           alt="Organized by"
-          className="md:h-[100px] w-auto"
+          className="h-[100px] w-auto"
         />
         <div className="flex flex-col md:flex-row md:pr-10 items-center gap-10">
           <Image
@@ -34,14 +34,14 @@ const Partners = () => {
             width={296}
             height={256}
             alt="RTU LOGO"
-            className="w-auto h-auto"
+            className="w-auto h-[100px]"
           />
           <Image
             src="/images/stories/logo/Helve.webp"
             width={320}
             height={106}
             alt="Helve LOGO"
-            className="w-auto h-auto"
+            className="w-auto h-[50px]"
           />
         </div>
       </div>
@@ -52,20 +52,20 @@ const Partners = () => {
         height={91}
         alt="Dots"
       />
-      <div className="flex flex-col-reverse md:flex-row md:pr-10 items-center gap-10 mt-10">
+      <div className="flex flex-col-reverse md:flex-row items-center gap-10 mt-10">
         <Image
           src="/images/stories/logo/tet.webp"
           width={286}
           height={134}
           alt="RTU LOGO"
-          className="w-auto h-auto"
+          className="w-auto h-[50px]"
         />
         <Image
           src={t('support')}
           width={610}
           height={168}
           alt="Helve LOGO"
-          className="w-auto h-auto"
+          className="w-auto h-[100px]"
         />
       </div>
       <Image
@@ -76,7 +76,7 @@ const Partners = () => {
         alt="Dots"
       />
       <Image
-        className="mt-10 w-auto h-auto"
+        className="mt-10 w-auto h-[100px]"
         src={t('friends')}
         width={398}
         height={206}
@@ -92,7 +92,7 @@ const Partners = () => {
             target="_blank"
             className="flex items-center justify-center">
             <Image
-              className="mt-6 w-auto h-auto"
+              className="mt-6 w-auto h-[55px]"
               src={item.imagePath}
               width={item.width}
               height={item.height}
