@@ -161,6 +161,12 @@
         "privacyPolicy": "Privacy Policy",
         "dataSafety": "Data Safety Policy"
       }
+    },
+    "partners": {
+      "main": "/images/stories/en/partners-en.webp",
+      "organize": "/images/stories/en/organize-en.webp",
+      "support": "/images/stories/en/support-en.webp",
+      "friends": "/images/en/friends.webp"
     }
   }
 }

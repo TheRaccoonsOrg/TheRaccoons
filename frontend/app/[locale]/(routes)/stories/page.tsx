@@ -1,5 +1,6 @@
 import ColumnSection from './_components/columnSection';
 import Header from './_components/header';
+import Partners from './_components/partners';
 import TestSection from './_components/testSection';
 import VideoPlayer from './_components/videoPlayer';
 
@@ -10,6 +11,7 @@ const Stories = () => {
       <ColumnSection />
       <VideoPlayer />
       <TestSection />
+      <Partners />
     </div>
   );
 };
