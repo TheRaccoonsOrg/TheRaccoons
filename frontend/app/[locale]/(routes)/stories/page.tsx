@@ -1,3 +1,4 @@
+import ContactSection from '@/components/layout/contact-info';
 import ColumnSection from './_components/columnSection';
 import Header from './_components/header';
 import Partners from './_components/partners';
@@ -12,6 +13,7 @@ const Stories = () => {
       <VideoPlayer />
       <TestSection />
       <Partners />
+      <ContactSection />
     </div>
   );
 };
