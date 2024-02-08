@@ -15,15 +15,21 @@ export const eventsList: EventCardProps[] = [
     show: false,
   },
   {
-    title: 'workshop2023-title',
-    buttonText: 'workshop2023',
-    buttonLink: '/events/workshop2023',
-    show: false,
-  },
-  {
     title: 'hackathon2023-old-title',
     buttonText: 'hackathon2023-old',
     buttonLink: '/events/hackathon2023-OLD',
     show: false,
+  },
+  {
+    title: 'Code Camp 4',
+    buttonText: 'code-camp-4',
+    buttonLink: '/events/code-camp-4',
+    show: true,
+  },
+  {
+    title: 'Code Camp 3',
+    buttonText: 'code-camp-3',
+    buttonLink: '/events/code-camp-3',
+    show: true,
   },
 ];

@@ -32,3 +32,10 @@ interface EventCardProps {
   cardImage?: string;
   show: boolean;
 }
+
+// types.ts
+export interface PageData {
+  id: number;
+  title: string;
+  content: string;
+}
