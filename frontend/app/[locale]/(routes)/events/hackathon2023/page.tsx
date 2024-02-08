@@ -2,7 +2,7 @@ import GreenButton from '@/components/green-button';
 import HowDidItGo from './_components/how-did-it-go';
 import Winners from './_components/winners';
 import Categories from '@/components/hackathon/categories';
-import SeeYouNextYear from './_components/see-you-next-year';
+import SeeYouNextYear from '../../../../../components/hackathon/see-you-next-year';
 import Partners from '../../../../../components/hackathon/partners';
 import ContactSection from '@/components/layout/contact-info';
 import Header from '@/components/hackathon/header';
@@ -52,7 +52,10 @@ const Hackathon2022 = () => {
         buttonHref="https://raccoons-2023.devpost.com/project-gallery"
         buttonText="All submissions"
       />
-      <SeeYouNextYear />
+      <SeeYouNextYear
+        imageSrc="/images/hackathon2023/hackathon2023.webp"
+        buttonHref="https://photos.app.goo.gl/4LfM9CetZzthEywJ6"
+      />
       <Partners props={{ partnerImages, communityPartners }} />
       <ContactSection />
     </div>

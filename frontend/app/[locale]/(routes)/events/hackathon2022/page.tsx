@@ -8,6 +8,7 @@ import { challengeCategories } from './_data/categories';
 import Partners from '@/components/hackathon/partners';
 import { communityPartners, partnerImages } from './_data/partner-images';
 import ContactSection from '@/components/layout/contact-info';
+import SeeYouNextYear from '@/components/hackathon/see-you-next-year';
 const headerImage: CombinedImageProps[] = [
   {
     imageStyles: 'hidden md:block md:w-[700px] lg:w-[971px]',
@@ -49,6 +50,10 @@ const Hackathon2022 = () => {
         buttonStyles="mt-10 min-w-[200px]"
         buttonText="All submissions"
         buttonHref="https://the-raccoons-2022.devpost.com/project-gallery"
+      />
+      <SeeYouNextYear
+        imageSrc="/images/hackathon2022/hackathon2022.webp"
+        buttonHref="https://bit.ly/raccoons2022Photos"
       />
       <Partners props={{ partnerImages, communityPartners }} />
       <ContactSection />
