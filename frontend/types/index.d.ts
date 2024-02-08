@@ -67,3 +67,4 @@ interface PartnerImagesProps {
   height: number;
   linkHref: string;
 }
+

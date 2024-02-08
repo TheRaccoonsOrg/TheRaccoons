@@ -13,8 +13,8 @@ export const eventsList: EventCardProps[] = [
     buttonText: 'hackathon2022',
     buttonLink: '/events/hackathon2022',
     cardImage: '/images/hackathon2022/hackathon2022.webp',
-
     show: true,
+
   },
   {
     title: 'hackathon2023-old-title',
@@ -27,7 +27,6 @@ export const eventsList: EventCardProps[] = [
     buttonText: 'code-camp-4',
     buttonLink: '/events/code-camp-4',
     cardImage: '/images/workshops/2024/code-camp-4-preview.webp',
-
     show: true,
   },
   {
