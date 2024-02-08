@@ -2,13 +2,19 @@ import GreenButton from '@/components/green-button';
 import HeaderImage from './header-image';
 import { CombinedImageProps } from '@/types';
 
-const Header = ({ props }: { props: CombinedImageProps[] }) => {
+const Header = ({
+  props,
+  submissionsLink,
+}: {
+  props: CombinedImageProps[];
+  submissionsLink: string;
+}) => {
   return (
     <div className="mt-20 flex flex-col items-center">
       <HeaderImage props={props} />
       <GreenButton
         buttonStyles="mt-10 min-w-[200px]"
-        buttonHref="https://raccoons-2023.devpost.com/project-gallery"
+        buttonHref={submissionsLink}
         buttonText="All submissions"
       />
       <div className="mt-4 flex flex-col items-center text-center">

@@ -59,3 +59,11 @@ type CombinedImageProps = {
   date: string;
   place: string;
 };
+
+interface PartnerImagesProps {
+  imagePath: string;
+  alt: string;
+  width: number;
+  height: number;
+  linkHref: string;
+}
