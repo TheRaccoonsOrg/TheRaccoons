@@ -10,7 +10,7 @@
   "Buttons": {
     "stories": "Stories",
     "hackathon2023": "Hackathon 2023",
-    "workshops": "Workshops"
+    "workshops": "Workshops (LV)"
   },
   "Events": {
     "hackathon2023-title": "Hackathon 2023",
@@ -20,7 +20,11 @@
     "workshop2024-title": "Workshop 2024",
     "workshop2024": "Explore Workshop 2024",
     "hackathon2023-old-title": "Hackathon 2023 OLD",
-    "hackathon2023-old": "Explore Hackathon 2023 OLD"
+    "hackathon2023-old": "Explore Hackathon 2023 OLD",
+    "code-camp-4-title": "CODE CAMP 4",
+    "code-camp-4": "View Code camp 4 (LV)",
+    "code-camp-3-title": "CODE CAMP 3",
+    "code-camp-3": "View Code camp 3 (LV)"
   },
   "Links": {
     "hackathon2022": "Take a look at hackathon 2022"

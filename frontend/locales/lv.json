@@ -10,7 +10,7 @@
   "Buttons": {
     "stories": "Stāsti",
     "hackathon2023": "Hakatons 2023 (EN)",
-    "workshops": "Darbnīcas (EN)"
+    "workshops": "Darbnīcas"
   },
   "Events": {
     "hackathon2023-title": "Hakatons 2023",
@@ -20,7 +20,11 @@
     "workshop2024-title": "Darbnīca 2024",
     "workshop2024": "Lasīt par Darbnīcu 2024",
     "hackathon2023-old-title": "Hakatons 2023 OLD",
-    "hackathon2023-old": "Lasīt par Hakatonu 2023 OLD (EN)"
+    "hackathon2023-old": "Lasīt par Hakatonu 2023 OLD (EN)",
+    "code-camp-4-title": "CODE CAMP 4",
+    "code-camp-4": "Lasīt par Code camp 4",
+    "code-camp-3-title": "CODE CAMP 3",
+    "code-camp-3": "Lasīt par Code camp 3"
   },
   "Links": {
     "hackathon2022": "Ieskaties 2022. gada hakatonā"
