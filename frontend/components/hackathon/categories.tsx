@@ -1,9 +1,9 @@
-import { challengeCategories } from '../_data/categories';
+import { CategoriesProps } from '@/types';
 
-const Categories = () => {
+const Categories = ({ props }: { props: CategoriesProps[] }) => {
   return (
     <div className="mt-10 grid max-w-[900px] grid-cols-1 gap-10 md:grid-cols-2 tss">
-      {challengeCategories.map((item, index) => (
+      {props.map((item, index) => (
         <div key={index}>
           <h2 className="font-raccoons text-hotgreen text-2xl">{item.categorieName}</h2>
           {item.position.map((item, index) => (
