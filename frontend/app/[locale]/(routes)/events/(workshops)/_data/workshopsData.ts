@@ -29,7 +29,7 @@ interface WorkshopProps {
 export const workshopsData: WorkshopProps[] = [
   {
     slug: 'code-camp-4',
-    title: 'CODE CAMP 4',
+    title: 'code-camp-4',
     date: '26.janvāris 16:00-18:00',
     place: 'SEB Inovāciju centrs | Krišjāņa Barona iela, Rīga',
     eventShortDescription:
@@ -71,13 +71,13 @@ export const workshopsData: WorkshopProps[] = [
       },
     ],
     subInfoSection: [
-      { shortDescription: 'Pasākuma laikā un pēc pasākuma tiks nodroāšināti dzērieni un uzkodas.' },
+      { shortDescription: 'Pasākuma laikā un pēc pasākuma tiks nodrošināti dzērieni un uzkodas.' },
       { shortDescription: 'Jautājumu gadījumā droši zvani/raksti: +371 26115374' },
     ],
   },
   {
     slug: 'code-camp-3',
-    title: 'CODE CAMP 3',
+    title: 'code-camp-3',
     date: '15.decembris 16:00-18:00',
     place: 'SEB Inovāciju centrs | Krišjāņa Barona iela, Rīga',
     eventShortDescription:
@@ -123,7 +123,7 @@ export const workshopsData: WorkshopProps[] = [
       },
     ],
     subInfoSection: [
-      { shortDescription: 'Pasākuma laikā un pēc pasākuma tiks nodroāšināti dzērieni un uzkodas.' },
+      { shortDescription: 'Pasākuma laikā un pēc pasākuma tiks nodrošināti dzērieni un uzkodas.' },
       { shortDescription: 'Jautājumu gadījumā droši zvani/raksti: +371 26115374' },
     ],
   },
