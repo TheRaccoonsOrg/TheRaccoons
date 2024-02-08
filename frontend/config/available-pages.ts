@@ -21,13 +21,13 @@ export const eventsList: EventCardProps[] = [
     show: false,
   },
   {
-    title: 'Code Camp 4',
+    title: 'code-camp-4-title',
     buttonText: 'code-camp-4',
     buttonLink: '/events/code-camp-4',
     show: true,
   },
   {
-    title: 'Code Camp 3',
+    title: 'code-camp-3-title',
     buttonText: 'code-camp-3',
     buttonLink: '/events/code-camp-3',
     show: true,
