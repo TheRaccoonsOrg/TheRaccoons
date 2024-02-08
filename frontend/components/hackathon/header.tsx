@@ -1,26 +1,11 @@
-import Image from 'next/image';
 import GreenButton from '@/components/green-button';
+import HeaderImage from './header-image';
+import { CombinedImageProps } from '@/types';
 
-const Header = () => {
+const Header = ({ props }: { props: CombinedImageProps[] }) => {
   return (
     <div className="mt-20 flex flex-col items-center">
-      <div>
-        <Image
-          className="hidden w-full md:block md:w-[971px]"
-          src="/images/hackathon2023/raccoons_apply_2023.webp"
-          alt="Hackathon2023"
-          width={971}
-          height={492}
-          priority
-        />
-        <Image
-          className="block w-full md:hidden"
-          src="/images/hackathon2023/raccoons_apply_2023-sm.webp"
-          alt="Hackathon2023"
-          width={560}
-          height={436}
-        />
-      </div>
+      <HeaderImage props={props} />
       <GreenButton
         buttonStyles="mt-10 min-w-[200px]"
         buttonHref="https://raccoons-2023.devpost.com/project-gallery"

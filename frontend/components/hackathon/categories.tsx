@@ -1,4 +1,4 @@
-import { challengeCategories } from '../_data/categories';
+import { challengeCategories } from '../../app/[locale]/(routes)/events/hackathon2023/_data/categories';
 
 const Categories = () => {
   return (
