@@ -33,13 +33,6 @@ interface EventCardProps {
   show: boolean;
 }
 
-// types.ts
-export interface PageData {
-  id: number;
-  title: string;
-  content: string;
-}
-
 interface CategoriesProps {
   categorieName: string;
   position: {
@@ -67,4 +60,3 @@ interface PartnerImagesProps {
   height: number;
   linkHref: string;
 }
-
