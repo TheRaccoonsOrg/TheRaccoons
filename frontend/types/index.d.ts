@@ -33,9 +33,59 @@ interface EventCardProps {
   show: boolean;
 }
 
-// types.ts
-export interface PageData {
-  id: number;
-  title: string;
-  content: string;
+interface CategoriesProps {
+  categorieName: string;
+  position: {
+    title: string | null;
+    projectName: string[];
+    description: string | null;
+  }[];
 }
+
+type CombinedImageProps = {
+  imageStyles: string;
+  src: string;
+  alt: string;
+  imageWidth: number;
+  imageHeight: number;
+  isPriority: boolean;
+  date: string;
+  place: string;
+};
+
+interface PartnerImagesProps {
+  imagePath: string;
+  alt: string;
+  width: number;
+  height: number;
+  linkHref: string;
+}
+
+interface CategoriesProps {
+  categorieName: string;
+  position: {
+    title: string | null;
+    projectName: string[];
+    description: string | null;
+  }[];
+}
+
+type CombinedImageProps = {
+  imageStyles: string;
+  src: string;
+  alt: string;
+  imageWidth: number;
+  imageHeight: number;
+  isPriority: boolean;
+  date: string;
+  place: string;
+};
+
+interface PartnerImagesProps {
+  imagePath: string;
+  alt: string;
+  width: number;
+  height: number;
+  linkHref: string;
+}
+

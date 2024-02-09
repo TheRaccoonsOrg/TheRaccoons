@@ -1,11 +1,5 @@
-interface CategoriesProps {
-  categorieName: string;
-  position: {
-    title: string;
-    projectName: string[];
-    description: string | null;
-  }[];
-}
+import { CategoriesProps } from '@/types';
+
 export const challengeCategories: CategoriesProps[] = [
   {
     categorieName: 'Deep Science',
