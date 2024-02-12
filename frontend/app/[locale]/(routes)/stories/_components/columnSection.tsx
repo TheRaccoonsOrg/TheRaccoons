@@ -5,7 +5,7 @@ const ColumnSection = () => {
   const keys = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'];
 
   return (
-    <div className=" max-w-[700px] lg:max-w-[940px] w-full mt-20">
+    <div className=" max-w-[700px] lg:max-w-[940px] w-full my-20">
       {keys.map((key) => (
         <div key={key} className="flex flex-col md:flex-row md:justify-between mx-10 md:mx-0">
           <p>{t(`${key}.left`)}</p>
