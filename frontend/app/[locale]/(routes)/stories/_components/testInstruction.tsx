@@ -1,5 +1,5 @@
+import ImageWithSkeleton from '@/components/hackathon/skeletons/image-with-skeleton';
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
 
 const TestInstruction = () => {
   const t = useTranslations('Stories.testSection');
@@ -11,13 +11,15 @@ const TestInstruction = () => {
         <p>{t('instruction.text.third')}</p>
         <p>{t('instruction.text.fourth')}</p>
       </div>
-      <Image
-        className="w-[450px]"
-        src={t('instruction.image')}
-        alt="Test description"
-        width={946}
-        height={618}
-      />
+      <div className="w-[345px] h-[229px] lg:w-[450px] lg:h-[289px]">
+        <ImageWithSkeleton
+          green={false}
+          src={t('instruction.image')}
+          alt="Test description"
+          width={946}
+          height={618}
+        />
+      </div>
     </div>
   );
 };
