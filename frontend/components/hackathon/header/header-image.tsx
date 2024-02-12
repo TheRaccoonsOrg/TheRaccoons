@@ -1,25 +1,39 @@
+'use client';
 import { CombinedImageProps } from '@/types';
 import Image from 'next/image';
+import { useState } from 'react';
+import { SkeletonLoader } from '../skeletons/skeleton-loader';
+
 const CombineImage = (props: CombinedImageProps) => {
+  const [loading, setLoading] = useState(true);
   return (
-    <div className={props.imageStyles + ' relative'}>
+    <div className={props.imageStyles + ' relative w-full h-full'}>
+      {loading && <SkeletonLoader green={false} />}
       <Image
         src={props.src}
         alt={props.alt}
         width={props.imageWidth}
         height={props.imageHeight}
-        className={props.imageStyles}
+        onLoadingComplete={() => setLoading(false)}
+        className={` transition-opacity duration-500 rounded-md ${
+          loading ? 'opacity-0' : 'opacity-100'
+        }`}
       />
-      <div className="absolute left-[4.7em] md:left-[8.7em] lg:left-[12em] bottom-[0.3em] md:bottom-[0.7em] lg:bottom-[0.9em]">
-        <p className="text-sm md:text-md lg:text-lg">{props.date}</p>
-        <p className="text-sm md:text-md lg:text-lg">{props.place}</p>
-      </div>
+      {!loading && (
+        <div
+          className={`absolute left-[5.7em] md:left-[8.7em] lg:left-[12em] bottom-[0.6em] md:bottom-[0.7em] lg:bottom-[0.9em]transition-opacity duration-500 ${
+            loading ? 'opacity-0' : 'opacity-100'
+          }`}>
+          <p className="text-sm md:text-md lg:text-lg">{props.date}</p>
+          <p className="text-sm md:text-md lg:text-lg">{props.place}</p>
+        </div>
+      )}
     </div>
   );
 };
 const HeaderImage = ({ props }: { props: CombinedImageProps[] }) => {
   return (
-    <div>
+    <div className="h-[269px] w-[345px] md:h-[355px] md:w-[700px] lg:h-[492px] lg:w-[971px]">
       <CombineImage
         imageStyles={props[0].imageStyles}
         src={props[0].src}
@@ -45,21 +59,3 @@ const HeaderImage = ({ props }: { props: CombinedImageProps[] }) => {
 };
 
 export default HeaderImage;
-
-{
-  /* <Image
-  className="hidden w-full md:block md:w-[971px]"
-  src="/images/hackathon2023/raccoons_apply_2023.webp"
-  alt="Hackathon2023"
-  width={971}
-  height={492}
-  priority
-/>
-<Image
-  className="block w-full md:hidden"
-  src="/images/hackathon2023/raccoons_apply_2023-sm.webp"
-  alt="Hackathon2023"
-  width={560}
-  height={436}
-/> */
-}
