@@ -1,14 +1,16 @@
-// components/ImageWithSkeleton.js
+'use client';
+import { SkeletonLoader } from '@/components/hackathon/skeletons/skeleton-loader';
 import Image from 'next/image';
 import { useState } from 'react';
-import { SkeletonLoader } from './skeleton-loader';
 
 const ImageWithSkeleton = ({
+  green,
   src,
   alt,
   width,
   height,
 }: {
+  green: boolean;
   src: string;
   alt: string;
   width: number;
@@ -18,13 +20,13 @@ const ImageWithSkeleton = ({
 
   return (
     <div className="relative w-full h-full">
-      {loading && <SkeletonLoader />}
+      {loading && <SkeletonLoader green={green} />}
       <Image
         src={src}
         alt={alt}
         width={width}
         height={height}
-        className={`transition-opacity duration-500 rounded-md ${
+        className={` transition-opacity duration-500 rounded-md ${
           loading ? 'opacity-0' : 'opacity-100'
         }`}
         onLoadingComplete={() => setLoading(false)}
