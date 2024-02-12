@@ -1,6 +1,6 @@
 import GreenButton from '@/components/green-button';
-import HeaderImage from './header-image';
 import { CombinedImageProps } from '@/types';
+import HeaderImage from './header/header-image';
 
 const Header = ({
   props,

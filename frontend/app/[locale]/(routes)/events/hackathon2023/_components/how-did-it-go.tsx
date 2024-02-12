@@ -1,13 +1,18 @@
+'use client';
+import { SkeletonLoader } from '@/components/hackathon/skeletons/skeleton-loader';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const HowDidItGo = () => {
+  const [loading, setLoading] = useState(true);
+
   return (
     <div className="flex flex-col items-center max-w-[900px]">
       <h2 className="font-raccoons text-purple-br text-4xl md:text-5xl mt-10">How did it go?</h2>
 
-      <div className="flex flex-col items-center md:flex-row">
-        <div className=" gap-y-5 ">
+      <div className="flex flex-col items-center md:flex-row ">
+        <div className=" gap-y-5 max-w-[500px]">
           <div>
             <h3 className="text-hotgreen">Who Joined?</h3>
             <p>
@@ -35,7 +40,19 @@ const HowDidItGo = () => {
             </Link>
           </div>
         </div>
-        <Image src="/images/hackathon2023/raccoon2.webp" alt="Raccoon" width={406} height={382} />
+        <div className="relative w-[345px] h-[324px] rounded-md">
+          {loading && <SkeletonLoader green={false} />}
+          <Image
+            src="/images/hackathon2023/raccoon2.webp"
+            alt="Raccoon"
+            width={406}
+            height={382}
+            onLoadingComplete={() => setLoading(false)}
+            className={` transition-opacity duration-500 rounded-md ${
+              loading ? 'opacity-0' : 'opacity-100'
+            }`}
+          />
+        </div>
       </div>
     </div>
   );
