@@ -1,10 +1,10 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { workshopsData } from '../_data/workshopsData';
-import Image from 'next/image';
 import GreenButton from '@/components/green-button';
 import Link from 'next/link';
 import ContactSection from '@/components/layout/contact-info';
+import ImageWithSkeleton from '../../_components/(skeletons)/image-with-skeleton';
 
 const Workshop2023 = ({ params }: { params: { slug: string } }) => {
   const router = useRouter();
@@ -25,9 +25,8 @@ const Workshop2023 = ({ params }: { params: { slug: string } }) => {
       <p className="text-sm font-bold text-hotgreen ">{filteredWorkshops.place}</p>
       <p className="text-sm">{filteredWorkshops.eventShortDescription}</p>
       <div className="flex flex-col items-center mt-10">
-        <div className="bg-hotgreen rounded-lg w-[390px] h-[210px] md:w-[629px] md:h-[349px] bg-opacity-40 flex items-center justify-center border-hotgreen border-2">
-          <Image
-            className="flex items-center justify-center w-[360px] h-[190]px md:w-[594px] md:h-[312px]"
+        <div className="bg-hotgreen rounded-lg w-[390px] h-[220px] md:w-[629px] md:h-[349px] bg-opacity-40 flex p-4 items-center justify-center border-hotgreen border-2">
+          <ImageWithSkeleton
             src={filteredWorkshops.image.src}
             alt={filteredWorkshops.image.alt}
             width={filteredWorkshops.image.width}
