@@ -1,6 +1,6 @@
 import { EventCardProps } from '@/types';
 import GreenButton from './green-button';
-import Image from 'next/image';
+import ImageWithSkeleton from './hackathon/skeletons/image-with-skeleton';
 
 const EventCard = (props: EventCardProps) => {
   return props.show ? (
@@ -8,14 +8,15 @@ const EventCard = (props: EventCardProps) => {
       <h2 className="font-raccoons text-4xl">{props.title}</h2>
 
       {props.cardImage ? (
-        <Image
-          priority
-          src={props.cardImage}
-          width={300}
-          height={200}
-          alt="Image from event"
-          className="w-[300px]"
-        />
+        <div className="w-[300px]">
+          <ImageWithSkeleton
+            green={false}
+            src={props.cardImage}
+            width={300}
+            height={200}
+            alt="Image from event"
+          />
+        </div>
       ) : null}
       <GreenButton
         buttonStyles="rounded-lg mt-7"
