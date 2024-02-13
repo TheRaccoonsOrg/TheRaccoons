@@ -5,7 +5,7 @@ import { siteConfig } from '@/config/site';
 import { LanguageChoiceDropDownMenu } from '../language-choice-dropdown';
 
 import { Button } from '../ui/button';
-import Link from 'next/link';
+import Link from 'next-intl/link';
 interface NavbarProps {
   navLinks: {
     route: string;
