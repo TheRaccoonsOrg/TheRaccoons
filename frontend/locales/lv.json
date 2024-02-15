@@ -26,6 +26,12 @@
     "code-camp-3-title": "CODE CAMP 3",
     "code-camp-3": "Lasīt par Code camp 3"
   },
+  "EventTypes": {
+    "hackathons": "Hakatoni",
+    "workshops": "Darbnīcas",
+    "sort": "Filtrēt",
+    "all": "Visi"
+  },
   "Links": {
     "hackathon2022": "Ieskaties 2022. gada hakatonā"
   },

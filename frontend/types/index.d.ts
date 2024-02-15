@@ -25,7 +25,9 @@ export interface InfoCardProps {
   linkHref?: string;
 }
 
+export type EventTypes = 'hackathon' | 'workshop' | 'other';
 interface EventCardProps {
+  typeOfEvent: EventTypes;
   title: string;
   buttonText: string;
   buttonLink: string;

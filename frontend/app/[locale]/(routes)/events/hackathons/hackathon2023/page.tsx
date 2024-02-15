@@ -2,13 +2,13 @@ import GreenButton from '@/components/green-button';
 import HowDidItGo from './_components/how-did-it-go';
 import Winners from './_components/winners';
 import Categories from '@/components/hackathon/categories';
-import SeeYouNextYear from '../../../../../components/hackathon/see-you-next-year';
-import Partners from '../../../../../components/hackathon/partners';
 import ContactSection from '@/components/layout/contact-info';
 import Header from '@/components/hackathon/header';
 import { CombinedImageProps } from '@/types';
 import { challengeCategories } from './_data/categories';
 import { communityPartners, partnerImages } from './_data/partner-images';
+import Partners from '@/components/hackathon/partners';
+import SeeYouNextYear from '@/components/hackathon/see-you-next-year';
 
 const headerImage: CombinedImageProps[] = [
   {
