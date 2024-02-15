@@ -14,12 +14,12 @@ const HeroHeader = (props: HeroHeaderProps) => {
 
   return (
     <header className={`flex flex-col justify-center items-center md:flex-row gap-x-4 `}>
-      <div className="w-[350px] sm:w-[400px] md:w-[450px]">
+      <div className="w-[345px] sm:w-[400px] md:w-[450px]">
         <p>{props.firstDesc}</p>
         <br />
         <p>{props.secondDesc}</p>
       </div>
-      <div className="w-[350px] h-[350px] lg:w-[450px] lg:h-[450px]">
+      <div className="w-[345px] h-[350px] lg:w-[450px] lg:h-[450px]">
         {loading && <SkeletonLoader green={false} />}
 
         <Image

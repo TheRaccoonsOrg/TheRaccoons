@@ -9,7 +9,7 @@ const AboutUs = (props: InfoCardProps) => {
 
   return (
     <div className="mt-8 flex flex-col items-center justify-center gap-x-10 md:flex-row">
-      <div className="w-[350px] h-[161px] md:w-[400px] md:h-[184px]">
+      <div className="w-[345px] h-[161px] md:w-[400px] md:h-[184px]">
         {loading && <SkeletonLoader green={false} />}
         <Image
           src={props.imagePath}
@@ -22,7 +22,7 @@ const AboutUs = (props: InfoCardProps) => {
           }`}
         />
       </div>
-      <p className="mt-4 w-[350px] md:w-[500px] ">{props.text}</p>
+      <p className="mt-4 w-[345px] md:w-[500px] ">{props.text}</p>
     </div>
   );
 };

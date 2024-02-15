@@ -7,7 +7,7 @@ const HeroImage = ({ pathToImage }: { pathToImage: string }) => {
   const [loading, setLoading] = useState(true);
 
   return (
-    <div className="pr-5 md:pr-0 w-[330px] h-[287px] sm:w-[400px] sm:h-[347px] ">
+    <div className="pr-5 md:pr-0 w-[345px] h-[287px] sm:w-[400px] sm:h-[347px] ">
       {loading && <SkeletonLoader green={false} />}
       <Image
         alt="Stories Header"
