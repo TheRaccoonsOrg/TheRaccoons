@@ -1,9 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { siteConfig } from '@/config/site';
 import { LanguageChoiceDropDownMenu } from '../language-choice-dropdown';
-
+import Image from 'next/image';
 import { Button } from '../ui/button';
 import Link from 'next-intl/link';
 interface NavbarProps {
@@ -24,7 +23,13 @@ export default function Navbar({ navLinks }: NavbarProps) {
       <nav className="bg-background fixed left-0 top-0 w-full  gap-x-10 px-5 md:flex md:items-center md:px-20 z-50 border-solid border-b-2 border-purple-br border-opacity-50">
         <div className="flex w-full items-center justify-between py-3 md:block md:py-5 ">
           <Link href="/" onClick={handleClick}>
-            <h1 className="text-2xl font-bold duration-200">{siteConfig.name}</h1>
+            <Image
+              src="/images/logo.webp"
+              alt="logo"
+              width={428}
+              height={78}
+              className="w-auto h-[2rem]"
+            />
           </Link>
           <div className="flex  gap-x-2 md:hidden">
             <LanguageChoiceDropDownMenu />
