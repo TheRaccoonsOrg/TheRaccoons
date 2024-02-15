@@ -14,7 +14,7 @@ export default function Main() {
       <HeroHeader
         firstDesc={t('firstDesc')}
         secondDesc={t('secondDesc')}
-        imageSrc={'/images/main.gif'}
+        imageSrc={'/images/main.webp'}
         imageAlt="Raccoons main picture"
       />
       <AboutUs
