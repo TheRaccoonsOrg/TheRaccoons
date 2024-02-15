@@ -10,7 +10,8 @@ export default function Main() {
   const tImage = useTranslations('Image');
 
   return (
-    <div className="mx-10">
+    // <div className="mx-10">
+    <div>
       <HeroHeader
         firstDesc={t('firstDesc')}
         secondDesc={t('secondDesc')}
