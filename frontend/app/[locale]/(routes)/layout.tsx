@@ -10,7 +10,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     { route: t('stories'), path: '/stories' },
   ];
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen pt-20">
       <Navbar navLinks={navLinksTranslated} />
       {children}
     </main>
