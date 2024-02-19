@@ -23,14 +23,14 @@ const EventsPage = () => {
     },
   ];
   return (
-    <div className="flex flex-col justify-between min-h-screen ">
-      <div className=" mx-5 md:mx-20 mt-4">
+    <div className="flex flex-col items-center md:items-stretch h-[91vh]">
+      <div className=" mx-5 md:mx-[4.7rem] mt-4 ">
         <EventPageNav events={eventTypes} placeHolder={t('sort')} />
       </div>
       <div className="flex flex-wrap items-center justify-center">
         <EventCardGrid props={filteredEvents} />
       </div>
-      <div className="mt-auto mb-20">
+      <div className=" flex flex-col items-center justify-end h-full">
         <ContactSection />
       </div>
     </div>

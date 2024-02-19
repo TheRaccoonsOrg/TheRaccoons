@@ -19,7 +19,7 @@ export default function Navbar({ navLinks }: NavbarProps) {
   };
 
   return (
-    <header className="mb-20 flex justify-center">
+    <header className="relative top-0 flex justify-center">
       <nav className="bg-background fixed left-0 top-0 w-full  gap-x-10 px-5 md:flex md:items-center md:px-20 z-50 border-solid border-b-2 border-purple-br border-opacity-50">
         <div className="flex w-full items-center justify-between py-3 md:block md:py-5 ">
           <Link href="/" onClick={handleClick}>

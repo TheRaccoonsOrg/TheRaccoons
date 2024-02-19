@@ -28,7 +28,7 @@ const EventPageNav = ({
       </SelectTrigger>
       <SelectContent defaultValue={'/events'}>
         {events.map((event) => (
-          <SelectItem key={event.href} value={event.href} onClick={() => console.log('click')}>
+          <SelectItem key={event.href} value={event.href}>
             {event.label}
           </SelectItem>
         ))}
