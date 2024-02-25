@@ -1,3 +1,7 @@
+'use client';
+import { localeNames, locales } from '@/i18n';
+import { useLocale } from 'next-intl';
+import { usePathname, useRouter } from 'next-intl/client';
 import * as React from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -10,8 +14,16 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 import { BiWorld } from 'react-icons/bi';
-import LinkWithRef from 'next-intl/link';
+
 export function LanguageChoiceDropDownMenu() {
+  const locale = useLocale();
+  const router = useRouter();
+  const pathName = usePathname();
+
+  const switchLocale = (locale: string) => {
+    router.push(pathName, { locale: locale });
+  };
+
   return (
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
@@ -19,14 +31,14 @@ export function LanguageChoiceDropDownMenu() {
           <BiWorld size={20} />
         </Button>
       </DropdownMenuTrigger>
+
       <DropdownMenuContent>
-        <DropdownMenuRadioGroup>
-          <LinkWithRef href="/" locale="lv">
-            <DropdownMenuRadioItem value="top">LV</DropdownMenuRadioItem>
-          </LinkWithRef>
-          <LinkWithRef href="/" locale="en">
-            <DropdownMenuRadioItem value="bottom">EN</DropdownMenuRadioItem>
-          </LinkWithRef>
+        <DropdownMenuRadioGroup value={locale}>
+          {locales.map((loc) => (
+            <DropdownMenuRadioItem key={loc} value={loc} onSelect={() => switchLocale(loc)}>
+              {localeNames[loc]}
+            </DropdownMenuRadioItem>
+          ))}
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>

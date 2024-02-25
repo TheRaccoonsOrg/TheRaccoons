@@ -9,12 +9,14 @@ const ImageWithSkeleton = ({
   alt,
   width,
   height,
+  imageStyles,
 }: {
   green: boolean;
   src: string;
   alt: string;
   width: number;
   height: number;
+  imageStyles?: string;
 }) => {
   const [loading, setLoading] = useState(true);
 
@@ -28,7 +30,7 @@ const ImageWithSkeleton = ({
         height={height}
         className={` transition-opacity duration-500 rounded-md ${
           loading ? 'opacity-0' : 'opacity-100'
-        }`}
+        } ${imageStyles}`}
         onLoadingComplete={() => setLoading(false)}
       />
     </div>

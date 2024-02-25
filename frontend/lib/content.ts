@@ -2,14 +2,14 @@ export const infoSectionData = [
   {
     title: 'hackathons',
     buttonText: 'hackathon2023',
-    buttonHref: '/events/hackathon2023',
+    buttonHref: '/events/hackathons/hackathon2023',
     linkText: 'hackathon2022',
-    linkHref: '/events/hackathon2022',
+    linkHref: '/events/hackathons/hackathon2022',
   },
   {
     title: 'workshops',
     buttonText: 'workshops',
-    buttonHref: '/events/code-camp-4',
+    buttonHref: '/events/workshops',
   },
   {
     title: 'stories',

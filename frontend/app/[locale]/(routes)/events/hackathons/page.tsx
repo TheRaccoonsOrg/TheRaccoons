@@ -1,12 +1,12 @@
 import { GetEventList } from '@/actions/events';
 import { EventTypes } from '@/types';
 import { useTranslations } from 'next-intl';
-import EventCardGrid from './_components/event-card-grid';
-import EventPageNav from './_components/event-page-nav';
+import EventCardGrid from '../_components/event-card-grid';
+import EventPageNav from '../_components/event-page-nav';
 import ContactSection from '@/components/layout/contact-info';
 
 const EventsPage = () => {
-  const filteredEvents = GetEventList('' as EventTypes);
+  const filteredEvents = GetEventList('hackathon' as EventTypes);
   const t = useTranslations('EventTypes');
   const eventTypes = [
     {
@@ -24,7 +24,7 @@ const EventsPage = () => {
   ];
   return (
     <div className="flex flex-col items-center md:items-stretch h-[91vh]">
-      <div className=" mx-5 md:mx-[4.7rem] mt-4">
+      <div className=" mx-5 md:mx-[4.7rem] mt-4 ">
         <EventPageNav events={eventTypes} placeHolder={t('sort')} />
       </div>
       <div className="flex flex-wrap items-center justify-center">

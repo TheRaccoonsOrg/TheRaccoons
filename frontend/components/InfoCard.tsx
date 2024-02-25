@@ -9,7 +9,7 @@ import { SkeletonLoader } from './hackathon/skeletons/skeleton-loader';
 const InfoCard = (props: InfoCardProps) => {
   const [loading, setLoading] = useState(true);
   return (
-    <div className="w-[350px] md:w-[300px] flex flex-col justify-center items-start mb-3">
+    <div className="w-[345px] md:w-[300px] flex flex-col justify-center items-start mb-3">
       <div className="w-full h-[136px]">
         {loading && <SkeletonLoader green={false} />}
         <Image

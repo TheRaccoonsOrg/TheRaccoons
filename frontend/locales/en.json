@@ -26,6 +26,12 @@
     "code-camp-3-title": "CODE CAMP 3",
     "code-camp-3": "View Code camp 3 (LV)"
   },
+  "EventTypes": {
+    "hackathons": "Hackathon",
+    "workshops": "Workshop",
+    "all": "All",
+    "sort": "Filter by:"
+  },
   "Links": {
     "hackathon2022": "Take a look at hackathon 2022"
   },

@@ -27,7 +27,6 @@ const SeeYouNextYear = ({ buttonHref, imageSrc }: { buttonHref: string; imageSrc
       <p className="text-hotgreen my-5">YOU CAN FIND MORE PICTURES FROM THE EVENT BELOW</p>
       <GreenButton
         buttonStyles="min-w-[200px]"
-        // buttonHref="https://photos.app.goo.gl/4LfM9CetZzthEywJ6"
         buttonHref={buttonHref}
         buttonText="Photos from event"
       />
