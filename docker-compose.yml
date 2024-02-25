@@ -10,5 +10,5 @@ services:
 
 networks:
   nginxproxymanager_nginx-proxy-manager-nw: 
-    # external: true
+    external: true
 
