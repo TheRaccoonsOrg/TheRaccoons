@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  frontend:
+    build: 
+      context: ./frontend
+    ports:
+      - 10451:3000
+    networks:
+      - nginxproxymanager_nginx-proxy-manager-nw
+
+networks:
+  nginxproxymanager_nginx-proxy-manager-nw: 
+    external: true
+
