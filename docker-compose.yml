@@ -8,6 +8,7 @@ services:
     networks:
       - nginxproxymanager_nginx-proxy-manager-nw
 
+
 networks:
   nginxproxymanager_nginx-proxy-manager-nw: 
     external: true
