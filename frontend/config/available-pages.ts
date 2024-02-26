@@ -6,7 +6,7 @@ export const eventsList: EventCardProps[] = [
     title: 'code-camp-5-title',
     buttonText: 'code-camp-5',
     buttonLink: '/events/workshops/code-camp-5',
-    cardImage: '/images/workshops/2024/code-camp-5.webp',
+    cardImage: '/images/workshops/2024/code-camp-5-preview.webp',
     show: true,
   },
   {
@@ -46,7 +46,7 @@ export const eventsList: EventCardProps[] = [
     title: 'code-camp-1-title',
     buttonText: 'code-camp-1',
     buttonLink: '/events/workshops/code-camp-1',
-    cardImage: '/images/workshops/2023/code-camp-1.webp',
+    cardImage: '/images/workshops/2023/code-camp-1-preview.webp',
     show: true,
   },
   {
