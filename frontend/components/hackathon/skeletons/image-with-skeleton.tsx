@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 const ImageWithSkeleton = ({
+  priority,
   green,
   src,
   alt,
@@ -11,6 +12,7 @@ const ImageWithSkeleton = ({
   height,
   imageStyles,
 }: {
+  priority?: boolean;
   green: boolean;
   src: string;
   alt: string;
@@ -24,6 +26,7 @@ const ImageWithSkeleton = ({
     <div className="relative w-full h-full">
       {loading && <SkeletonLoader green={green} />}
       <Image
+        priority={priority}
         src={src}
         alt={alt}
         width={width}
