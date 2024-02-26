@@ -27,6 +27,7 @@ const Workshop2023 = ({ params }: { params: { slug: string } }) => {
       <div className="flex flex-col items-center mt-10">
         <div className="bg-hotgreen rounded-lg w-[390px] h-[220px] md:w-[629px] md:h-[349px] bg-opacity-40 flex p-4 items-center justify-center border-hotgreen border-2">
           <ImageWithSkeleton
+            priority={true}
             green={true}
             src={filteredWorkshops.image.src}
             alt={filteredWorkshops.image.alt}
