@@ -35,6 +35,14 @@ export const eventsList: EventCardProps[] = [
   },
   {
     typeOfEvent: 'workshop',
+    title: 'code-camp-2-title',
+    buttonText: 'code-camp-2',
+    buttonLink: '/events/workshops/code-camp-2',
+    cardImage: '/images/workshops/2023/code-camp-2-preview.webp',
+    show: true,
+  },
+  {
+    typeOfEvent: 'workshop',
     title: 'code-camp-1-title',
     buttonText: 'code-camp-1',
     buttonLink: '/events/workshops/code-camp-1',

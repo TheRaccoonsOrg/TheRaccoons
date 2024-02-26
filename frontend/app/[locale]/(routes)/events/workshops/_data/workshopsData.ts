@@ -30,7 +30,7 @@ export const workshopsData: WorkshopProps[] = [
   {
     slug: 'code-camp-5',
     title: 'code camp 5',
-    date: '23.februāris 16:00-18:00',
+    date: '2024.gads 23.februāris 16:00-18:00',
     place: 'SEB Inovāciju centrs | Krišjāņa Barona iela, Rīga',
     eventShortDescription:
       'Pievienojies darbnīcai un uzzini kādi ir biežākie rīki un tehnoloģijas, kas tiek pielietotas spēļu izstrādes veidošanā, kā arī izmēģini izveidot savu spēli. ',
@@ -69,7 +69,7 @@ export const workshopsData: WorkshopProps[] = [
   {
     slug: 'code-camp-4',
     title: 'code camp 4',
-    date: '26.janvāris 16:00-18:00',
+    date: '2024. gads 26. janvāris 16:00-18:00',
     place: 'SEB Inovāciju centrs | Krišjāņa Barona iela, Rīga',
     eventShortDescription:
       'Pievienojies darbnīcai un uzzini, kā uzbūvēt savu mobilo lietotni, izmantojot rīku Flutter. ',
@@ -117,7 +117,7 @@ export const workshopsData: WorkshopProps[] = [
   {
     slug: 'code-camp-3',
     title: 'code camp 3',
-    date: '15.decembris 16:00-18:00',
+    date: '2023. gads 15. decembris 16:00-18:00',
     place: 'SEB Inovāciju centrs | Krišjāņa Barona iela, Rīga',
     eventShortDescription:
       'Pievienojies darbnīcai un uzzini kā labāk nonākt līdz savai biznesa idejai un uzbūvēt pirmo mājaslapas prototipu.',
@@ -167,9 +167,31 @@ export const workshopsData: WorkshopProps[] = [
     ],
   },
   {
+    slug: 'code-camp-2',
+    title: 'code camp 2',
+    date: 'October 4, 2023, 18:00',
+    place: 'SEB Inovation center | Krišjāņa Barona street 20, Rīga',
+    eventShortDescription: 'PART 2 to our first CODE CAMP!',
+    image: {
+      src: '/images/workshops/2023/code-camp-2.webp',
+      alt: 'Code Camp 2',
+      width: 3000,
+      height: 1809,
+    },
+    description:
+      'If you are new to coding, this in-person session is going to help you familiarize yourself with coding projects and GitHub. Learn to navigate your repo, understand branches, and collaborate with others on code.',
+    moreInfo: '',
+    description2nd: '',
+    when: '',
+    where: '',
+    necessary: '',
+    registerLink: '',
+    subInfoSection: [],
+  },
+  {
     slug: 'code-camp-1',
     title: 'code camp 1',
-    date: '29.september 18:00',
+    date: 'September 20, 2023, 18:00',
     place: 'SEB Inovation center | Krišjāņa Barona street 20, Rīga',
     eventShortDescription:
       'Join the workshop and familiarize yourself with the coding environment and basic front-end web design!',
