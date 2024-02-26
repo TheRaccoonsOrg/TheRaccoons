@@ -18,10 +18,10 @@ interface WorkshopProps {
   where: string;
   necessary: string;
   registerLink: string;
-  whatToExpect: string;
-  timeFrames: {
-    timeFrame: string;
-    descriptionOfTimeFrame: { shortDescription: string }[];
+  whatToExpect?: string;
+  timeFrames?: {
+    timeFrame?: string;
+    descriptionOfTimeFrame?: { shortDescription?: string }[];
   }[];
 
   subInfoSection: { shortDescription: string }[];
@@ -29,7 +29,7 @@ interface WorkshopProps {
 export const workshopsData: WorkshopProps[] = [
   {
     slug: 'code-camp-5',
-    title: 'code-camp-5',
+    title: 'code camp 5',
     date: '23.februāris 16:00-18:00',
     place: 'SEB Inovāciju centrs | Krišjāņa Barona iela, Rīga',
     eventShortDescription:
@@ -68,7 +68,7 @@ export const workshopsData: WorkshopProps[] = [
   },
   {
     slug: 'code-camp-4',
-    title: 'code-camp-4',
+    title: 'code camp 4',
     date: '26.janvāris 16:00-18:00',
     place: 'SEB Inovāciju centrs | Krišjāņa Barona iela, Rīga',
     eventShortDescription:
@@ -116,7 +116,7 @@ export const workshopsData: WorkshopProps[] = [
   },
   {
     slug: 'code-camp-3',
-    title: 'code-camp-3',
+    title: 'code camp 3',
     date: '15.decembris 16:00-18:00',
     place: 'SEB Inovāciju centrs | Krišjāņa Barona iela, Rīga',
     eventShortDescription:
@@ -165,5 +165,28 @@ export const workshopsData: WorkshopProps[] = [
       { shortDescription: 'Pasākuma laikā un pēc pasākuma tiks nodrošināti dzērieni un uzkodas.' },
       { shortDescription: 'Jautājumu gadījumā droši zvani/raksti: +371 26115374' },
     ],
+  },
+  {
+    slug: 'code-camp-1',
+    title: 'code camp 1',
+    date: '29.september 18:00',
+    place: 'SEB Inovation center | Krišjāņa Barona street 20, Rīga',
+    eventShortDescription:
+      'Join the workshop and familiarize yourself with the coding environment and basic front-end web design!',
+    image: {
+      src: '/images/workshops/2023/code-camp-1.webp',
+      alt: 'Code Camp 1',
+      width: 3000,
+      height: 1809,
+    },
+    description:
+      'Do you want to introduce yourself to coding and build a simple site? This in-person session is going to help you familiarize yourself with a coding environment and basic front-end web design in a hands-on workshop!',
+    moreInfo: '',
+    description2nd: '',
+    when: '',
+    where: '',
+    necessary: '',
+    registerLink: '',
+    subInfoSection: [],
   },
 ];
