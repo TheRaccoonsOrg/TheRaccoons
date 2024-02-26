@@ -11,7 +11,7 @@ interface WorkshopProps {
     height: number;
   };
   description: string;
-  moreInfo: string;
+  moreInfo?: string;
   moreInfoLink?: string;
   description2nd: string;
   when: string;
@@ -27,6 +27,45 @@ interface WorkshopProps {
   subInfoSection: { shortDescription: string }[];
 }
 export const workshopsData: WorkshopProps[] = [
+  {
+    slug: 'code-camp-5',
+    title: 'code-camp-5',
+    date: '23.februāris 16:00-18:00',
+    place: 'SEB Inovāciju centrs | Krišjāņa Barona iela, Rīga',
+    eventShortDescription:
+      'Pievienojies darbnīcai un uzzini kādi ir biežākie rīki un tehnoloģijas, kas tiek pielietotas spēļu izstrādes veidošanā, kā arī izmēģini izveidot savu spēli. ',
+    image: {
+      src: '/images/workshops/2024/code-camp-5.webp',
+      alt: 'Code Camp 5',
+      width: 594,
+      height: 312,
+    },
+    description:
+      'Pasākuma laikā praktiski darbosimies, apgūstot pamatus par spēļu izstrādi. Iepazīsimies ar vairākiem populāriem rīkiem, ko izmanto spēļu izstrādē un mēģināsim izveidot arī savu pirmo spēli. Nekādas iepriekšējas zināšanas nav nepieciešamas, tamdēļ jāņem vērā, ka darbnīca paredzēta iesācējiem un tiem, kas nav vēl nekad izstrādājuši savas spēles.',
+    description2nd:
+      'Īpaši aicināti uz pasākumu ir vidusskolas skolēni un universitātes studenti, ar interesti par tehnoloģijām vai jaunu ideju veidošanu. Jebkuram dalībniekam pasākums ir par brīvu.',
+    when: '23.februāris 16:00',
+    where: 'SEB Inovāciju centrs, Krišjāņa Barona iela 20, Rīga',
+    necessary: 'Dators, lādētājs un vēlme apgūt jaunas tehnoloģijas!',
+    registerLink: 'https://forms.gle/EtpjgKqbrvyQyQ4M9',
+    whatToExpect: 'Ko vari sagaidīt no darbnīcas?',
+    timeFrames: [
+      {
+        timeFrame: '16:00-16:25',
+        descriptionOfTimeFrame: [
+          { shortDescription: 'Iepazīšanās un apskats par spēļu izstrādes rīkiem un tendencēm;' },
+        ],
+      },
+      {
+        timeFrame: '16:25-17:50',
+        descriptionOfTimeFrame: [{ shortDescription: 'Praktiska darbošanās veidojot spēles;' }],
+      },
+    ],
+    subInfoSection: [
+      { shortDescription: 'Pasākuma laikā un pēc pasākuma tiks nodrošināti dzērieni un uzkodas.' },
+      { shortDescription: 'Jautājumu gadījumā droši zvani/raksti: +371 26115374' },
+    ],
+  },
   {
     slug: 'code-camp-4',
     title: 'code-camp-4',
@@ -63,7 +102,7 @@ export const workshopsData: WorkshopProps[] = [
         ],
       },
       {
-        timeFrame: '16:25 -17:50',
+        timeFrame: '16:25-17:50',
         descriptionOfTimeFrame: [
           { shortDescription: 'Apskats par Flutter un tā iespējām;' },
           { shortDescription: 'Mobilās lietotnes veidošana ar Flutter;' },
@@ -114,7 +153,7 @@ export const workshopsData: WorkshopProps[] = [
         ],
       },
       {
-        timeFrame: '16:55 -17:50',
+        timeFrame: '16:55-17:50',
         descriptionOfTimeFrame: [
           { shortDescription: 'Iedziļinies mājaslapu izstrādes un lietotāja pieredzes pamatos;' },
           { shortDescription: 'Izmantojot no-code rīkus izveido savu pirmo mājaslapas prototipu;' },
