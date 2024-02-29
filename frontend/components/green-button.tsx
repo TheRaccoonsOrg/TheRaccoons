@@ -1,5 +1,5 @@
+import { Link } from '@/i18n';
 import { Button } from './ui/button';
-import Link from 'next/link';
 
 const GreenButton = ({
   buttonHref,

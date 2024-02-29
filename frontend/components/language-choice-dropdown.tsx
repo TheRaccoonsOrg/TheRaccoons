@@ -1,7 +1,6 @@
 'use client';
-import { localeNames, locales } from '@/i18n';
+import { localeNames, locales, usePathname, useRouter } from '@/i18n';
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from 'next-intl/client';
 import * as React from 'react';
 
 import { Button } from '@/components/ui/button';

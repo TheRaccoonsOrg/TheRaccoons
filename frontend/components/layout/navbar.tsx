@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { LanguageChoiceDropDownMenu } from '../language-choice-dropdown';
 import Image from 'next/image';
 import { Button } from '../ui/button';
-import Link from 'next-intl/link';
+import { Link } from '@/i18n';
+
 interface NavbarProps {
   navLinks: {
     route: string;
@@ -14,7 +15,7 @@ interface NavbarProps {
 
 export default function Navbar({ navLinks }: NavbarProps) {
   const [navbar, setNavbar] = useState(false);
-  const handleClick = async () => {
+  const handleClick = () => {
     setNavbar(false);
   };
 

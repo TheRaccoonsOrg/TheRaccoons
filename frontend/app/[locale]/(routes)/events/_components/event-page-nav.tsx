@@ -7,7 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@/i18n';
 
 const EventPageNav = ({
   events,
@@ -18,7 +18,6 @@ const EventPageNav = ({
 }) => {
   const router = useRouter();
   const selectEventType = (link: string) => {
-    console.log('link', link);
     return router.push(link);
   };
   return (
