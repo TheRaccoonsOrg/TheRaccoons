@@ -7,14 +7,54 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/lv/maps' || '/en/maps' || '/maps',
+        source: '/en/sitemap.xml',
+        destination: '/sitemap.xml',
+        permanent: false,
+      },
+      {
+        source: '/lv/sitemap.xml',
+        destination: '/sitemap.xml',
+        permanent: false,
+      },
+      {
+        source: '/en/robots.txt',
+        destination: '/robots.txt',
+        permanent: false,
+      },
+      {
+        source: '/lv/robots.txt',
+        destination: '/robots.txt',
+        permanent: false,
+      },
+      {
+        source: '/maps',
         destination: 'https://maps.google.com/',
         permanent: false,
       },
       {
-        source: '/scholar' || '/en/scholar' || '/lv/scholar',
+        source: '/en/maps',
+        destination: 'https://maps.google.com/',
+        permanent: false,
+      },
+      {
+        source: '/lv/maps',
+        destination: 'https://maps.google.com/',
+        permanent: false,
+      },
+      {
+        source: '/scholar',
         destination: 'https://scholar.google.lv/',
-        permanent: true,
+        permanent: false,
+      },
+      {
+        source: '/en/scholar',
+        destination: 'https://scholar.google.lv/',
+        permanent: false,
+      },
+      {
+        source: '/lv/scholar',
+        destination: 'https://scholar.google.lv/',
+        permanent: false,
       },
     ];
   },

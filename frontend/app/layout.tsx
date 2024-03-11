@@ -15,6 +15,7 @@ export const metadata = {
   icons: {
     icon: '/icon.png',
   },
+  verification: { google: `xjnyriHFHQJ6VHJ8TD09Qszr-dy6MNQtDPkGTXS2ZXE` },
 };
 
 const locales = ['en', 'lv'];
