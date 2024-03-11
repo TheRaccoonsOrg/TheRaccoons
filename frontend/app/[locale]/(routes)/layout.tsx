@@ -1,8 +1,8 @@
 import Navbar from '@/components/layout/navbar';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
-const MainLayout = ({ children }: { children: React.ReactNode }) => {
-  const t = useTranslations('NavLinks');
+const MainLayout = async ({ children }: { children: React.ReactNode }) => {
+  const t = await getTranslations('NavLinks');
 
   const navLinksTranslated = [
     { route: t('home'), path: '/' },

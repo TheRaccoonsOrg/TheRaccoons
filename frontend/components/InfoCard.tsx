@@ -1,10 +1,11 @@
 'use client';
 import { InfoCardProps } from '@/types';
 import Image from 'next/image';
-import Link from 'next/link';
+
 import GreenButton from './green-button';
 import { useState } from 'react';
 import { SkeletonLoader } from './hackathon/skeletons/skeleton-loader';
+import { Link } from '@/i18n';
 
 const InfoCard = (props: InfoCardProps) => {
   const [loading, setLoading] = useState(true);

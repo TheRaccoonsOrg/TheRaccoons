@@ -32,6 +32,7 @@ interface EventCardProps {
   buttonText: string;
   buttonLink: string;
   cardImage?: string;
+  lastModified?: string;
   show: boolean;
 }
 

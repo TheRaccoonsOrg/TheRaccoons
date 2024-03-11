@@ -1,13 +1,14 @@
 import { GetEventList } from '@/actions/events';
 import { EventTypes } from '@/types';
-import { useTranslations } from 'next-intl';
+
 import EventCardGrid from './_components/event-card-grid';
 import EventPageNav from './_components/event-page-nav';
 import ContactSection from '@/components/layout/contact-info';
+import { getTranslations } from 'next-intl/server';
 
-const EventsPage = () => {
+const EventsPage = async () => {
   const filteredEvents = GetEventList('' as EventTypes);
-  const t = useTranslations('EventTypes');
+  const t = await getTranslations('EventTypes');
   const eventTypes = [
     {
       href: '/events',

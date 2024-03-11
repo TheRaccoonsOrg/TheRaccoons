@@ -1,13 +1,13 @@
-import { useTranslations } from 'next-intl';
 import HeroHeader from '@/components/layout/hero';
 import FriendsSection from '@/components/layout/friends';
 import ContactSection from '@/components/layout/contact-info';
 import AboutUs from '@/components/layout/about-us';
 import InfoSection from '@/components/layout/info-section';
+import { getTranslations } from 'next-intl/server';
 
-export default function Main() {
-  const t = useTranslations('Index');
-  const tImage = useTranslations('Image');
+export default async function Main() {
+  const t = await getTranslations('Index');
+  const tImage = await getTranslations('Image');
 
   return (
     <div>

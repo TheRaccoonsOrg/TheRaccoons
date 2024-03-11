@@ -1,4 +1,10 @@
 {
+  "errorMessages": {
+    "error": "Kļūda",
+    "notFound": "Lapa netika atrasta",
+    "notFoundDesc": "Lapa kuru Jūs meklējat neeksistē vai ir pārvietota.",
+    "backToHome": "Atpakaļ uz sākumlapu"
+  },
   "Index": {
     "firstDesc": "The Raccoons ir studentu kopiena, kas piesaista jauniešus, kuri vēlas pilnveidoties, nodrošinot viņiem vidi, kur pētīt, mācīties, veidot un radīt. Vispārējas zināšanas par STEM (dabas zinātnes un tehnoloģijas) prasmēm kļūst arvien svarīgākas gandrīz visās jomās.",
     "secondDesc": "The Raccoons komanda sniedz pieredzi jauniešiem ar jebkādu zināšanu līmeni, cenšoties veicināt ziņkārību attiecībā uz tehnoloģijām un izpēti. Lai sasniegtu mērķus, The Raccoons veido meistarklases par STEM un tehnoloģiju tēmām, organizē hakatonus, kā arī veido un dalās ar tiešsaistes saturu, kas palīdz izzināt tehnoloģiju nozares plašās iespējas.",

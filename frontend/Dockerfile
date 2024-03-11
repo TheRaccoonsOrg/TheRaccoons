@@ -13,6 +13,11 @@ RUN npm install
 # Copy your application source code to the Docker image
 COPY . .
 
+ARG SENTRY_AUTH_TOKEN
+ARG NEXT_PUBLIC_SENTRY_DSN
+ENV NEXT_PUBLIC_SENTRY_DSN ${NEXT_PUBLIC_SENTRY_DSN}
+ENV SENTRY_AUTH_TOKEN ${SENTRY_AUTH_TOKEN}
+
 # Build your Next.js application
 RUN npm run build
 
