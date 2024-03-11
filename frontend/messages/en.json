@@ -1,4 +1,10 @@
 {
+  "errorMessages": {
+    "error": "Error",
+    "notFound": "Page not found",
+    "notFoundDesc": "The page you are looking for does not exist or has been moved.",
+    "backToHome": "Back to home"
+  },
   "Index": {
     "firstDesc": "The Raccoons is a student community that empowers youngsters who are eager to learn by providing an environment for them to explore, learn, build, and create. A general knowledge of STEM (science, technology, engineering, and mathematics) skills is becoming increasingly important.",
     "secondDesc": "The Raccoons team aims to bring an experience for students with any level of knowledge, that would inspire them about technology and research. In order to achieve this we develop lecture cycles on the themes of STEM and technology, organize hackathons, and also create and share online content that helps to learn more about the various fields in technology. ",

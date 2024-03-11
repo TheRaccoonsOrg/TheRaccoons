@@ -20,3 +20,6 @@ out
 
 # OS files
 .DS_Store
+
+#Sentry
+.sentryclirc

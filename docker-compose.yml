@@ -3,6 +3,9 @@ services:
   frontend:
     build: 
       context: ./frontend
+      args:
+        - SENTRY_AUTH_TOKEN=${SENTRY_AUTH_TOKEN}
+        - NEXT_PUBLIC_SENTRY_DSN=${NEXT_PUBLIC_SENTRY_DSN}
     ports:
       - 10451:3000
     networks:

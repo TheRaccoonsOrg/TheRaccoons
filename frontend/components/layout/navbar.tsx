@@ -25,6 +25,7 @@ export default function Navbar({ navLinks }: NavbarProps) {
         <div className="flex w-full items-center justify-between py-3 md:block md:py-5 ">
           <Link href="/" onClick={handleClick}>
             <Image
+              priority
               src="/images/logo.webp"
               alt="logo"
               width={428}
