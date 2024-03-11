@@ -1,4 +1,3 @@
-// import { NextIntlClientProvider } from 'next-intl';
 import { NextIntlClientProvider } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
