@@ -28,6 +28,55 @@ interface WorkshopProps {
 }
 export const workshopsData: WorkshopProps[] = [
   {
+    slug: 'code-camp-6',
+    title: 'code camp 6',
+    date: '2024.gads 22.marts 16:00-18:00',
+    place: 'SEB Inovāciju centrs | Krišjāņa Barona iela, Rīga',
+    eventShortDescription:
+      'Pievienojies darbnīcai un izmēģini vienu no populārākajiem mājaslapu programmēšanas rīkiem pasaulē - React.',
+    image: {
+      src: '/images/workshops/2024/code-camp-6.webp',
+      alt: 'Code Camp 6',
+      width: 594,
+      height: 312,
+    },
+    description:
+      'Darbnīcā uzzināsi vairāk par to, kas ir JavaScript bibliotēkas, un kopā praktiski izpētīsim visbiežāk izmantoto no tām - React. Varēsi izveidot pats savu (varbūt pirmo?!) mājaslapu, izmantojot mūsdienīgas izstrādes tehnoloģijas un paņēmienus. Nekādas iepriekšējas zināšanas par JavaScript vai React nav nepieciešamas, tāpēc ņem vērā, ka darbnīca paredzēta tiem, kas vēlas pamēģināt vēl nepieredzētu mājaslapu izstrādes veidu.',
+    moreInfo: 'Vairāk par React: ',
+    moreInfoLink: 'https://react.dev/',
+    description2nd:
+      'Īpaši aicināti uz pasākumu ir vidusskolas skolēni un universitātes studenti, ar interesti par tehnoloģijām vai jaunu ideju veidošanu. Jebkuram dalībniekam pasākums ir par brīvu.',
+    when: '22.marts 16:00',
+    where: 'SEB Inovāciju centrs, Krišjāņa Barona iela 20, Rīga',
+    necessary: 'Dators, lādētājs un vēlme apgūt jaunas tehnoloģijas!',
+    registerLink: 'https://forms.gle/m43ETZfxYfWder12A',
+    whatToExpect: 'Ko vari sagaidīt no darbnīcas?',
+    timeFrames: [
+      {
+        timeFrame: '16:00-16:25',
+        descriptionOfTimeFrame: [
+          {
+            shortDescription:
+              'Iepazīšanās un apskats par JavaScript un kas ir JavaScript bibliotēkas;',
+          },
+        ],
+      },
+      {
+        timeFrame: '16:25-17:50',
+        descriptionOfTimeFrame: [
+          {
+            shortDescription:
+              'epazīšanās ar React un praktiska darbošanās izmantojot React lai uzbūvētu savu pirmo mājaslapu;',
+          },
+        ],
+      },
+    ],
+    subInfoSection: [
+      { shortDescription: 'Pasākuma laikā un pēc pasākuma tiks nodrošināti dzērieni un uzkodas.' },
+      { shortDescription: 'Jautājumu gadījumā droši zvani/raksti: +371 26115374' },
+    ],
+  },
+  {
     slug: 'code-camp-5',
     title: 'code camp 5',
     date: '2024.gads 23.februāris 16:00-18:00',

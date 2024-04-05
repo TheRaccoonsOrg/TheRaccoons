@@ -3,6 +3,15 @@ import { EventCardProps } from '@/types';
 export const eventsList: EventCardProps[] = [
   {
     typeOfEvent: 'workshop',
+    title: 'code-camp-6-title',
+    buttonText: 'code-camp-6',
+    buttonLink: '/events/workshops/code-camp-6',
+    cardImage: '/images/workshops/2024/code-camp-6.webp',
+    lastModified: '2024-04-05',
+    show: true,
+  },
+  {
+    typeOfEvent: 'workshop',
     title: 'code-camp-5-title',
     buttonText: 'code-camp-5',
     buttonLink: '/events/workshops/code-camp-5',
