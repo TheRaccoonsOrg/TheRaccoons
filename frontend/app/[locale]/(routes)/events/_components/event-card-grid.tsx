@@ -12,7 +12,7 @@ const EventCardGrid = ({ props }: { props: EventCardProps[] }) => {
             typeOfEvent={item.typeOfEvent}
             key={index}
             cardImage={item.cardImage}
-            title={t(item.title)}
+            cardTitle={t(item.cardTitle)}
             buttonText={t(item.buttonText)}
             buttonLink={item.buttonLink}
             show={item.show}

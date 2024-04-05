@@ -1,4 +1,4 @@
-import { eventsList } from '@/config/available-pages';
+import { GetEventList } from '@/actions/events';
 import { baseUrl } from '@/config/site';
 import { MetadataRoute } from 'next';
 
@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
+  const eventsList = GetEventList('' as 'hackathon' | 'workshop' | 'other');
   const dynamicRoutes = eventsList
     .filter((event) => event.show)
     .flatMap((event) =>

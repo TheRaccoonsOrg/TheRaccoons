@@ -28,12 +28,13 @@ export interface InfoCardProps {
 export type EventTypes = 'hackathon' | 'workshop' | 'other';
 interface EventCardProps {
   typeOfEvent: EventTypes;
-  title: string;
+  cardTitle: string;
   buttonText: string;
   buttonLink: string;
-  cardImage?: string;
+  cardImage: string;
   lastModified?: string;
   show: boolean;
+  date?: Date;
 }
 
 interface CategoriesProps {
@@ -90,4 +91,36 @@ interface PartnerImagesProps {
   width: number;
   height: number;
   linkHref: string;
+}
+
+interface WorkshopProps extends EventCardProps {
+  // Card details
+  typeOfEvent: 'workshop';
+  // Page details
+  slug: string;
+  title: string;
+  dateWithText: string;
+  place: string;
+  eventShortDescription: string;
+  image: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
+  description: string;
+  moreInfo?: string;
+  moreInfoLink?: string;
+  description2nd: string;
+  when: string;
+  where: string;
+  necessary: string;
+  registerLink: string;
+  whatToExpect?: string;
+  timeFrames?: {
+    timeFrame?: string;
+    descriptionOfTimeFrame?: { shortDescription?: string }[];
+  }[];
+
+  subInfoSection: { shortDescription: string }[];
 }
