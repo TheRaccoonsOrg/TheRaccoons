@@ -1,44 +1,28 @@
-interface WorkshopProps {
-  slug: string;
-  title: string;
-  date: string;
-  place: string;
-  eventShortDescription: string;
-  image: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-  };
-  description: string;
-  moreInfo?: string;
-  moreInfoLink?: string;
-  description2nd: string;
-  when: string;
-  where: string;
-  necessary: string;
-  registerLink: string;
-  whatToExpect?: string;
-  timeFrames?: {
-    timeFrame?: string;
-    descriptionOfTimeFrame?: { shortDescription?: string }[];
-  }[];
+import { WorkshopProps } from '@/types';
 
-  subInfoSection: { shortDescription: string }[];
-}
 export const workshopsData: WorkshopProps[] = [
   {
+    // Card details
+    typeOfEvent: 'workshop',
+    cardTitle: 'code-camp-6-title',
+    buttonText: 'code-camp-6',
+    buttonLink: '/events/workshops/code-camp-6',
+    cardImage: '/images/workshops/2024/code-camp-6.webp',
+    lastModified: '2024-04-05',
+    show: true,
+    date: new Date('2024-03-22T16:00:00'),
+    // Page details
     slug: 'code-camp-6',
     title: 'code camp 6',
-    date: '2024.gads 22.marts 16:00-18:00',
+    dateWithText: '2024.gads 22.marts 16:00-18:00',
     place: 'SEB Inovāciju centrs | Krišjāņa Barona iela, Rīga',
     eventShortDescription:
       'Pievienojies darbnīcai un izmēģini vienu no populārākajiem mājaslapu programmēšanas rīkiem pasaulē - React.',
     image: {
       src: '/images/workshops/2024/code-camp-6.webp',
       alt: 'Code Camp 6',
-      width: 594,
-      height: 312,
+      width: 1188,
+      height: 624,
     },
     description:
       'Darbnīcā uzzināsi vairāk par to, kas ir JavaScript bibliotēkas, un kopā praktiski izpētīsim visbiežāk izmantoto no tām - React. Varēsi izveidot pats savu (varbūt pirmo?!) mājaslapu, izmantojot mūsdienīgas izstrādes tehnoloģijas un paņēmienus. Nekādas iepriekšējas zināšanas par JavaScript vai React nav nepieciešamas, tāpēc ņem vērā, ka darbnīca paredzēta tiem, kas vēlas pamēģināt vēl nepieredzētu mājaslapu izstrādes veidu.',
@@ -77,9 +61,19 @@ export const workshopsData: WorkshopProps[] = [
     ],
   },
   {
+    // Card details
+    typeOfEvent: 'workshop',
+    cardTitle: 'code-camp-5-title',
+    buttonText: 'code-camp-5',
+    buttonLink: '/events/workshops/code-camp-5',
+    cardImage: '/images/workshops/2024/code-camp-5-preview.webp',
+    lastModified: '2024-03-11',
+    show: true,
+    date: new Date('2024-02-23T16:00:00'),
+    // Page details
     slug: 'code-camp-5',
     title: 'code camp 5',
-    date: '2024.gads 23.februāris 16:00-18:00',
+    dateWithText: '2024.gads 23.februāris 16:00-18:00',
     place: 'SEB Inovāciju centrs | Krišjāņa Barona iela, Rīga',
     eventShortDescription:
       'Pievienojies darbnīcai un uzzini kādi ir biežākie rīki un tehnoloģijas, kas tiek pielietotas spēļu izstrādes veidošanā, kā arī izmēģini izveidot savu spēli. ',
@@ -116,9 +110,19 @@ export const workshopsData: WorkshopProps[] = [
     ],
   },
   {
+    // Card details
+    typeOfEvent: 'workshop',
+    cardTitle: 'code-camp-4-title',
+    buttonText: 'code-camp-4',
+    buttonLink: '/events/workshops/code-camp-4',
+    cardImage: '/images/workshops/2024/code-camp-4-preview.webp',
+    lastModified: '2024-03-11',
+    show: true,
+    date: new Date('2024-01-26T16:00:00'),
+    // Page details
     slug: 'code-camp-4',
     title: 'code camp 4',
-    date: '2024. gads 26. janvāris 16:00-18:00',
+    dateWithText: '2024. gads 26. janvāris 16:00-18:00',
     place: 'SEB Inovāciju centrs | Krišjāņa Barona iela, Rīga',
     eventShortDescription:
       'Pievienojies darbnīcai un uzzini, kā uzbūvēt savu mobilo lietotni, izmantojot rīku Flutter. ',
@@ -164,9 +168,19 @@ export const workshopsData: WorkshopProps[] = [
     ],
   },
   {
+    // Card details
+    typeOfEvent: 'workshop',
+    cardTitle: 'code-camp-3-title',
+    buttonText: 'code-camp-3',
+    buttonLink: '/events/workshops/code-camp-3',
+    cardImage: '/images/workshops/2023/code-camp-3-preview.webp',
+    lastModified: '2024-03-11',
+    show: true,
+    date: new Date('2023-12-15T16:00:00'),
+    // Page details
     slug: 'code-camp-3',
     title: 'code camp 3',
-    date: '2023. gads 15. decembris 16:00-18:00',
+    dateWithText: '2023. gads 15. decembris 16:00-18:00',
     place: 'SEB Inovāciju centrs | Krišjāņa Barona iela, Rīga',
     eventShortDescription:
       'Pievienojies darbnīcai un uzzini kā labāk nonākt līdz savai biznesa idejai un uzbūvēt pirmo mājaslapas prototipu.',
@@ -216,9 +230,19 @@ export const workshopsData: WorkshopProps[] = [
     ],
   },
   {
+    // Card details
+    typeOfEvent: 'workshop',
+    cardTitle: 'code-camp-2-title',
+    buttonText: 'code-camp-2',
+    buttonLink: '/events/workshops/code-camp-2',
+    cardImage: '/images/workshops/2023/code-camp-2-preview.webp',
+    lastModified: '2024-03-11',
+    show: true,
+    date: new Date('2023-10-04T18:00:00'),
+    // Page details
     slug: 'code-camp-2',
     title: 'code camp 2',
-    date: 'October 4, 2023, 18:00',
+    dateWithText: 'October 4, 2023, 18:00',
     place: 'SEB Inovation center | Krišjāņa Barona street 20, Rīga',
     eventShortDescription: 'PART 2 to our first CODE CAMP!',
     image: {
@@ -238,9 +262,19 @@ export const workshopsData: WorkshopProps[] = [
     subInfoSection: [],
   },
   {
+    // Card details
+    typeOfEvent: 'workshop',
+    cardTitle: 'code-camp-1-title',
+    buttonText: 'code-camp-1',
+    buttonLink: '/events/workshops/code-camp-1',
+    cardImage: '/images/workshops/2023/code-camp-1-preview.webp',
+    lastModified: '2024-03-11',
+    show: true,
+    date: new Date('2023-09-20T18:00:00'),
+    // Page details
     slug: 'code-camp-1',
     title: 'code camp 1',
-    date: 'September 20, 2023, 18:00',
+    dateWithText: 'September 20, 2023, 18:00',
     place: 'SEB Inovation center | Krišjāņa Barona street 20, Rīga',
     eventShortDescription:
       'Join the workshop and familiarize yourself with the coding environment and basic front-end web design!',
