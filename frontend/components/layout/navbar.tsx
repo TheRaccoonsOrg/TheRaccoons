@@ -75,7 +75,7 @@ export default function Navbar({ navLinks }: NavbarProps) {
           <ul className="flex flex-col items-center space-y-4 text-primary  md:flex-row md:space-y-0">
             {navLinks.map((link) => (
               <li key={link.route}>
-                <Button variant="ghost" className="w-full text-md" asChild>
+                <Button variant="ghost" className="w-full text-lg" asChild>
                   <Link href={link.path} onClick={handleClick}>
                     {link.route}
                   </Link>

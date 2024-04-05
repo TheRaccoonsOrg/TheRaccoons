@@ -12,7 +12,7 @@ export const locales: Locale[] = ['en', 'lv'];
 
 export const localeNames: Record<Locale, string> = {
   en: 'English',
-  lv: 'Latvian',
+  lv: 'Latviešu',
 };
 export const { Link, redirect, usePathname, useRouter } = createSharedPathnamesNavigation({
   locales,
