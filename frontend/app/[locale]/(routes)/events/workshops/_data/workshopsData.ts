@@ -50,7 +50,7 @@ export const workshopsData: WorkshopProps[] = [
         descriptionOfTimeFrame: [
           {
             shortDescription:
-              'epazīšanās ar React un praktiska darbošanās izmantojot React lai uzbūvētu savu pirmo mājaslapu;',
+              'Iepazīšanās ar React un praktiska darbošanās izmantojot React lai uzbūvētu savu pirmo mājaslapu;',
           },
         ],
       },
