@@ -64,8 +64,9 @@ const nextConfigWithIntl = withNextIntl(nextConfig);
 const { withSentryConfig } = require('@sentry/nextjs');
 const sentryCongig = {
   silent: true,
-  org: 'mihail-danilov-org',
-  project: 'javascript-nextjs',
+  org: 'theraccoonsorg',
+  project: 'theraccoons-org',
+  authToken: process.env.SENTRY_AUTH_TOKEN,
   widenClientFileUpload: true,
   transpileClientSDK: true,
   tunnelRoute: '/monitoring',
