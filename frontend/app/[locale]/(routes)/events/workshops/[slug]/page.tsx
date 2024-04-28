@@ -73,6 +73,18 @@ const Workshop = ({ params }: { params: { slug: string } }) => {
             <p className="text-sm font-bold text-hotgreen mr-1">Kas jāņem līdzi?</p>
             <p className="text-sm">{workshop.necessary}</p>
           </div>
+          {workshop.slidesLink ? (
+            <div className="flex flex-col md:flex-row mt-2 ">
+              <p className="text-sm font-bold text-hotgreen mr-1">Prezentācija</p>
+              <Link
+                className="text-sm underline text-purple-br"
+                href={workshop.slidesLink}
+                rel="noopener noreferrer"
+                target="_blank">
+                {workshop.slidesLink}
+              </Link>
+            </div>
+          ) : null}
           <div className="flex flex-col md:flex-row mt-2 ">
             <p className="text-sm font-bold text-hotgreen mr-1">Reģistrējies darbnīcai te:</p>
             <Link
