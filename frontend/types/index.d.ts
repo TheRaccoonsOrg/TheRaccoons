@@ -117,6 +117,7 @@ interface WorkshopProps extends EventCardProps {
   necessary: string;
   registerLink: string;
   whatToExpect?: string;
+  slidesLink?: string;
   timeFrames?: {
     timeFrame?: string;
     descriptionOfTimeFrame?: { shortDescription?: string }[];
