@@ -4,10 +4,68 @@ export const workshopsData: WorkshopProps[] = [
   {
     // Card details
     typeOfEvent: 'workshop',
+    cardTitle: 'code-camp-7-title',
+    buttonText: 'code-camp-7',
+    buttonLink: '/events/workshops/code-camp-7',
+    cardImage: '/images/workshops/2024/code-camp-7-preview.webp',
+    lastModified: '2024-04-26',
+    show: true,
+    date: new Date('2024-04-26T16:00:00'),
+    // Page details
+    slug: 'code-camp-7',
+    title: 'code camp 7',
+    dateWithText: '2024.gads 26.aprīlis 16:00-18:00',
+    place: 'SEB Inovāciju centrs | Krišjāņa Barona iela, Rīga',
+    eventShortDescription:
+      'Nāc uz darbnīcu, un kopīgi izveidosim robotu Discord saziņas platformā, izmantojot programmēšanas valodu Python! 🐍',
+    image: {
+      src: '/images/workshops/2024/code-camp-7.webp',
+      alt: 'Code Camp 7',
+      width: 1188,
+      height: 624,
+    },
+    description:
+      'Pasākumā izzināsi, kas ir bots, kā automatizēt saziņu un citas populārajā Discord saziņas platformā esošās funkcijas. Izveidosi pats savu sarunu biedru - botu -, programmējot ar Python. Iepriekšēja pieredze darbā ar Python programmēšanas valodu un Discord nav nepieciešama, tāpēc ņem vērā, ka uz darbnīcu sevišķi aicināti tie, kas vēlas pamēģināt ko jaunu.',
+    moreInfo: 'Vairāk par Python: ',
+    moreInfoLink: 'https://www.python.org/',
+    description2nd:
+      'Īpaši aicināti uz pasākumu ir vidusskolas skolēni un universitātes studenti, ar interesti par tehnoloģijām vai jaunu ideju veidošanu. Jebkuram dalībniekam pasākums ir par brīvu.',
+    when: '26.aprīlis 16:00.',
+    where: 'SEB Inovāciju centrs, Krišjāņa Barona iela 20, Rīga',
+    necessary: 'Dators, lādētājs un vēlme apgūt jaunas tehnoloģijas!',
+    registerLink: 'https://forms.gle/s66CjcV7Xda718oa8',
+    whatToExpect: 'Ko vari sagaidīt no darbnīcas?',
+    slidesLink: 'link.theraccoons.org/cc-discord',
+    timeFrames: [
+      {
+        timeFrame: '16:00-16:20',
+        descriptionOfTimeFrame: [
+          {
+            shortDescription: 'Iepazīšanās un apskats par Python un Discord;',
+          },
+        ],
+      },
+      {
+        timeFrame: '16:20-17:50',
+        descriptionOfTimeFrame: [
+          {
+            shortDescription: 'Discord bota veidošana;',
+          },
+        ],
+      },
+    ],
+    subInfoSection: [
+      { shortDescription: 'Pasākuma laikā un pēc pasākuma tiks nodrošināti dzērieni un uzkodas.' },
+      { shortDescription: 'Jautājumu gadījumā droši zvani/raksti: +371 26115374' },
+    ],
+  },
+  {
+    // Card details
+    typeOfEvent: 'workshop',
     cardTitle: 'code-camp-6-title',
     buttonText: 'code-camp-6',
     buttonLink: '/events/workshops/code-camp-6',
-    cardImage: '/images/workshops/2024/code-camp-6.webp',
+    cardImage: '/images/workshops/2024/code-camp-6-preview.webp',
     lastModified: '2024-04-05',
     show: true,
     date: new Date('2024-03-22T16:00:00'),
