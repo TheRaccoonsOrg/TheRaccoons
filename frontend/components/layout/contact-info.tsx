@@ -1,6 +1,6 @@
 import { contactConfig } from '@/config/site';
 import Link from 'next/link';
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const ContactSection = () => {
   return (
@@ -17,6 +17,9 @@ const ContactSection = () => {
         </Link>
         <Link href="https://twitter.com/RaccoonsHQ">
           <FaTwitter size={40} />
+        </Link>
+        <Link href="https://github.com/TheRaccoonsOrg">
+          <FaGithub size={40} />
         </Link>
       </div>
       <Link href={`mailto:${contactConfig.email}`} className={`text-lg hover:underline`}>
