@@ -28,7 +28,7 @@ const HeroHeader = (props: HeroHeaderProps) => {
           alt={props.imageAlt}
           width={800}
           height={800}
-          onLoadingComplete={() => setLoading(false)}
+          onLoad={() => setLoading(false)}
           className={` transition-opacity duration-500 rounded-md ${
             loading ? 'opacity-0' : 'opacity-100'
           }`}
