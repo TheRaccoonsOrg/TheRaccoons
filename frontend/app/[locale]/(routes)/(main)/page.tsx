@@ -4,11 +4,12 @@ import ContactSection from '@/components/layout/contact-info';
 import AboutUs from '@/components/layout/about-us';
 import InfoSection from '@/components/layout/info-section';
 import { getTranslations } from 'next-intl/server';
+import NewsletterForm from '@/components/layout/NewsletterForm';
 
 export default async function Main() {
   const t = await getTranslations('Index');
   const tImage = await getTranslations('Image');
-
+  const tForm = await getTranslations('Newsletter');
   return (
     <div>
       <HeroHeader
@@ -26,6 +27,15 @@ export default async function Main() {
       />
       <InfoSection />
       <FriendsSection />
+      <NewsletterForm
+        headerTitle={tForm('header')}
+        description={tForm('description')}
+        placeholderTitle={tForm('placeholderTitle')}
+        additionalInfo={tForm('additionalInfo')}
+        buttonText={tForm('buttonText')}
+        listUUID={tForm('listUUID')}
+        errorMessage={tForm('errorMessage')}
+      />
       <ContactSection />
     </div>
   );
