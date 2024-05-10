@@ -72,7 +72,6 @@ const sentryCongig = {
   tunnelRoute: '/monitoring',
   hideSourceMaps: true,
   disableLogger: true,
-  automaticVercelMonitors: true, // Ensure if that really needed
 };
 
 module.exports = withSentryConfig(nextConfigWithIntl, sentryCongig);

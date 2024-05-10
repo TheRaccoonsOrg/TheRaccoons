@@ -15,5 +15,5 @@ services:
 
 networks:
   nginx_portainer_nginx-proxy-manager-nw: 
-    # external: true
+    external: true
 
