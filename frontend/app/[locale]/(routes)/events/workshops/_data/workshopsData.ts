@@ -35,7 +35,7 @@ export const workshopsData: WorkshopProps[] = [
     necessary: 'Dators, lādētājs un vēlme apgūt jaunas tehnoloģijas!',
     registerLink: 'https://forms.gle/s66CjcV7Xda718oa8',
     whatToExpect: 'Ko vari sagaidīt no darbnīcas?',
-    slidesLink: 'link.theraccoons.org/cc-discord',
+    slidesLink: 'https://link.theraccoons.org/cc-discord',
     timeFrames: [
       {
         timeFrame: '16:00-16:20',

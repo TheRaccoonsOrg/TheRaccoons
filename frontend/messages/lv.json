@@ -193,5 +193,14 @@
       "support": "/images/stories/lv/support-lv.webp",
       "friends": "/images/lv/draugi.webp"
     }
+  },
+  "Newsletter": {
+    "header": "Saņemiet jaunākās ziņas!",
+    "description": "Abonējiet, lai uzzinātu par gaidāmajām ziņām par hakatoniem, semināriem un daudz ko citu!",
+    "placeholderTitle": "E-pasts",
+    "additionalInfo": "*aizpildot šo veidlapu, jūs pierakstāties, lai saņemtu mūsu e-pasta ziņojumus, un jebkurā laikā varat anulēt abonementu.",
+    "errorMessage": "Lūdzu ievadiet derīgu e-pasta adresi.",
+    "buttonText": "Abonēt",
+    "listUUID": "f0ac2134-a0e1-4de0-b43f-f56f531102d0"
   }
 }
