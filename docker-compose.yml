@@ -6,6 +6,7 @@ services:
       args:
         - SENTRY_AUTH_TOKEN=${SENTRY_AUTH_TOKEN}
         - NEXT_PUBLIC_SENTRY_DSN=${NEXT_PUBLIC_SENTRY_DSN}
+        - NEXT_PUBLIC_LISTMONK_API_URL=${NEXT_PUBLIC_LISTMONK_API_URL}
     ports:
       - 10451:3000
     networks:
@@ -14,5 +15,5 @@ services:
 
 networks:
   nginx_portainer_nginx-proxy-manager-nw: 
-    external: true
+    # external: true
 
