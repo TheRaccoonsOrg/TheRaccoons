@@ -16,7 +16,7 @@ const AboutUs = (props: InfoCardProps) => {
           alt="Image"
           width={1000}
           height={1000}
-          onLoadingComplete={() => setLoading(false)}
+          onLoad={() => setLoading(false)}
           className={` transition-opacity duration-500 rounded-md ${
             loading ? 'opacity-0' : 'opacity-100'
           }`}
