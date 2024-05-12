@@ -1,8 +1,8 @@
-import GreenButton from '@/components/green-button';
+import GreenButton from '@/components/GreenButton';
 import { CombinedImageProps } from '@/types';
-import HeaderImage from './header/header-image';
+import HeaderImage from './HeaderImage';
 
-const Header = ({
+const HeaderSection = ({
   props,
   submissionsLink,
 }: {
@@ -28,4 +28,4 @@ const Header = ({
   );
 };
 
-export default Header;
+export default HeaderSection;

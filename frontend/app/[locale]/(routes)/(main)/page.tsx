@@ -1,8 +1,8 @@
-import HeroHeader from '@/components/layout/hero';
-import FriendsSection from '@/components/layout/friends';
-import ContactSection from '@/components/layout/contact-info';
-import AboutUs from '@/components/layout/about-us';
-import InfoSection from '@/components/layout/info-section';
+import HeroHeader from '@/components/layout/HeroHeader';
+import FriendsSection from '@/components/layout/FriendsSection';
+import ContactSection from '@/components/layout/ContactSection';
+import AboutUs from '@/components/layout/AboutUs';
+import InfoSection from '@/components/layout/InfoSection';
 import { getTranslations } from 'next-intl/server';
 import NewsletterForm from '@/components/layout/NewsletterForm';
 

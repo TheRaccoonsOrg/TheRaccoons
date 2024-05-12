@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
-import GreenButton from '@/components/green-button';
-import { SkeletonLoader } from './skeletons/skeleton-loader';
+import GreenButton from '@/components/GreenButton';
+import { SkeletonLoader } from './skeletons/SkeletonLoader';
 import { useState } from 'react';
 
 const SeeYouNextYear = ({ buttonHref, imageSrc }: { buttonHref: string; imageSrc: string }) => {

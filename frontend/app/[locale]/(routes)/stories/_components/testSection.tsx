@@ -1,6 +1,6 @@
-import TestChoice from './testChoice';
-import TestDescription from './testDescription';
-import TestInstruction from './testInstruction';
+import TestChoice from './TestChoice';
+import TestDescription from './TestDescription';
+import TestInstruction from './TestInstruction';
 
 const TestSection = () => {
   return (

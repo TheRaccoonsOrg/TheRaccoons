@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { LanguageChoiceDropDownMenu } from '../language-choice-dropdown';
+import { LanguageChoiceDropDownMenu } from '../LanguageChoiceDropdown';
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import { Link } from '@/i18n';

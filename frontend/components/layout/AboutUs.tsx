@@ -2,7 +2,7 @@
 import { InfoCardProps } from '@/types';
 import Image from 'next/image';
 import { useState } from 'react';
-import { SkeletonLoader } from '../hackathon/skeletons/skeleton-loader';
+import { SkeletonLoader } from '../hackathon/skeletons/SkeletonLoader';
 
 const AboutUs = (props: InfoCardProps) => {
   const [loading, setLoading] = useState(true);

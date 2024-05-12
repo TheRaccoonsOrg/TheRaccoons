@@ -2,9 +2,9 @@
 import { InfoCardProps } from '@/types';
 import Image from 'next/image';
 
-import GreenButton from './green-button';
+import GreenButton from './GreenButton';
 import { useState } from 'react';
-import { SkeletonLoader } from './hackathon/skeletons/skeleton-loader';
+import { SkeletonLoader } from './hackathon/skeletons/SkeletonLoader';
 import { Link } from '@/i18n';
 
 const InfoCard = (props: InfoCardProps) => {

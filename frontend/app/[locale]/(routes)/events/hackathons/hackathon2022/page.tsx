@@ -1,14 +1,14 @@
-import Header from '@/components/hackathon/header';
+import HeaderSection from '@/components/hackathon/header/HeaderSection';
 import { CombinedImageProps } from '@/types';
 import FinalPresentations from './_components/final-presentations';
-import GreenButton from '@/components/green-button';
-import Winners from './_components/winners';
-import Categories from '@/components/hackathon/categories';
+import GreenButton from '@/components/GreenButton';
+import Winners from './_components/Winners';
+import Categories from '@/components/hackathon/Categories';
 import { challengeCategories } from './_data/categories';
-import Partners from '@/components/hackathon/partners';
-import { communityPartners, partnerImages } from './_data/partner-images';
-import ContactSection from '@/components/layout/contact-info';
-import SeeYouNextYear from '@/components/hackathon/see-you-next-year';
+import Partners from '@/components/hackathon/Partners';
+import { communityPartners, partnerImages } from './_data/partnerImages';
+import ContactSection from '@/components/layout/ContactSection';
+import SeeYouNextYear from '@/components/hackathon/SeeYouNextYear';
 const headerImage: CombinedImageProps[] = [
   {
     imageStyles: 'hidden md:block md:w-[700px] lg:w-[971px]',
@@ -34,7 +34,7 @@ const headerImage: CombinedImageProps[] = [
 const Hackathon2022 = () => {
   return (
     <div className="mx-10 flex flex-col items-center">
-      <Header
+      <HeaderSection
         props={headerImage}
         submissionsLink="https://the-raccoons-2022.devpost.com/project-gallery"
       />
