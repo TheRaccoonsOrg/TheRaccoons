@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { subscribeToNewsletter } from '@/actions/subscribeToNewsletter';
+import { toast } from 'sonner';
 
 type NewsletterFormProps = {
   headerTitle: string;
@@ -23,24 +24,33 @@ type NewsletterFormProps = {
   buttonText: string;
   errorMessage: string;
   listUUID: string;
+  successMessage: string;
+  apiError: string;
 };
 
 const NewsletterForm = (props: NewsletterFormProps) => {
   const formSchema = z.object({
     email: z.string().email(props.errorMessage),
-    uuid_list: z.array(z.string()),
+    list_uuids: z.array(z.string()),
   });
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: '',
-      uuid_list: [props.listUUID],
+      list_uuids: [props.listUUID],
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    subscribeToNewsletter(values);
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const { success } = await subscribeToNewsletter(values);
+    if (success) {
+      toast.success(props.successMessage);
+      form.reset();
+    } else {
+      toast.warning(props.apiError);
+    }
   };
+
   return (
     <div className="my-4 flex flex-col items-center justify-center gap-y-4">
       <h2 className="text-3xl font-bold">{props.headerTitle}</h2>
