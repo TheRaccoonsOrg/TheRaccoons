@@ -1,6 +1,6 @@
 import HeaderSection from '@/components/hackathon/header/HeaderSection';
 import { CombinedImageProps } from '@/types';
-import FinalPresentations from './_components/final-presentations';
+import FinalPresentations from './_components/FinalPresentations';
 import GreenButton from '@/components/GreenButton';
 import Winners from './_components/Winners';
 import Categories from '@/components/hackathon/Categories';
