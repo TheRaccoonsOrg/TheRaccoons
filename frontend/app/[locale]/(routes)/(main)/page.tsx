@@ -35,6 +35,8 @@ export default async function Main() {
         buttonText={tForm('buttonText')}
         listUUID={tForm('listUUID')}
         errorMessage={tForm('errorMessage')}
+        successMessage={tForm('successMessage')}
+        apiError={tForm('apiError')}
       />
       <ContactSection />
     </div>

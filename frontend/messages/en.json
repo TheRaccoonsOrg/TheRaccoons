@@ -202,6 +202,8 @@
     "additionalInfo": "*by completing this form you are signing up to receive our emails and can unsubscribe at any time.",
     "errorMessage": "Please enter a valid email address.",
     "buttonText": "Subscribe",
-    "listUUID": "4a2ddaa8-1ef2-4c31-add4-88583c96cae4"
+    "listUUID": "4a2ddaa8-1ef2-4c31-add4-88583c96cae4",
+    "successMessage": "Thank you for subscribing!",
+    "apiError": "Something went wrong. Please try again later."
   }
 }
