@@ -1,4 +1,4 @@
-import Navbar from '@/components/layout/NavBar';
+import Navbar from '@/components/layout/navbar';
 import { getTranslations } from 'next-intl/server';
 
 const MainLayout = async ({ children }: { children: React.ReactNode }) => {
