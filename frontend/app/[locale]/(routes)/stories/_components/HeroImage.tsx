@@ -14,7 +14,7 @@ const HeroImage = ({ pathToImage }: { pathToImage: string }) => {
         width={994}
         height={864}
         src={pathToImage}
-        onLoadingComplete={() => setLoading(false)}
+        onLoad={() => setLoading(false)}
         className={` transition-opacity duration-500 rounded-md ${
           loading ? 'opacity-0' : 'opacity-100'
         }`}

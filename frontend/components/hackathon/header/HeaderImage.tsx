@@ -14,10 +14,11 @@ const CombineImage = (props: CombinedImageProps) => {
         alt={props.alt}
         width={props.imageWidth}
         height={props.imageHeight}
-        onLoadingComplete={() => setLoading(false)}
+        onLoad={() => setLoading(false)}
         className={` transition-opacity duration-500 rounded-md ${
           loading ? 'opacity-0' : 'opacity-100'
         }`}
+        priority={props.isPriority}
       />
       {!loading && (
         <div
