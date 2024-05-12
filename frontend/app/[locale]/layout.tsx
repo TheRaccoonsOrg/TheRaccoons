@@ -1,3 +1,4 @@
+import { Toaster } from '@/components/ui/sonner';
 import { NextIntlClientProvider } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -13,5 +14,10 @@ export default function LocaleLayout({
   unstable_setRequestLocale(locale);
   const isValidLocale = locales.some((cur) => cur === locale);
   if (!isValidLocale) notFound();
-  return <NextIntlClientProvider locale={locale}>{children}</NextIntlClientProvider>;
+  return (
+    <NextIntlClientProvider locale={locale}>
+      {children}
+      <Toaster />
+    </NextIntlClientProvider>
+  );
 }

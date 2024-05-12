@@ -195,12 +195,14 @@
     }
   },
   "Newsletter": {
-    "header": "Saņemiet jaunākās ziņas!",
-    "description": "Abonējiet, lai uzzinātu par gaidāmajām ziņām par hakatoniem, semināriem un daudz ko citu!",
+    "header": "Piesakies jaunumiem!",
+    "description": "Abonē, lai uzzinātu par gaidāmajiem hakatoniem, darbnīcām un daudz ko citu!",
     "placeholderTitle": "E-pasts",
-    "additionalInfo": "*aizpildot šo veidlapu, jūs pierakstāties, lai saņemtu mūsu e-pasta ziņojumus, un jebkurā laikā varat anulēt abonementu.",
-    "errorMessage": "Lūdzu ievadiet derīgu e-pasta adresi.",
+    "additionalInfo": "*aizpildot šo veidlapu, tu piekrīti saņemt mūsu e-pasta ziņojumus. Jebkurā laikā vari anulēt savu abonementu.",
+    "errorMessage": "Lūdzu, ievadi derīgu e-pasta adresi.",
     "buttonText": "Abonēt",
-    "listUUID": "f0ac2134-a0e1-4de0-b43f-f56f531102d0"
+    "listUUID": "f0ac2134-a0e1-4de0-b43f-f56f531102d0",
+    "successMessage": "Paldies par abonēšanu!",
+    "apiError": "Kļūda, lūdzu mēģini vēlreiz vēlāk."
   }
 }

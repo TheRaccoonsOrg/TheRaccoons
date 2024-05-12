@@ -4,10 +4,17 @@ export const subscribeToNewsletter = async (values: { email: string }) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(values),
   };
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_LISTMONK_API_URL}/api/public/subscription`,
-    requestOptions,
-  );
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_LISTMONK_API_URL}/api/public/subscription`,
+      requestOptions,
+    );
+    if (response.ok) {
+      return { success: true };
+    } else {
+      return { success: false };
+    }
+  } catch (error) {
+    return { success: false };
+  }
 };
