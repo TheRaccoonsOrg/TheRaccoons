@@ -15,7 +15,7 @@ const VideoFrameImage = () => {
         width={1958}
         height={1014}
         src={'/images/stories/videoFrame.webp'}
-        onLoadingComplete={() => setLoading(false)}
+        onLoad={() => setLoading(false)}
         className={`absolute mt-[-90px] w-[900px] h-[544px] transition-opacity duration-500 rounded-md ${
           loading ? 'opacity-0' : 'opacity-100'
         }`}

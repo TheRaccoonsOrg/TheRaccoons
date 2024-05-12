@@ -35,7 +35,7 @@ const FinalPresentations = () => {
             className={` mt-10 transition-opacity duration-500 rounded-md ${
               loading ? 'opacity-0' : 'opacity-100'
             }`}
-            onLoadingComplete={() => setLoading(false)}
+            onLoad={() => setLoading(false)}
           />
         </div>
       </div>

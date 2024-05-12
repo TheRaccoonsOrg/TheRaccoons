@@ -18,7 +18,7 @@ const SeeYouNextYear = ({ buttonHref, imageSrc }: { buttonHref: string; imageSrc
           width={632}
           height={421}
           alt="Photo from the event"
-          onLoadingComplete={() => setLoading(false)}
+          onLoad={() => setLoading(false)}
           className={` transition-opacity duration-500 rounded-md ${
             loading ? 'opacity-0' : 'opacity-100'
           }`}

@@ -47,7 +47,7 @@ const HowDidItGo = () => {
             alt="Raccoon"
             width={406}
             height={382}
-            onLoadingComplete={() => setLoading(false)}
+            onLoad={() => setLoading(false)}
             className={` transition-opacity duration-500 rounded-md ${
               loading ? 'opacity-0' : 'opacity-100'
             }`}
