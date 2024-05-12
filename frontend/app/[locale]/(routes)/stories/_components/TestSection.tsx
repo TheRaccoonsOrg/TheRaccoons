@@ -1,5 +1,5 @@
 import TestChoice from './TestChoice';
-import TestDescription from './TestDescription';
+import TestDescription from './testDescription';
 import TestInstruction from './TestInstruction';
 
 const TestSection = () => {
