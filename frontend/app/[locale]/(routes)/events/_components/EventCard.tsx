@@ -1,6 +1,6 @@
 'use client';
-import GreenButton from '@/components/green-button';
-import ImageWithSkeleton from '@/components/hackathon/skeletons/image-with-skeleton';
+import GreenButton from '@/components/GreenButton';
+import ImageWithSkeleton from '@/components/hackathon/skeletons/ImageWithSkeleton';
 import { EventCardProps } from '@/types';
 
 const EventCard = (props: EventCardProps) => {

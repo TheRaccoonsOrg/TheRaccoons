@@ -1,5 +1,5 @@
 'use client';
-import { SkeletonLoader } from '@/components/hackathon/skeletons/skeleton-loader';
+import { SkeletonLoader } from '@/components/hackathon/skeletons/SkeletonLoader';
 import Image from 'next/image';
 import { useState } from 'react';
 

@@ -1,14 +1,14 @@
-import GreenButton from '@/components/green-button';
-import HowDidItGo from './_components/how-did-it-go';
-import Winners from './_components/winners';
-import Categories from '@/components/hackathon/categories';
-import ContactSection from '@/components/layout/contact-info';
-import Header from '@/components/hackathon/header';
+import GreenButton from '@/components/GreenButton';
+import HowDidItGo from './_components/HowDidItGo';
+import Winners from './_components/Winners';
+import Categories from '@/components/hackathon/Categories';
+import ContactSection from '@/components/layout/ContactSection';
+import HeaderSection from '@/components/hackathon/header/HeaderSection';
 import { CombinedImageProps } from '@/types';
 import { challengeCategories } from './_data/categories';
 import { communityPartners, partnerImages } from './_data/partner-images';
-import Partners from '@/components/hackathon/partners';
-import SeeYouNextYear from '@/components/hackathon/see-you-next-year';
+import Partners from '@/components/hackathon/Partners';
+import SeeYouNextYear from '@/components/hackathon/SeeYouNextYear';
 
 const headerImage: CombinedImageProps[] = [
   {
@@ -35,7 +35,7 @@ const headerImage: CombinedImageProps[] = [
 const Hackathon2022 = () => {
   return (
     <div className="mx-10 flex flex-col items-center">
-      <Header
+      <HeaderSection
         props={headerImage}
         submissionsLink="https://raccoons-2023.devpost.com/project-gallery"
       />

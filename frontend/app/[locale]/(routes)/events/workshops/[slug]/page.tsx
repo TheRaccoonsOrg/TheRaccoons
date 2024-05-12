@@ -1,9 +1,9 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import GreenButton from '@/components/green-button';
+import GreenButton from '@/components/GreenButton';
 import Link from 'next/link';
-import ContactSection from '@/components/layout/contact-info';
-import ImageWithSkeleton from '@/components/hackathon/skeletons/image-with-skeleton';
+import ContactSection from '@/components/layout/ContactSection';
+import ImageWithSkeleton from '@/components/hackathon/skeletons/ImageWithSkeleton';
 import { findWorkshopBySlug } from '@/actions/events';
 
 const Workshop = ({ params }: { params: { slug: string } }) => {

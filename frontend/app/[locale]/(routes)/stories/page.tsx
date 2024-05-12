@@ -1,9 +1,9 @@
-import ContactSection from '@/components/layout/contact-info';
-import ColumnSection from './_components/columnSection';
-import Header from './_components/header';
-import Partners from './_components/partners';
-import TestSection from './_components/testSection';
-import VideoPlayer from './_components/videoPlayer';
+import ContactSection from '@/components/layout/ContactSection';
+import ColumnSection from './_components/ColumnSection';
+import Header from './_components/Header';
+import Partners from './_components/Partners';
+import TestSection from './_components/TestSection';
+import VideoPlayer from './_components/VideoPlayer';
 
 const Stories = () => {
   return (

@@ -1,4 +1,4 @@
-import GreenButton from '@/components/green-button';
+import GreenButton from '@/components/GreenButton';
 import { NextIntlClientProvider } from 'next-intl';
 
 import { getTranslations } from 'next-intl/server';

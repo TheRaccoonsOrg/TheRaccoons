@@ -1,9 +1,9 @@
 import { GetEventList } from '@/actions/events';
 import { EventTypes } from '@/types';
 import { useTranslations } from 'next-intl';
-import EventCardGrid from '../_components/event-card-grid';
-import EventPageNav from '../_components/event-page-nav';
-import ContactSection from '@/components/layout/contact-info';
+import EventCardGrid from '../_components/EventCardGrid';
+import EventPageNav from '../_components/EventPageNav';
+import ContactSection from '@/components/layout/ContactSection';
 
 const EventsPage = () => {
   const filteredEvents = GetEventList('workshop' as EventTypes);
