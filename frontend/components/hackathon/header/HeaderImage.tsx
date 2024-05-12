@@ -2,7 +2,7 @@
 import { CombinedImageProps } from '@/types';
 import Image from 'next/image';
 import { useState } from 'react';
-import { SkeletonLoader } from '../skeletons/skeleton-loader';
+import { SkeletonLoader } from '../skeletons/SkeletonLoader';
 
 const CombineImage = (props: CombinedImageProps) => {
   const [loading, setLoading] = useState(true);

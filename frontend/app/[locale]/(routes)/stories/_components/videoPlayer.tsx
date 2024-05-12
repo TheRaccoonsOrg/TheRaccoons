@@ -1,6 +1,6 @@
-import GreenButton from '@/components/green-button';
+import GreenButton from '@/components/GreenButton';
 import { useTranslations } from 'next-intl';
-import VideoFrameImage from './videoFrameImage';
+import VideoFrameImage from './VideoFrameImage';
 
 const VideoPlayer = () => {
   const t = useTranslations('Stories.videoPlayer');

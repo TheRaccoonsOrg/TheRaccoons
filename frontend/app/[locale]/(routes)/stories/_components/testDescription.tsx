@@ -1,4 +1,4 @@
-import ImageWithSkeleton from '@/components/hackathon/skeletons/image-with-skeleton';
+import ImageWithSkeleton from '@/components/hackathon/skeletons/ImageWithSkeleton';
 import { useTranslations } from 'next-intl';
 
 const TestDescription = () => {

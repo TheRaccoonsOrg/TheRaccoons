@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { EventCardProps } from '@/types';
-import EventCard from './event-card';
+import EventCard from './EventCard';
 
 const EventCardGrid = ({ props }: { props: EventCardProps[] }) => {
   const t = useTranslations('Events');

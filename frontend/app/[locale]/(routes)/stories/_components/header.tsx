@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import HeroImage from './hero';
+import HeroImage from './HeroImage';
 
 const Header = () => {
   const t = useTranslations('Stories.header');

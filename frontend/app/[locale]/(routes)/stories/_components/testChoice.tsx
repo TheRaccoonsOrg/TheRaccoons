@@ -1,4 +1,4 @@
-import GreenButton from '@/components/green-button';
+import GreenButton from '@/components/GreenButton';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 const TestChoice = () => {
