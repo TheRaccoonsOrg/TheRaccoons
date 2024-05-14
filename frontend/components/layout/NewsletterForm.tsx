@@ -52,14 +52,14 @@ const NewsletterForm = (props: NewsletterFormProps) => {
   };
 
   return (
-    <div className="my-4 flex flex-col items-center justify-center gap-y-4">
+    <div className="py-4 flex flex-col items-center justify-center gap-y-4 px-5 ">
       <h2 className="text-3xl font-bold">{props.headerTitle}</h2>
       <p className="text-white">{props.description}</p>
-      <div className="w-[400px] mb-10">
+      <div className="pb-10">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-8 flex flex-col items-center">
+            className="space-y-8 flex flex-col items-center max-w-[400px]">
             <FormField
               control={form.control}
               name="email"

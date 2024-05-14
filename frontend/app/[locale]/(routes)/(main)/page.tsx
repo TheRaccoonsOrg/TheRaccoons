@@ -11,7 +11,7 @@ export default async function Main() {
   const tImage = await getTranslations('Image');
   const tForm = await getTranslations('Newsletter');
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <HeroHeader
         firstDesc={t('firstDesc')}
         secondDesc={t('secondDesc')}
