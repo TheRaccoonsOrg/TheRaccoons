@@ -125,3 +125,10 @@ interface WorkshopProps extends EventCardProps {
 
   subInfoSection: { shortDescription: string }[];
 }
+
+interface HeroHeaderProps {
+  firstDesc: string;
+  secondDesc: string;
+  imageSrc: string;
+  imageAlt: string;
+}

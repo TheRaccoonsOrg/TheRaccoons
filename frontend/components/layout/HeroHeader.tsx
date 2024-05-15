@@ -2,13 +2,8 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { SkeletonLoader } from '../hackathon/skeletons/SkeletonLoader';
+import { HeroHeaderProps } from '@/types';
 
-interface HeroHeaderProps {
-  firstDesc: string;
-  secondDesc: string;
-  imageSrc: string;
-  imageAlt: string;
-}
 const HeroHeader = (props: HeroHeaderProps) => {
   const [loading, setLoading] = useState(true);
 
@@ -21,7 +16,6 @@ const HeroHeader = (props: HeroHeaderProps) => {
       </div>
       <div className="w-[345px] h-[350px] lg:w-[450px] lg:h-[450px]">
         {loading && <SkeletonLoader green={false} />}
-
         <Image
           priority
           src={props.imageSrc}
