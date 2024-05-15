@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@/__tests__/test-util';
 import HeaderSection from '@/components/hackathon/header/HeaderSection';
 import { CombinedImageProps } from '@/types';

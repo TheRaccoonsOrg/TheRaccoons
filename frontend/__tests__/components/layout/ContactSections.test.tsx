@@ -34,7 +34,7 @@ describe('ContactSection', () => {
     expect(screen.getAllByRole('link')[5]).toHaveAttribute('href', `mailto:${contactConfig.email}`);
   });
 
-  test('renders social media icons', () => {
+  it('renders social media icons', () => {
     render(<ContactSection />);
     expect(screen.getByLabelText('Facebook')).toBeInTheDocument();
     expect(screen.getByLabelText('Instagram')).toBeInTheDocument();
