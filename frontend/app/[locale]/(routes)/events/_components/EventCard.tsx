@@ -8,7 +8,7 @@ const EventCard = (props: EventCardProps) => {
     <div className="m-3 flex min-h-[300px] w-[340px] sm:w-[350px] h-[352px] flex-col items-center justify-around rounded-lg border-2 border-purple-br bg-purple-md py-3">
       <h2 className="font-raccoons text-3xl md:text-4xl">{props.cardTitle}</h2>
       {props.cardImage ? (
-        <div className="w-[300px] h-[200px]">
+        <div className="w-[300px] h-[200px]" data-testid="image-parent-div">
           <ImageWithSkeleton
             priority={true}
             imageStyles="object-cover w-[300px] h-[200px]"

@@ -19,13 +19,16 @@ describe('Hero header', () => {
     expect(secondDesc).toBeInTheDocument();
     const skeletonLoader = await screen.findByTestId('skeleton-loader');
     expect(skeletonLoader).toBeInTheDocument();
+    const imageParentDiv = await screen.findByTestId('image-parent-div');
+    expect(imageParentDiv).toHaveClass('w-[345px] h-[350px] lg:w-[450px] lg:h-[450px]');
     const image = await screen.findByAltText('Raccoons main picture');
     expect(image).toBeInTheDocument();
   });
 
-  it('should have correct image src and alt attributes', () => {
+  it('should have correct image src and alt attributes', async () => {
     render(<HeroHeader {...heroHeaderProps} />);
-
+    const imageParentDiv = await screen.findByTestId('image-parent-div');
+    expect(imageParentDiv).toHaveClass('w-[345px] h-[350px] lg:w-[450px] lg:h-[450px]');
     const image = screen.getByAltText('Raccoons main picture');
     expect(image).toHaveAttribute('src', getNextImagePath('/images/main.webp', 1920));
     expect(image).toHaveAttribute('alt', 'Raccoons main picture');
