@@ -52,9 +52,12 @@ describe('Navbar', () => {
 
   it('clicking on nav links', () => {
     render(<Navbar navLinks={navLinks} />);
-
-    const link = screen.getByText('Home');
-    fireEvent.click(screen.getByText('Home'));
-    expect(link).toHaveAttribute('href', '/en');
+    for (const link of navLinks) {
+      fireEvent.click(screen.getByText(link.route));
+      expect(screen.getByText(link.route)).toHaveAttribute(
+        'href',
+        '/en' + (link.path === '/' ? '' : link.path),
+      );
+    }
   });
 });
