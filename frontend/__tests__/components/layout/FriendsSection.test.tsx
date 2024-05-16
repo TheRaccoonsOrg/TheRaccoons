@@ -1,5 +1,4 @@
 /* eslint-disable jest/no-conditional-expect */
-// __tests__/FriendsSection.test.tsx
 'use server';
 import '@testing-library/jest-dom';
 import FriendsSection from '@/components/layout/FriendsSection';
