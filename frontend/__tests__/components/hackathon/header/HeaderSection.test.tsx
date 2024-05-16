@@ -1,4 +1,4 @@
-import { render, screen } from '@/__tests__/test-util';
+import { render, screen } from '@/__tests__/utils/test-wrapper';
 import HeaderSection from '@/components/hackathon/header/HeaderSection';
 import { CombinedImageProps } from '@/types';
 

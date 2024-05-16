@@ -10,6 +10,7 @@ export default async function Main() {
   const t = await getTranslations('Index');
   const tImage = await getTranslations('Image');
   const tForm = await getTranslations('Newsletter');
+
   return (
     <div className="flex flex-col items-center">
       <HeroHeader
@@ -26,7 +27,7 @@ export default async function Main() {
         height={500}
       />
       <InfoSection />
-      <FriendsSection />
+      <FriendsSection mainImageSrc={tImage('friends')} />
       <NewsletterForm
         headerTitle={tForm('header')}
         description={tForm('description')}
