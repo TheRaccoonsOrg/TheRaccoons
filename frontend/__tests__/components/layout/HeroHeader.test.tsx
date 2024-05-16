@@ -1,4 +1,5 @@
-import { render, screen } from '@/__tests__/test-util';
+import { getNextImagePath } from '@/__tests__/utils/nextImagePath';
+import { render, screen } from '@/__tests__/utils/test-wrapper';
 import HeroHeader from '@/components/layout/HeroHeader';
 import { HeroHeaderProps } from '@/types';
 
@@ -26,7 +27,7 @@ describe('Hero header', () => {
     render(<HeroHeader {...heroHeaderProps} />);
 
     const image = screen.getByAltText('Raccoons main picture');
-    expect(image).toHaveAttribute('src', '/_next/image?url=%2Fimages%2Fmain.webp&w=1920&q=75');
+    expect(image).toHaveAttribute('src', getNextImagePath('/images/main.webp', 1920));
     expect(image).toHaveAttribute('alt', 'Raccoons main picture');
   });
 });

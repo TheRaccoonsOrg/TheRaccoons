@@ -1,5 +1,3 @@
-// test-utils.js
-
 import React from 'react';
 import { render as rtlRender, RenderOptions } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
