@@ -57,7 +57,7 @@ const config: Config = {
       statements: 85,
     },
   },
-
+  preset: 'ts-jest',
   // A path to a custom dependency extractor
   // dependencyExtractor: undefined,
 
