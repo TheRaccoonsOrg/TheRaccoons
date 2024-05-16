@@ -5,8 +5,7 @@ import { SiteConfig, ContactConfig } from '@/types';
 -- Fill the details about your website
  ==================== */
 
-// const baseUrl = 'https://theraccoons.org';
-export const baseUrl = 'https://theraccoons.mihaildanilov.com';
+export const baseUrl = 'https://theraccoons.org';
 
 export const siteConfig: SiteConfig = {
   name: 'The Raccoons',

@@ -34,7 +34,9 @@ export default function Navbar({ navLinks }: NavbarProps) {
             />
           </Link>
           <div className="flex  gap-x-2 md:hidden">
-            <LanguageChoiceDropDownMenu />
+            <div data-testid="language-dropdown">
+              <LanguageChoiceDropDownMenu />
+            </div>
 
             <button
               className="text-primary focus:border-primary rounded-md p-2 outline-none focus:border"
@@ -71,7 +73,8 @@ export default function Navbar({ navLinks }: NavbarProps) {
           className={`absolute left-0 right-0 z-10 m-auto justify-self-center rounded-md border bg-background p-4 md:static md:flex md:border-none md:p-0 ${
             navbar ? 'block' : 'hidden'
           }`}
-          style={{ width: '100%', maxWidth: '16rem' }}>
+          style={{ width: '100%', maxWidth: '16rem' }}
+          data-testid="hamburger-menu">
           <ul className="flex flex-col items-center space-y-4 text-primary  md:flex-row md:space-y-0">
             {navLinks.map((link) => (
               <li key={link.route}>
