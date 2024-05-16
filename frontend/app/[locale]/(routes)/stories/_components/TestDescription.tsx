@@ -10,7 +10,7 @@ const TestDescription = () => {
         <p>{t('description.text.second')}</p>
         <p>{t('description.text.third')}</p>
       </div>
-      <div className="w-[345px] h-[221px] lg:w-[450px] lg:h-[289px]">
+      <div className="w-[345px] h-[221px] lg:w-[450px] lg:h-[289px]" data-testid="image-parent-div">
         <ImageWithSkeleton
           green={false}
           src={t('description.image')}

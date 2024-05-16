@@ -1,27 +1,19 @@
 'use client';
 import { InfoCardProps } from '@/types';
-import Image from 'next/image';
-
 import GreenButton from './GreenButton';
-import { useState } from 'react';
-import { SkeletonLoader } from './hackathon/skeletons/SkeletonLoader';
 import { Link } from '@/i18n';
+import ImageWithSkeleton from './hackathon/skeletons/ImageWithSkeleton';
 
 const InfoCard = (props: InfoCardProps) => {
-  const [loading, setLoading] = useState(true);
   return (
     <div className="w-[345px] md:w-[300px] flex flex-col justify-center items-start mb-3">
-      <div className="w-full h-[136px]">
-        {loading && <SkeletonLoader green={false} />}
-        <Image
+      <div className="w-full h-[136px]" data-testid="image-parent-div">
+        <ImageWithSkeleton
+          green={false}
           src={props.imagePath}
           alt={props.alt}
           width={props.width}
           height={props.height}
-          onLoad={() => setLoading(false)}
-          className={` transition-opacity duration-500 rounded-md ${
-            loading ? 'opacity-0' : 'opacity-100'
-          }`}
         />
       </div>
       <p className="text-lg my-5">{props.text}</p>

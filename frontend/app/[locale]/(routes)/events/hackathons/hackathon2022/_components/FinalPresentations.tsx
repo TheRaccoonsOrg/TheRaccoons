@@ -1,9 +1,6 @@
 'use client';
-import { SkeletonLoader } from '@/components/hackathon/skeletons/SkeletonLoader';
-import Image from 'next/image';
-import { useState } from 'react';
+import ImageWithSkeleton from '@/components/hackathon/skeletons/ImageWithSkeleton';
 const FinalPresentations = () => {
-  const [loading, setLoading] = useState(true);
   return (
     <div className="flex flex-col items-center max-w-[900px] ">
       <h2 className="font-raccoons text-purple-br text-4xl md:text-5xl mt-10 text-center">
@@ -25,17 +22,13 @@ const FinalPresentations = () => {
             then be applied to build their ideas.
           </p>
         </div>
-        <div className="relative w-[357px] h-[357px]">
-          {loading && <SkeletonLoader green={false} />}
-          <Image
+        <div className="relative w-[357px] h-[357px]" data-testid="image-parent-div">
+          <ImageWithSkeleton
+            green={false}
             src="/images/hackathon2023/raccoon2.webp"
             alt="Raccoon"
             width={406}
             height={382}
-            className={` mt-10 transition-opacity duration-500 rounded-md ${
-              loading ? 'opacity-0' : 'opacity-100'
-            }`}
-            onLoad={() => setLoading(false)}
           />
         </div>
       </div>

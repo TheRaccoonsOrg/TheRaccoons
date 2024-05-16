@@ -11,7 +11,7 @@ const TestInstruction = () => {
         <p>{t('instruction.text.third')}</p>
         <p>{t('instruction.text.fourth')}</p>
       </div>
-      <div className="w-[345px] h-[229px] lg:w-[450px] lg:h-[289px]">
+      <div className="w-[345px] h-[229px] lg:w-[450px] lg:h-[289px]" data-testid="image-parent-div">
         <ImageWithSkeleton
           green={false}
           src={t('instruction.image')}
