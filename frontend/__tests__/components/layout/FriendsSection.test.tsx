@@ -20,12 +20,14 @@ describe('FriendsSection', () => {
   it('renders all friend images with correct links', () => {
     render(<FriendsSection mainImageSrc="/images/en/friends.webp" />);
 
-    friendsImagePaths.forEach((item) => {
+    friendsImagePaths.forEach((item, index) => {
       if (item.show) {
         const friendLink = screen.getByRole('link', { name: item.alt });
         expect(friendLink).toBeInTheDocument();
         expect(friendLink).toHaveAttribute('href', item.link);
 
+        const imageParentDiv = screen.getByTestId(`image-parent-div-${index}`);
+        expect(imageParentDiv).toBeInTheDocument();
         const friendImage = screen.getByAltText(item.alt);
         expect(friendImage).toBeInTheDocument();
         expect(friendImage).toHaveAttribute('alt', item.alt);
