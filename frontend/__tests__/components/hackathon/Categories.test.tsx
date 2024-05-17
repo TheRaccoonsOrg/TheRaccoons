@@ -1,6 +1,6 @@
 /* eslint-disable jest/no-conditional-expect */
 
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '@/__tests__/utils/test-wrapper';
 import '@testing-library/jest-dom';
 import Categories from '@/components/hackathon/Categories';
 import { challengeCategories } from '@/app/[locale]/(routes)/events/hackathons/hackathon2023/_data/categories';
