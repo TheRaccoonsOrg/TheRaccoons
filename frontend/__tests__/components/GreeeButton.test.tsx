@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import GreenButton from '@/components/GreenButton'; // Adjust the import path as necessary
+import GreenButton from '@/components/GreenButton';
 import '@testing-library/jest-dom';
 
 jest.mock('@/i18n', () => ({
