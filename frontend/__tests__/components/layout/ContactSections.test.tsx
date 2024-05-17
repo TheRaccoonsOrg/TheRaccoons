@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@/__tests__/utils/test-wrapper';
 import ContactSection from '@/components/layout/ContactSection';
 import { contactConfig } from '@/config/site';

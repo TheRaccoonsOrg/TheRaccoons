@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { render, screen } from '@testing-library/react';
-import InfoCard from '@/components/InfoCard'; // Adjust the import path as necessary
+import InfoCard from '@/components/InfoCard';
 import '@testing-library/jest-dom';
 import { InfoCardProps } from '@/types';
 
