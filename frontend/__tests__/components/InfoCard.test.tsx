@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '@/__tests__/utils/test-wrapper';
 import InfoCard from '@/components/InfoCard';
-import '@testing-library/jest-dom';
 import { InfoCardProps } from '@/types';
 
 jest.mock('@/i18n', () => ({
