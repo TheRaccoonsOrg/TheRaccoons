@@ -151,8 +151,9 @@ const config: Config = {
   moduleNameMapper: {
     '^@/components/(.*)$': '<rootDir>/components/$1',
     '^@/actions/(.*)$': '<rootDir>/frontend/actions/$1',
-    '^@/types$': '<rootDir>/frontend/types',
-    '^@/app/(.*)$': '<rootDir>/frontend/app/$1',
+    '^@/types$': '<rootDir>/types',
+    '^@/app/(.*)$': '<rootDir>/app/$1',
+    '^@/i18n$': '<rootDir>/i18n',
   },
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
