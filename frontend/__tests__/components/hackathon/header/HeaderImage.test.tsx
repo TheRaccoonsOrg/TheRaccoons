@@ -1,12 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-// __tests__/HeaderImage.test.tsx
-import React from 'react';
+
 import { render, screen, fireEvent } from '@/__tests__/utils/test-wrapper';
-import '@testing-library/jest-dom';
 import HeaderImage from '@/components/hackathon/header/HeaderImage';
 import { CombinedImageProps } from '@/types';
 
-// Mock next/image component
 jest.mock('next/image', () => ({
   __esModule: true,
   default: ({ src, alt, ...props }: { src: string; alt: string }) => (

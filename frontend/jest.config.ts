@@ -32,6 +32,7 @@ const config: Config = {
     'actions/**/*.{js,jsx,ts,tsx}',
     'components/**/*.{js,jsx,ts,tsx}',
     '!components/ui/*.{js,jsx,ts,tsx}',
+    '!**/**/_data/*.{js,jsx,ts,tsx}',
   ],
 
   // The directory where Jest should output its coverage files

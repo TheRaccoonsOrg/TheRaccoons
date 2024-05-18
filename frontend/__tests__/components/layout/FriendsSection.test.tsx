@@ -1,6 +1,4 @@
 /* eslint-disable jest/no-conditional-expect */
-'use server';
-import '@testing-library/jest-dom';
 import FriendsSection from '@/components/layout/FriendsSection';
 import { friendsImagePaths } from '@/lib/friends-pics';
 import { render, screen } from '@/__tests__/utils/test-wrapper';

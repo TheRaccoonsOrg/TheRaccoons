@@ -1,6 +1,5 @@
 import { subscribeToNewsletter } from '@/actions/subscribeToNewsletter';
 
-// Mock the fetch function
 const globalAny = global as unknown as { fetch: jest.Mock };
 globalAny.fetch = jest.fn();
 
