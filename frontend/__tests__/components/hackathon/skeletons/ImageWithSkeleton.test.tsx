@@ -33,10 +33,8 @@ describe('ImageWithSkeleton', () => {
     render(<ImageWithSkeleton {...props} />);
     const image = screen.getByTestId('next-image');
 
-    // Simulate image load
     fireEvent.load(image);
 
-    // SkeletonLoader should be removed
     expect(screen.queryByTestId('skeleton-loader')).not.toBeInTheDocument();
     expect(image).toHaveClass('opacity-100');
   });

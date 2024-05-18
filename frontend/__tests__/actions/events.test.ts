@@ -3,7 +3,6 @@ import { hackathonCards } from '@/config/available-pages';
 import { workshopsData } from '@/app/[locale]/(routes)/events/workshops/_data/workshopsData';
 import { EventCardProps, EventTypes } from '@/types';
 
-// Mock data for hackathon cards
 const mockHackathonCards: EventCardProps[] = [
   {
     typeOfEvent: 'hackathon',
@@ -59,7 +58,6 @@ describe('appendExtractedData', () => {
 
 describe('GetEventList', () => {
   beforeEach(() => {
-    // Re-run appendExtractedData before each test to ensure updated array
     appendExtractedData(workshopsData);
   });
 
@@ -73,7 +71,7 @@ describe('GetEventList', () => {
   it('returns sorted and filtered workshop events', () => {
     const result = GetEventList('workshop');
     expect(result).toHaveLength(workshopsData.length);
-    expect(result[0].cardTitle).toBe('code-camp-7-title'); // Workshops should be sorted by date
+    expect(result[0].cardTitle).toBe('code-camp-7-title');
     expect(result[1].cardTitle).toBe('code-camp-6-title');
     expect(result[2].cardTitle).toBe('code-camp-5-title');
   });
