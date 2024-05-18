@@ -2,7 +2,7 @@ import { workshopsData } from '@/app/[locale]/(routes)/events/workshops/_data/wo
 import { hackathonCards } from '@/config/available-pages';
 import { EventCardProps, EventTypes, WorkshopProps } from '@/types';
 
-const appendExtractedData = (originalArray: WorkshopProps[]) => {
+export const appendExtractedData = (originalArray: WorkshopProps[]) => {
   const newArray: EventCardProps[] = originalArray.map((item) => ({
     typeOfEvent: item.typeOfEvent,
     cardTitle: item.cardTitle,
