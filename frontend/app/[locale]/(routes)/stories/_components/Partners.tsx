@@ -64,7 +64,7 @@ const Partners = () => {
           src={t('support')}
           width={610}
           height={168}
-          alt="Helve LOGO"
+          alt="Supported by"
           className="w-auto h-[100px]"
         />
       </div>
