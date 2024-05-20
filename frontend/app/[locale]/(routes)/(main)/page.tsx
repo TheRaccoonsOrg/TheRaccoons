@@ -5,6 +5,8 @@ import AboutUs from '@/components/layout/AboutUs';
 import InfoSection from '@/components/layout/InfoSection';
 import { getTranslations } from 'next-intl/server';
 import NewsletterForm from '@/components/layout/NewsletterForm';
+// import { Button } from '@/components/ui/button';
+// import { LoginButton } from '@/components/auth/LoginButton';
 
 export default async function Main() {
   const t = await getTranslations('Index');
@@ -39,6 +41,9 @@ export default async function Main() {
         successMessage={tForm('successMessage')}
         apiError={tForm('apiError')}
       />
+      {/* <LoginButton>
+        <Button className="text-background">Login</Button>
+      </LoginButton> */}
       <ContactSection />
     </div>
   );
