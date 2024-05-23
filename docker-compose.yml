@@ -7,13 +7,47 @@ services:
         - SENTRY_AUTH_TOKEN=${SENTRY_AUTH_TOKEN}
         - NEXT_PUBLIC_SENTRY_DSN=${NEXT_PUBLIC_SENTRY_DSN}
         - NEXT_PUBLIC_LISTMONK_API_URL=${NEXT_PUBLIC_LISTMONK_API_URL}
+        - DATABASE_URL=${DATABASE_URL}
+        - AUTH_SECRET=${AUTH_SECRET}
+        - AUTH_TRUST_HOST=${AUTH_TRUST_HOST}
+        - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+        - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+        - GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
+        - GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
+        - RESEND_API_KEY=${RESEND_API_KEY}
+
     ports:
-      - 10451:3000
+      - 59991:3000
     networks:
       - nginx_portainer_nginx-proxy-manager-nw
+      - postgres_network
+    depends_on:
+      db:
+        condition: service_healthy
 
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - postgres_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
 networks:
   nginx_portainer_nginx-proxy-manager-nw: 
     external: true
+  postgres_network:
+    driver: bridge
 
+volumes:
+  postgres_data:

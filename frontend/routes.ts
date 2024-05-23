@@ -7,8 +7,9 @@ export const publicRoutes = [
   '^/lv/events/$',
   '^/lv/stories$',
   '^/en/stories$',
-  '^/en/events/.*$', // Allow all paths under /en/event/
-  '^/lv/events/.*$', // Allow all paths under /lv/event/
+  '^/en/events/.*$',
+  '^/lv/events/.*$',
+  '^/en/auth/new-verification.*$',
 ];
 
 export const authRoutes = [
