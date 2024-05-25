@@ -15,6 +15,7 @@ services:
         - GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
         - GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
         - RESEND_API_KEY=${RESEND_API_KEY}
+        - NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL}
 
     ports:
       - 59991:3000
@@ -45,7 +46,7 @@ services:
 
 networks:
   nginx_portainer_nginx-proxy-manager-nw: 
-    external: true
+    # external: true
   postgres_network:
     driver: bridge
 
