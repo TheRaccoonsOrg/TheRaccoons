@@ -19,6 +19,8 @@ export const authRoutes = [
   '/en/auth/register',
   '/en/auth/error',
   '/lv/auth/error',
+  '/en/auth/reset',
+  '/lv/auth/reset',
 ];
 
 export const apiAuthPrefix = '/api/auth';
