@@ -5,6 +5,8 @@ import { LanguageChoiceDropDownMenu } from '../LanguageChoiceDropdown';
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import { Link } from '@/i18n';
+import { UserButton } from '../auth/UserButton';
+import { useSession } from 'next-auth/react';
 
 interface NavbarProps {
   navLinks: {
@@ -18,6 +20,7 @@ export default function Navbar({ navLinks }: NavbarProps) {
   const handleClick = () => {
     setNavbar(false);
   };
+  const session = useSession();
 
   return (
     <header className="relative top-0 flex justify-center">
@@ -87,8 +90,9 @@ export default function Navbar({ navLinks }: NavbarProps) {
             ))}
           </ul>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:flex flex-row  ">
           <LanguageChoiceDropDownMenu />
+          {session.data?.user && <UserButton />}
         </div>
       </nav>
     </header>

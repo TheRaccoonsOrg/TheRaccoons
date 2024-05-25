@@ -1,10 +1,12 @@
 import { Toaster } from '@/components/ui/sonner';
+import { SessionProvider } from 'next-auth/react';
 import { NextIntlClientProvider } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { auth } from '@/auth';
 
 const locales = ['en', 'lv'];
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
   params: { locale },
 }: {
@@ -14,10 +16,15 @@ export default function LocaleLayout({
   unstable_setRequestLocale(locale);
   const isValidLocale = locales.some((cur) => cur === locale);
   if (!isValidLocale) notFound();
+
+  const session = await auth();
+
   return (
-    <NextIntlClientProvider locale={locale}>
-      {children}
-      <Toaster />
-    </NextIntlClientProvider>
+    <SessionProvider session={session}>
+      <NextIntlClientProvider locale={locale}>
+        {children}
+        <Toaster />
+      </NextIntlClientProvider>
+    </SessionProvider>
   );
 }
