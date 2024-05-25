@@ -55,6 +55,11 @@ const nextConfig = {
         destination: 'https://scholar.google.lv/',
         permanent: false,
       },
+      {
+        source: '/login',
+        destination: '/en/auth/login',
+        permanent: false,
+      },
     ];
   },
 };
