@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Button } from '../ui/button';
 import { Link } from '@/i18n';
 import { UserButton } from '../auth/UserButton';
-import { useSession } from 'next-auth/react';
+import { useCurrentUser } from '@/hooks/useCurrentUser';
 
 interface NavbarProps {
   navLinks: {
@@ -20,7 +20,7 @@ export default function Navbar({ navLinks }: NavbarProps) {
   const handleClick = () => {
     setNavbar(false);
   };
-  const session = useSession();
+  const session = useCurrentUser();
 
   return (
     <header className="relative top-0 flex justify-center">
@@ -38,6 +38,7 @@ export default function Navbar({ navLinks }: NavbarProps) {
           </Link>
           <div className="flex  gap-x-2 md:hidden">
             <div data-testid="language-dropdown">
+              {session && <UserButton />}
               <LanguageChoiceDropDownMenu />
             </div>
 
@@ -90,9 +91,10 @@ export default function Navbar({ navLinks }: NavbarProps) {
             ))}
           </ul>
         </div>
-        <div className="hidden md:flex flex-row  ">
+        <div className="hidden md:flex flex-row items-center space-x-2 ">
+          {session && <p className="whitespace-nowrap">{session?.name}</p>}
+          {session && <UserButton />}
           <LanguageChoiceDropDownMenu />
-          {session.data?.user && <UserButton />}
         </div>
       </nav>
     </header>

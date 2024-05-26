@@ -30,6 +30,11 @@ export const login = async (values: z.infer<typeof LoginSchema>, callBackUrl?: s
     return { success: 'Verification email sent!' };
   }
 
+  const verifiedByAdmin = existingUser.role === 'ADMIN';
+  if (!verifiedByAdmin) {
+    return { error: 'Your account is not verified by admin!' };
+  }
+
   if (existingUser.isTwoFactorEnabled && existingUser.email) {
     if (code) {
       const twoFactorToken = await getTwoFactorTokenByEmail(existingUser.email);
