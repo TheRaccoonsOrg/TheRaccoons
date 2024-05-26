@@ -18,7 +18,7 @@ export const UserButton = () => {
   const user = useCurrentUser();
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger>
         <Avatar>
           <AvatarImage src={user?.image || ''} />
@@ -28,16 +28,15 @@ export const UserButton = () => {
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40" align="end">
-        <DropdownMenuItem onClick={() => logout()}>
-          <RxExit className="h-4 w-4 mr-2" />
-          Logout
-        </DropdownMenuItem>
-
-        <DropdownMenuItem>
+        <DropdownMenuItem className="w-full cursor-pointer" asChild>
           <Link href="/admin/dashboard">Dashboard</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem>
+        <DropdownMenuItem className="w-full cursor-pointer">
           <Link href="/admin/settings">Settings</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => logout()} className="cursor-pointer">
+          <RxExit className="h-4 w-4 mr-2" />
+          Logout
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
