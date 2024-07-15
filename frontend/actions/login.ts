@@ -23,18 +23,15 @@ export const login = async (values: z.infer<typeof LoginSchema>, callBackUrl?: s
   if (!existingUser || !existingUser.email || !existingUser.password) {
     return { error: 'Email does not exist!' };
   }
-  if (!existingUser.emailVerified) {
-    const verificationToken = await generateVerificationToken(existingUser.email);
-    await sendVerificationEmail(verificationToken.email, verificationToken.token);
+  const verificationNeeded = process.env.EMAIL_VERIFICATION === 'true';
+  if (verificationNeeded) {
+    if (!existingUser.emailVerified) {
+      const verificationToken = await generateVerificationToken(existingUser.email);
+      await sendVerificationEmail(verificationToken.email, verificationToken.token);
 
-    return { success: 'Verification email sent!' };
+      return { success: 'Verification email sent!' };
+    }
   }
-
-  const verifiedByAdmin = existingUser.role === 'ADMIN';
-  if (!verifiedByAdmin) {
-    return { error: 'Your account is not verified by admin!' };
-  }
-
   if (existingUser.isTwoFactorEnabled && existingUser.email) {
     if (code) {
       const twoFactorToken = await getTwoFactorTokenByEmail(existingUser.email);
@@ -44,9 +41,9 @@ export const login = async (values: z.infer<typeof LoginSchema>, callBackUrl?: s
       if (twoFactorToken.token !== code) {
         return { error: 'Invalid 2FA code!' };
       }
-      const hasExpred = new Date(twoFactorToken.expires) < new Date();
+      const hasExpired = new Date(twoFactorToken.expires) < new Date();
 
-      if (hasExpred) {
+      if (hasExpired) {
         return { error: '2FA code has expired!' };
       }
 

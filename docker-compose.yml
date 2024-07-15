@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   frontend:
-    build: 
+    build:
       context: ./frontend
       args:
         - SENTRY_AUTH_TOKEN=${SENTRY_AUTH_TOKEN}
@@ -40,7 +40,7 @@ services:
       retries: 5
 
 networks:
-  nginx_portainer_nginx-proxy-manager-nw: 
+  nginx_portainer_nginx-proxy-manager-nw:
     external: true
   postgres_network:
     driver: bridge

@@ -10,12 +10,16 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { useCurrentUser } from '@/hooks/useCurrentUser';
-import { logout } from '@/actions/logout';
 import { Link } from '@/i18n';
+import { ExtendedUser } from '@/next-auth';
+import { logout } from '@/actions/logout';
 
-export const UserButton = () => {
-  const user = useCurrentUser();
+export const UserButton = ({ user }: { user: ExtendedUser }) => {
+  const handleLogout = async () => {
+    await logout();
+  };
+
+  if (!user) return null;
 
   return (
     <DropdownMenu modal={false}>
@@ -28,13 +32,20 @@ export const UserButton = () => {
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40" align="end">
-        <DropdownMenuItem className="w-full cursor-pointer" asChild>
-          <Link href="/admin/dashboard">Dashboard</Link>
+        <DropdownMenuItem className="h-full w-full cursor-pointer" asChild>
+          <Link href="/profile">Profile</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem className="w-full cursor-pointer">
-          <Link href="/admin/settings">Settings</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => logout()} className="cursor-pointer">
+        {user.role === 'ADMIN' && (
+          <>
+            <DropdownMenuItem className="h-full w-full cursor-pointer" asChild>
+              <Link href="/admin/dashboard">Dashboard</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem className="h-full w-full cursor-pointer" asChild>
+              <Link href="/admin/settings">Settings</Link>
+            </DropdownMenuItem>
+          </>
+        )}
+        <DropdownMenuItem onClick={handleLogout} className="cursor-pointer h-full w-full">
           <RxExit className="h-4 w-4 mr-2" />
           Logout
         </DropdownMenuItem>
