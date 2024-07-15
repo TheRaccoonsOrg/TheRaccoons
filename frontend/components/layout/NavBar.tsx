@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Button } from '../ui/button';
 import { Link } from '@/i18n';
 import { UserButton } from '../auth/UserButton';
-import { useCurrentUser } from '@/hooks/useCurrentUser';
+import { useCurrentSession } from '@/hooks/useCurrentSession';
 
 interface NavbarProps {
   navLinks: {
@@ -20,11 +20,11 @@ export default function Navbar({ navLinks }: NavbarProps) {
   const handleClick = () => {
     setNavbar(false);
   };
-  const session = useCurrentUser();
+  const { user, status } = useCurrentSession();
 
   return (
     <header className="relative top-0 flex justify-center">
-      <nav className="bg-background fixed left-0 top-0 w-full  gap-x-10 px-5 md:flex md:items-center md:px-20 z-50 border-solid border-b-2 border-purple-br border-opacity-50">
+      <nav className="bg-background fixed left-0 top-0 w-full  gap-x-6 px-5 md:flex md:items-center md:px-20 z-50 border-solid border-b-2 border-purple-br border-opacity-50">
         <div className="flex w-full items-center justify-between py-3 md:block md:py-5 ">
           <Link href="/" onClick={handleClick}>
             <Image
@@ -38,7 +38,7 @@ export default function Navbar({ navLinks }: NavbarProps) {
           </Link>
           <div className="flex  gap-x-2 md:hidden">
             <div data-testid="language-dropdown">
-              {session && <UserButton />}
+              {user && <UserButton user={user} />}
               <LanguageChoiceDropDownMenu />
             </div>
 
@@ -79,7 +79,7 @@ export default function Navbar({ navLinks }: NavbarProps) {
           }`}
           style={{ width: '100%', maxWidth: '16rem' }}
           data-testid="hamburger-menu">
-          <ul className="flex flex-col items-center space-y-4 text-primary  md:flex-row md:space-y-0">
+          <ul className="flex flex-col items-center space-y-4 text-primary md:flex-row md:space-y-0 ">
             {navLinks.map((link) => (
               <li key={link.route}>
                 <Button variant="ghost" className="w-full text-lg" asChild>
@@ -89,11 +89,17 @@ export default function Navbar({ navLinks }: NavbarProps) {
                 </Button>
               </li>
             ))}
+            <li></li>
           </ul>
         </div>
         <div className="hidden md:flex flex-row items-center space-x-2 ">
-          {session && <p className="whitespace-nowrap">{session?.name}</p>}
-          {session && <UserButton />}
+          {!user && status !== 'loading' && (
+            <Button variant="ghost" className="text-lg pl-4" asChild>
+              <Link href="/auth/login">Login</Link>
+            </Button>
+          )}
+          {user && <p className="whitespace-nowrap">{user?.name}</p>}
+          {user && <UserButton user={user} />}
           <LanguageChoiceDropDownMenu />
         </div>
       </nav>

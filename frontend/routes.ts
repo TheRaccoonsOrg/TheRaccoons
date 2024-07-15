@@ -1,4 +1,5 @@
 export const publicRoutes = [
+  '^/$',
   '^/en$',
   '^/lv$',
   '^/en/events$',
@@ -9,7 +10,10 @@ export const publicRoutes = [
   '^/en/stories$',
   '^/en/events/.*$',
   '^/lv/events/.*$',
+  '^/lv/profile/.*$',
+  '^/en/profile/.*$',
   '^/en/auth/new-verification.*$',
+  '^/lv/auth/new-verification.*$',
 ];
 
 export const authRoutes = [
@@ -27,4 +31,4 @@ export const authRoutes = [
 
 export const apiAuthPrefix = '/api/auth';
 
-export const DEFAULT_LOGIN_REDIRECT = '/en/admin/dashboard';
+export const DEFAULT_LOGIN_REDIRECT = '/';

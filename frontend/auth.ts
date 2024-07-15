@@ -10,11 +10,9 @@ export const {
   handlers: { GET, POST },
   auth,
   signIn,
-  signOut,
   unstable_update,
 } = NextAuth({
   pages: {
-    signIn: '/auth/login',
     error: '/auth/error',
   },
   events: {
@@ -28,11 +26,14 @@ export const {
   callbacks: {
     async signIn({ user, account }) {
       if (account?.provider !== 'credentials') return true;
-
+      const verificationNeeded = process.env.EMAIL_VERIFICATION === 'true';
       const existingUser = await getUserById(user.id!);
-      if (!existingUser?.emailVerified) return false;
-
-      if (existingUser?.role !== 'ADMIN') return false;
+      if (!existingUser) {
+        return false;
+      }
+      if (verificationNeeded) {
+        if (!existingUser?.emailVerified) return false;
+      }
 
       if (existingUser.isTwoFactorEnabled) {
         const twoFactorConfirmation = await getTwoFactorConfirmationByUserId(existingUser.id);

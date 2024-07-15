@@ -28,13 +28,13 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { FormError } from '@/components/FormError';
 import { FormSuccess } from '@/components/FormSuccess';
 import { UserRole } from '@prisma/client';
+import { useCurrentSession } from '@/hooks/useCurrentSession';
 
 const SettingsPage = () => {
-  const user = useCurrentUser();
+  const user = useCurrentSession().user;
 
   const [error, setError] = useState<string | undefined>();
   const [success, setSuccess] = useState<string | undefined>();

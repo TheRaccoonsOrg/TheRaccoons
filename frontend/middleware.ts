@@ -17,11 +17,11 @@ export default auth((req) => {
   const { nextUrl } = req;
   const isLoggedIn = !!req.auth;
 
-  const isApiAutRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
+  const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
   const isPublicRoute = publicRoutes.some((pattern) => new RegExp(pattern).test(nextUrl.pathname));
   const isAuthRoute = authRoutes.includes(nextUrl.pathname);
 
-  if (isApiAutRoute) {
+  if (isApiAuthRoute) {
     return intlMiddleware(req);
   }
   if (isAuthRoute) {
@@ -32,13 +32,7 @@ export default auth((req) => {
   }
 
   if (!isLoggedIn && !isPublicRoute) {
-    let callbackUrl = nextUrl.pathname;
-    if (nextUrl.search) {
-      callbackUrl += nextUrl.search;
-    }
-    const encodedUrl = encodeURIComponent(callbackUrl);
-
-    return NextResponse.redirect(new URL(`/en/auth/login?callbackUrl=${encodedUrl}`, nextUrl));
+    return NextResponse.redirect(new URL('/en/auth/login', nextUrl));
   }
 
   return intlMiddleware(req);
