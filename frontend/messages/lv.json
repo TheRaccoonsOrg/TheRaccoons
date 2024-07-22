@@ -204,5 +204,32 @@
     "listUUID": "f0ac2134-a0e1-4de0-b43f-f56f531102d0",
     "successMessage": "Paldies par abonēšanu!",
     "apiError": "Kļūda, lūdzu mēģini vēlreiz vēlāk."
+  },
+  "UserRegistration": {
+    "title": "Reģistrēt jauno kontu",
+    "name-surname": "Vārds Uzvārds",
+    "email": "E-pasts",
+    "password": "Parole",
+    "registerButton": "Reģistrēties",
+    "loginLink": "Vai jau esi reģistrējies? Ienāc šeit!",
+    "validation": {
+      "name": "Vārds un uzvārds ir obligāti",
+      "email": "E-pasta adrese ir obligāta",
+      "emailValid": "E-pasta adrese nav derīga",
+      "password": "Parolei jabut vismaz 6 simbolus garai"
+    }
+  },
+  "UserLogin": {
+    "title": "Laipni lūdzam atpakaļ!",
+    "email": "E-pasts",
+    "password": "Parole",
+    "loginButton": "Ienākt",
+    "registerLink": "Vēl nav konta? Reģistrējies šeit!",
+    "forgotPassword": "Aizmirsi paroli?",
+    "validation": {
+      "email": "E-pasta adrese ir obligāta",
+      "emailValid": "E-pasta adrese nav derīga",
+      "password": "Parole ir obligāta"
+    }
   }
 }

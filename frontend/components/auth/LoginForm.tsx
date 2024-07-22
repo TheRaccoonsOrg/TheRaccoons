@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form';
 import { z } from 'zod';
-import { LoginSchema } from '@/schemas';
+
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { FormError } from '../FormError';
@@ -14,8 +14,10 @@ import { login } from '@/actions/login';
 import { useState, useTransition } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Link } from '@/i18n';
+import { LoginFormProps } from '@/types';
 
-export const LoginForm = () => {
+export const LoginForm = (props: LoginFormProps) => {
+  const { translations } = props;
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl');
   const urlError =
@@ -27,6 +29,17 @@ export const LoginForm = () => {
   const [success, setSuccess] = useState<string | undefined>('');
   const [isPending, startTransition] = useTransition();
   const [showTwoFactor, setShowTwoFactor] = useState(false);
+
+  const LoginSchema = z.object({
+    email: z.string().email({
+      message: translations.validation.email,
+    }),
+    password: z.string().min(1, {
+      message: translations.validation.password,
+    }),
+
+    code: z.optional(z.string()),
+  });
 
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
@@ -63,8 +76,8 @@ export const LoginForm = () => {
   return (
     <div>
       <CardWrapper
-        headerLabel="Welcome back!"
-        backButtonLabel="Don't have an account?"
+        headerLabel={translations.text.title}
+        backButtonLabel={translations.text.registerLink}
         backButtonHref="/auth/register">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -75,7 +88,7 @@ export const LoginForm = () => {
                   name="code"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Two Factor Code</FormLabel>
+                      <FormLabel>2FA</FormLabel>
                       <Input
                         {...field}
                         className="bg-white focus:border-white focus-visible:ring-white"
@@ -95,7 +108,7 @@ export const LoginForm = () => {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email</FormLabel>
+                        <FormLabel>{translations.text.email}</FormLabel>
                         <Input
                           {...field}
                           className="bg-white focus:border-white focus-visible:ring-white"
@@ -122,12 +135,12 @@ export const LoginForm = () => {
                           disabled={isPending}
                         />
                         <FormControl />
+                        <FormMessage />
                         <div className="flex justify-end">
                           <Button size="sm" className="text-backgorund p-0" variant="link" asChild>
-                            <Link href="/auth/reset">Forgot password?</Link>
+                            <Link href="/auth/reset">{translations.text.forgotPasswordLink}</Link>
                           </Button>
                         </div>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -142,7 +155,7 @@ export const LoginForm = () => {
               size="lg"
               className="w-full bg-white"
               disabled={isPending}>
-              {showTwoFactor ? 'Confirm' : 'Login'}
+              {showTwoFactor ? 'Confirm' : translations.text.loginButton}
             </Button>
           </form>
         </Form>

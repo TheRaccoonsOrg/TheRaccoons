@@ -205,5 +205,32 @@
     "listUUID": "4a2ddaa8-1ef2-4c31-add4-88583c96cae4",
     "successMessage": "Thank you for subscribing!",
     "apiError": "Something went wrong. Please try again later."
+  },
+  "UserRegistration": {
+    "title": "Create an account!",
+    "name-surname": "Name Surname",
+    "email": "Email",
+    "password": "Password",
+    "registerButton": "Register",
+    "loginLink": "Already have an account? Sign in here!",
+    "validation": {
+      "name": "Name is required",
+      "email": "Email is required",
+      "emailValid": "Please enter a valid email address",
+      "password": "Password must be at least 6 characters long"
+    }
+  },
+  "UserLogin": {
+    "title": "Welcome back!",
+    "email": "Email",
+    "password": "Password",
+    "loginButton": "Sign in",
+    "registerLink": "Don't have an account? Register here!",
+    "forgotPassword": "Forgot password?",
+    "validation": {
+      "email": "Email is required",
+      "emailValid": "Please enter a valid email address",
+      "password": "Password is required"
+    }
   }
 }

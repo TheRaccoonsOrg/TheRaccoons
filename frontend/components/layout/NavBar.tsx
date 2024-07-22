@@ -20,7 +20,7 @@ export default function Navbar({ navLinks }: NavbarProps) {
   const handleClick = () => {
     setNavbar(false);
   };
-  const { user, status } = useCurrentSession();
+  const { user } = useCurrentSession();
 
   return (
     <header className="relative top-0 flex justify-center">
@@ -92,13 +92,12 @@ export default function Navbar({ navLinks }: NavbarProps) {
             <li></li>
           </ul>
         </div>
-        <div className="hidden md:flex flex-row items-center space-x-2 ">
-          {!user && status !== 'loading' && (
+        <div className="hidden md:flex flex-row items-center space-x-2 pl-4">
+          {/* {!user && status !== 'loading' && (
             <Button variant="ghost" className="text-lg pl-4" asChild>
               <Link href="/auth/login">Login</Link>
             </Button>
-          )}
-          {user && <p className="whitespace-nowrap">{user?.name}</p>}
+          )} */}
           {user && <UserButton user={user} />}
           <LanguageChoiceDropDownMenu />
         </div>
