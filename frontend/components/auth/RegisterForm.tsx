@@ -5,19 +5,36 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form';
 import { z } from 'zod';
-import { RegisterSchema } from '@/schemas';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { FormError } from '../FormError';
 import { FormSuccess } from '../FormSuccess';
 import { useState, useTransition } from 'react';
 import { register } from '@/actions/register';
+import { RegisterFormProps } from '@/types';
 
-export const RegisterForm = () => {
+export const RegisterForm = (props: RegisterFormProps) => {
   const [error, setError] = useState<string | undefined>('');
   const [success, setSuccess] = useState<string | undefined>('');
   const [isPending, startTransition] = useTransition();
 
+  const { translations } = props;
+  const RegisterSchema = z.object({
+    name: z.string().min(1, {
+      message: translations.validation.name,
+    }),
+    email: z
+      .string()
+      .min(1, {
+        message: translations.validation.email,
+      })
+      .email({
+        message: translations.validation.emailValid,
+      }),
+    password: z.string().min(6, {
+      message: translations.validation.password,
+    }),
+  });
   const form = useForm<z.infer<typeof RegisterSchema>>({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
@@ -39,8 +56,8 @@ export const RegisterForm = () => {
   return (
     <div>
       <CardWrapper
-        headerLabel="Create an account!"
-        backButtonLabel="Already have an account? Sign in here!"
+        headerLabel={translations.text.title}
+        backButtonLabel={translations.text.loginLink}
         backButtonHref="/auth/login">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -50,7 +67,7 @@ export const RegisterForm = () => {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel>{translations.text.name}</FormLabel>
                     <Input
                       {...field}
                       className="bg-white focus:border-white focus-visible:ring-white"
@@ -67,7 +84,7 @@ export const RegisterForm = () => {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel>{translations.text.email}</FormLabel>
                     <Input
                       {...field}
                       className="bg-white focus:border-white focus-visible:ring-white"
@@ -85,7 +102,7 @@ export const RegisterForm = () => {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Password</FormLabel>
+                    <FormLabel>{translations.text.password}</FormLabel>
                     <Input
                       {...field}
                       className="bg-white focus:border-white focus-visible:ring-white"
@@ -107,7 +124,7 @@ export const RegisterForm = () => {
               size="lg"
               className="w-full bg-white"
               disabled={isPending}>
-              Register
+              {translations.text.registerButton}
             </Button>
           </form>
         </Form>

@@ -34,6 +34,7 @@ export const {
       if (verificationNeeded) {
         if (!existingUser?.emailVerified) return false;
       }
+      if (existingUser?.role !== 'ADMIN') return false;
 
       if (existingUser.isTwoFactorEnabled) {
         const twoFactorConfirmation = await getTwoFactorConfirmationByUserId(existingUser.id);

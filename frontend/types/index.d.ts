@@ -132,3 +132,39 @@ interface HeroHeaderProps {
   imageSrc: string;
   imageAlt: string;
 }
+
+export interface RegisterFormProps {
+  translations: {
+    validation: {
+      name: string;
+      email: string;
+      emailValid: string;
+      password: string;
+    };
+    text: {
+      title: string;
+      name: string;
+      email: string;
+      password: string;
+      registerButton: string;
+      loginLink: string;
+    };
+  };
+}
+
+export interface LoginFormProps {
+  translations: {
+    validation: {
+      email: string;
+      password: string;
+    };
+    text: {
+      title: string;
+      email: string;
+      password: string;
+      forgotPasswordLink: string;
+      loginButton: string;
+      registerLink: string;
+    };
+  };
+}
