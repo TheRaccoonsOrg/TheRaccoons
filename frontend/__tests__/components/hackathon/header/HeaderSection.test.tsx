@@ -27,7 +27,14 @@ const headerImage: CombinedImageProps[] = [
 ];
 describe('Hackathon header', () => {
   it('should render the header section', async () => {
-    render(<HeaderSection props={headerImage} submissionsLink="https://example.com" />);
+    render(
+      <HeaderSection
+        props={headerImage}
+        submissionsLink="https://example.com"
+        eventEnded={true}
+        buttonText="All submissions"
+      />,
+    );
     const images = await screen.findAllByAltText('Hackathon2022');
     images.forEach((header) => {
       expect(header).toBeInTheDocument();

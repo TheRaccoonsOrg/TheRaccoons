@@ -52,9 +52,11 @@ const NewsletterForm = (props: NewsletterFormProps) => {
   };
 
   return (
-    <div className="py-4 flex flex-col items-center justify-center gap-y-4 px-5 ">
-      <h2 className="text-3xl font-bold">{props.headerTitle}</h2>
-      <p className="text-white">{props.description}</p>
+    <div
+      id="newsletter-form"
+      className="py-4 flex flex-col items-center justify-center gap-y-4 px-5 ">
+      <h2 className="text-lg md:text-3xl font-bold">{props.headerTitle}</h2>
+      <p className="text-sm md:text-lg text-white text-center">{props.description}</p>
       <div className="pb-10">
         <Form {...form}>
           <form
