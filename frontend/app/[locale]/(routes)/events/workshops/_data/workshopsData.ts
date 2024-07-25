@@ -33,7 +33,7 @@ export const workshopsData: WorkshopProps[] = [
     when: '26.aprīlis 16:00.',
     where: 'SEB Inovāciju centrs, Krišjāņa Barona iela 20, Rīga',
     necessary: 'Dators, lādētājs un vēlme apgūt jaunas tehnoloģijas!',
-    registerLink: 'https://forms.gle/s66CjcV7Xda718oa8',
+    registerLink: 'https://forms.gle/ASzvBJX22mYvMdUAA',
     whatToExpect: 'Ko vari sagaidīt no darbnīcas?',
     slidesLink: 'https://link.theraccoons.org/cc-discord',
     timeFrames: [
