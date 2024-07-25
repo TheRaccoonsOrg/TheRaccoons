@@ -16,7 +16,7 @@ export const hackathonCards: EventCardProps[] = [
     cardTitle: 'hackathon2024-title',
     buttonText: 'hackathon2024',
     buttonLink: '/events/hackathons/hackathon2024',
-    cardImage: '/images/hackathon2023/hackathon2023.webp',
+    cardImage: '/images/coming-soon.webp',
     lastModified: '2024-07-25',
     show: true,
     date: new Date('2024-10-25T16:00:00'),
