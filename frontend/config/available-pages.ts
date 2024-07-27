@@ -13,6 +13,16 @@ export const hackathonCards: EventCardProps[] = [
   },
   {
     typeOfEvent: 'hackathon',
+    cardTitle: 'hackathon2024-title',
+    buttonText: 'hackathon2024',
+    buttonLink: '/events/hackathons/hackathon2024',
+    cardImage: '/images/coming-soon.webp',
+    lastModified: '2024-07-25',
+    show: true,
+    date: new Date('2024-10-25T16:00:00'),
+  },
+  {
+    typeOfEvent: 'hackathon',
     cardTitle: 'hackathon2022-title',
     buttonText: 'hackathon2022',
     buttonLink: '/events/hackathons/hackathon2022',

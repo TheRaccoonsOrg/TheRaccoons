@@ -38,6 +38,8 @@ const Hackathon2022 = () => {
       <HeaderSection
         props={headerImage}
         submissionsLink="https://raccoons-2023.devpost.com/project-gallery"
+        buttonText="All submissions"
+        eventEnded={true}
       />
       <GreenButton
         buttonStyles="mt-10"
