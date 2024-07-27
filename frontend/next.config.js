@@ -15,6 +15,11 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: '/lv/admin',
+        destination: '/lv/admin/dashboard',
+        permanent: false,
+      },
+      {
         source: '/en/sitemap.xml',
         destination: '/sitemap.xml',
         permanent: false,

@@ -10,10 +10,13 @@ services:
         - DATABASE_URL=${DATABASE_URL}
         - AUTH_SECRET=${AUTH_SECRET}
         - AUTH_TRUST_HOST=${AUTH_TRUST_HOST}
-        - RESEND_API_KEY=${RESEND_API_KEY}
         - NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL}
+        - MAIL_HOST=${MAIL_HOST}
+        - MAIL_PORT=${MAIL_PORT}
+        - MAIL_USER=${MAIL_USER}
+        - MAIL_PASS=${MAIL_PASS}
     ports:
-      - 59991:3000
+      - "59991:3000"
     networks:
       - nginx_portainer_nginx-proxy-manager-nw
       - postgres_network
@@ -28,7 +31,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
     ports:
-      - 5432:5432
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
