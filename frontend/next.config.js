@@ -5,6 +5,16 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/admin',
+        destination: '/en/admin/dashboard',
+        permanent: false,
+      },
+      {
+        source: '/en/admin',
+        destination: '/en/admin/dashboard',
+        permanent: false,
+      },
+      {
         source: '/en/sitemap.xml',
         destination: '/sitemap.xml',
         permanent: false,

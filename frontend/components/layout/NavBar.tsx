@@ -5,8 +5,6 @@ import { LanguageChoiceDropDownMenu } from '../LanguageChoiceDropdown';
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import { Link } from '@/i18n';
-import { UserButton } from '../auth/UserButton';
-import { useCurrentSession } from '@/hooks/useCurrentSession';
 
 interface NavbarProps {
   navLinks: {
@@ -20,11 +18,10 @@ export default function Navbar({ navLinks }: NavbarProps) {
   const handleClick = () => {
     setNavbar(false);
   };
-  const { user } = useCurrentSession();
 
   return (
     <header className="relative top-0 flex justify-center">
-      <nav className="bg-background fixed left-0 top-0 w-full  gap-x-6 px-5 md:flex md:items-center md:px-20 z-50 border-solid border-b-2 border-purple-br border-opacity-50">
+      <nav className="fixed left-0 top-0 w-full  gap-x-6 px-5 md:flex md:items-center md:px-20 z-50 border-solid border-b-2 border-purple-br bg-purple-bg border-opacity-50">
         <div className="flex w-full items-center justify-between py-3 md:block md:py-5 ">
           <Link href="/" onClick={handleClick}>
             <Image
@@ -38,7 +35,6 @@ export default function Navbar({ navLinks }: NavbarProps) {
           </Link>
           <div className="flex  gap-x-2 md:hidden">
             <div data-testid="language-dropdown">
-              {user && <UserButton user={user} />}
               <LanguageChoiceDropDownMenu />
             </div>
 
@@ -74,7 +70,7 @@ export default function Navbar({ navLinks }: NavbarProps) {
         </div>
 
         <div
-          className={`absolute left-0 right-0 z-10 m-auto justify-self-center rounded-md border bg-background p-4 md:static md:flex md:border-none md:p-0 ${
+          className={`absolute left-0 right-0 z-10 m-auto justify-self-center rounded-md border p-4 md:static md:flex md:border-none md:p-0 bg-purple-bg ${
             navbar ? 'block' : 'hidden'
           }`}
           style={{ width: '100%', maxWidth: '16rem' }}
@@ -93,12 +89,6 @@ export default function Navbar({ navLinks }: NavbarProps) {
           </ul>
         </div>
         <div className="hidden md:flex flex-row items-center space-x-2 pl-4">
-          {/* {!user && status !== 'loading' && (
-            <Button variant="ghost" className="text-lg pl-4" asChild>
-              <Link href="/auth/login">Login</Link>
-            </Button>
-          )} */}
-          {user && <UserButton user={user} />}
           <LanguageChoiceDropDownMenu />
         </div>
       </nav>

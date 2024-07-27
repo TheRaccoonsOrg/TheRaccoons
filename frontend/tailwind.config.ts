@@ -53,6 +53,7 @@ module.exports = {
         hotgreen: '#36f8a7',
         'purple-br': '#9562da',
         'purple-md': '#230c40',
+        'purple-bg': 'hsl(265 85% 10%)',
       },
       borderRadius: {
         lg: 'var(--radius)',

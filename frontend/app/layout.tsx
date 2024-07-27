@@ -1,6 +1,4 @@
-import { InterFont } from '@/lib/fonts';
 import { siteConfig } from '@/config/site';
-import './globals.css';
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url.base),
@@ -32,11 +30,8 @@ const RootLayout = ({
   params: { locale: string };
 }) => {
   return (
-    <html lang={locale}>
-      <body
-        className={`${InterFont.className} flex min-h-screen flex-col bg-background  text-primary`}>
-        {children}
-      </body>
+    <html lang={locale} suppressHydrationWarning>
+      {children}
     </html>
   );
 };

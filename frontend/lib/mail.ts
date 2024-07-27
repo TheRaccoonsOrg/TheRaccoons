@@ -1,32 +1,58 @@
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
+import SMTPTransport from 'nodemailer/lib/smtp-transport';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const transport = nodemailer.createTransport({
+  host: process.env.MAIL_HOST,
+  port: process.env.MAIL_PORT,
+  secure: process.env.NODE_ENV === 'production',
+  auth: {
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS,
+  },
+} as SMTPTransport.Options);
+
+type SendEmailDto = {
+  from: string;
+  to: string;
+  subject: string;
+  message: string;
+};
+
+export const sendEmail = async ({ from, to, subject, message }: SendEmailDto) => {
+  return await transport.sendMail({
+    from,
+    to,
+    subject,
+    html: message,
+    text: message,
+  });
+};
 
 export const sendVerificationEmail = async (email: string, token: string) => {
   const confirmLink = `${process.env.NEXT_PUBLIC_APP_URL}/en/auth/new-verification?token=${token}`;
-  await resend.emails.send({
-    from: 'onboarding@resend.dev',
+  await sendEmail({
+    from: 'onboarding@yourdomain.com',
     to: email,
     subject: 'Verify your email address',
-    html: `<p>Click <a href="${confirmLink}">here</a> to verify your email address.</p>`,
+    message: `<p>Click <a href="${confirmLink}">here</a> to verify your email address.</p>`,
   });
 };
 
 export const sendPasswordResetEmail = async (email: string, token: string) => {
   const resetLink = `${process.env.NEXT_PUBLIC_APP_URL}/en/auth/new-password?token=${token}`;
-  await resend.emails.send({
-    from: 'onboarding@resend.dev',
+  await sendEmail({
+    from: 'onboarding@yourdomain.com',
     to: email,
     subject: 'Reset your password',
-    html: `<p>Click <a href="${resetLink}">here</a> to reset your password.</p>`,
+    message: `<p>Click <a href="${resetLink}">here</a> to reset your password.</p>`,
   });
 };
 
 export const sendTwoFactorTokenEmail = async (email: string, token: string) => {
-  await resend.emails.send({
-    from: 'onboarding@resend.dev',
+  await sendEmail({
+    from: 'onboarding@yourdomain.com',
     to: email,
     subject: '2FA Code',
-    html: `<p>Your 2FA code: ${token}</p>`,
+    message: `<p>Your 2FA code: ${token}</p>`,
   });
 };

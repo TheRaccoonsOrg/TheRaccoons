@@ -1,9 +1,9 @@
 'use client';
 
-import { useCurrentSession } from '@/hooks/useCurrentSession';
+import { useCurrentUser } from '@/hooks/use-current-user';
 
 const ProfilePage = () => {
-  const user = useCurrentSession().user;
+  const user = useCurrentUser();
 
   if (!user) return <div>Loading...</div>;
   return (

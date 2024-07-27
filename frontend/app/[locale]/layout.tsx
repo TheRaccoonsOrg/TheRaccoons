@@ -1,4 +1,3 @@
-import { Toaster } from '@/components/ui/sonner';
 import { SessionProvider } from 'next-auth/react';
 import { NextIntlClientProvider } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
@@ -18,12 +17,16 @@ export default async function LocaleLayout({
   if (!isValidLocale) notFound();
 
   const session = await auth();
-
+  let messages;
+  try {
+    messages = (await import(`../../messages/${locale}.json`)).default;
+  } catch (error) {
+    notFound();
+  }
   return (
     <SessionProvider session={session}>
-      <NextIntlClientProvider locale={locale}>
+      <NextIntlClientProvider locale={locale} messages={messages}>
         {children}
-        <Toaster />
       </NextIntlClientProvider>
     </SessionProvider>
   );

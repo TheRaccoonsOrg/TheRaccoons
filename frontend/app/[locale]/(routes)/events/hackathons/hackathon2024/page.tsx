@@ -94,7 +94,7 @@ const Hackathon2024 = () => {
         apiError={'Something went wrong. Please try again later.'}
       />
 
-      <FriendsSection />
+      <FriendsSection mainImageSrc="/images/en/friends.webp" />
 
       <ContactSection />
     </div>
