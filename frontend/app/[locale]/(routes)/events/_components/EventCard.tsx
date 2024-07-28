@@ -21,7 +21,7 @@ const EventCard = (props: EventCardProps) => {
         </div>
       ) : null}
       <GreenButton
-        buttonStyles="rounded-lg"
+        buttonStyles="rounded-lg z-20"
         buttonHref={props.buttonLink}
         buttonText={props.buttonText}
       />

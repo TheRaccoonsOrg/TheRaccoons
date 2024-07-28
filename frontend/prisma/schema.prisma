@@ -59,3 +59,84 @@ model TwoFactorConfirmation {
 
   @@unique([userId])
 }
+
+model EventEntity {
+  id           String             @id @default(cuid())
+  eventId      String             @unique
+  title        String
+  dateText     String
+  date         DateTime
+  location     String
+  description  String
+  image        String
+  content      String
+  draftContent String
+  isPublished  Boolean            @default(false)
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+  participants EventParticipant[]
+  forms        Form[]
+  EventForm    EventForm[]
+}
+
+model Participant {
+  id        String             @id @default(cuid())
+  name      String
+  email     String             @unique
+  phone     String
+  address   String
+  city      String
+  state     String
+  zip       String
+  country   String
+  events    EventParticipant[]
+  createdAt DateTime           @default(now())
+  updatedAt DateTime           @updatedAt
+}
+
+model EventParticipant {
+  id            String      @id @default(cuid())
+  event         EventEntity @relation(fields: [eventId], references: [id])
+  eventId       String
+  participant   Participant @relation(fields: [participantId], references: [id])
+  participantId String
+  responses     Json
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @default(now())
+
+  @@unique([eventId, participantId])
+}
+
+model Form {
+  id          String      @id @default(cuid())
+  typeformId  String      @unique
+  name        String
+  description String
+  eventId     String
+  event       EventEntity @relation(fields: [eventId], references: [eventId])
+  fields      FormField[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @default(now())
+  EventForm   EventForm[]
+}
+
+model FormField {
+  id         String @id @default(cuid())
+  form       Form   @relation(fields: [formId], references: [id])
+  formId     String
+  fieldRef   String
+  fieldType  String
+  fieldLabel String
+}
+
+model EventForm {
+  id        String      @id @default(cuid())
+  event     EventEntity @relation(fields: [eventId], references: [id])
+  eventId   String
+  form      Form        @relation(fields: [formId], references: [id])
+  formId    String
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @default(now())
+
+  @@unique([eventId, formId])
+}
