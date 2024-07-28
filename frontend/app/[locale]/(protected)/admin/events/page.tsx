@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { createEvent } from '@/actions/createEvent';
+import { createEvent } from '@/actions/admin/createEvent';
 
 const CreateEventForm = () => {
   const [formData, setFormData] = useState({

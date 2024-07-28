@@ -57,24 +57,50 @@ export async function POST(
     const participantData: any = {};
     const responses: any = {};
 
+    // Dynamically handle all answer types
     for (const answer of answers) {
       const fieldRef = answer.field.ref;
       const formField = formFields.find((field) => field.fieldRef === fieldRef);
 
       if (formField) {
-        // Map the responses correctly based on the field type
-        if (answer.type === 'text' || answer.type === 'short_text') {
-          responses[fieldRef] = answer.text;
-        } else if (answer.type === 'email') {
-          responses[fieldRef] = answer.email;
-        } else if (answer.type === 'phone_number') {
-          responses[fieldRef] = answer.phone_number;
-        } else if (answer.type === 'date') {
-          responses[fieldRef] = answer.date;
-        } else if (answer.type === 'multiple_choice' && answer.choice) {
-          responses[fieldRef] = answer.choice.label;
-        } else if (answer.type === 'yes_no') {
-          responses[fieldRef] = answer.boolean;
+        switch (answer.type) {
+          case 'text':
+          case 'short_text':
+          case 'long_text':
+            responses[fieldRef] = answer.text;
+            break;
+          case 'email':
+            responses[fieldRef] = answer.email;
+            break;
+          case 'phone_number':
+            responses[fieldRef] = answer.phone_number;
+            break;
+          case 'date':
+            responses[fieldRef] = answer.date;
+            break;
+          case 'choice':
+          case 'multiple_choice':
+          case 'dropdown':
+            responses[fieldRef] = answer.choice?.label || null;
+            break;
+          case 'boolean':
+          case 'yes_no':
+            responses[fieldRef] = answer.boolean;
+            break;
+          case 'payment':
+            responses[fieldRef] = JSON.stringify(answer.payment);
+            break;
+          case 'file_url':
+            responses[fieldRef] = answer.file_url;
+            break;
+          case 'url':
+            responses[fieldRef] = answer.url;
+            break;
+          case 'picture_choice':
+            responses[fieldRef] = answer.choice?.label || null;
+            break;
+          default:
+            console.warn(`Unhandled answer type: ${answer.type}`);
         }
 
         // Populate participantData for specific fields
@@ -95,8 +121,13 @@ export async function POST(
         } else if (fieldRef === 'country') {
           participantData.country = answer.text;
         }
+      } else {
+        console.warn(`Form field not found for fieldRef: ${fieldRef}`);
       }
     }
+
+    console.log('Mapped participantData:', participantData);
+    console.log('Mapped responses:', responses);
 
     if (!participantData.email || !participantData.name) {
       return NextResponse.json(
@@ -155,7 +186,7 @@ export async function POST(
         eventId: eventExists.id,
         participantId: participant.id,
         formId: formExists.id,
-        responses: JSON.stringify(responses, null, 2), // Format responses with 2-space indentation
+        responses: responses,
       },
     });
 
