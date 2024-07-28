@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use server';
 import { db } from '@/lib/db';
 
@@ -26,7 +27,8 @@ export const createFormFields = async (payload: FormPayload, eventId: string) =>
     });
 
     if (!eventExists) {
-      throw new Error(`Event with eventId ${eventId} does not exist`);
+      console.log(`Event with eventId ${eventId} does not exist`);
+      return null;
     }
 
     const { form_response } = payload;
@@ -40,7 +42,7 @@ export const createFormFields = async (payload: FormPayload, eventId: string) =>
     }));
 
     // Create the form and its fields in the database
-    const form = await db.form.create({
+    return await db.form.create({
       data: {
         typeformId: form_id,
         name: definition.title,
@@ -51,8 +53,6 @@ export const createFormFields = async (payload: FormPayload, eventId: string) =>
         },
       },
     });
-
-    return form;
   } catch (error) {
     console.error('Error creating form fields:', error);
     throw new Error('Internal server error');

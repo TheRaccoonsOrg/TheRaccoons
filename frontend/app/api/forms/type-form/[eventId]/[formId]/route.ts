@@ -129,22 +129,23 @@ export async function POST(
       });
     }
 
-    // Check if EventParticipant already exists
+    // Check if EventParticipant already exists for the same form
     const existingEventParticipant = await db.eventParticipant.findUnique({
       where: {
-        eventId_participantId: {
+        eventId_participantId_formId: {
           eventId: eventExists.id,
           participantId: participant.id,
+          formId: formExists.id,
         },
       },
     });
 
     if (existingEventParticipant) {
       console.log(
-        `EventParticipant for event ${eventId} and participant ${participant.id} already exists`,
+        `EventParticipant for event ${eventId}, participant ${participant.id}, and form ${formExists.id} already exists`,
       );
       return NextResponse.json(
-        { message: 'Participant already registered for this event' },
+        { message: 'Participant already registered for this form in the event' },
         { status: 409 },
       );
     }
@@ -153,6 +154,7 @@ export async function POST(
       data: {
         eventId: eventExists.id,
         participantId: participant.id,
+        formId: formExists.id,
         responses: JSON.stringify(responses, null, 2), // Format responses with 2-space indentation
       },
     });

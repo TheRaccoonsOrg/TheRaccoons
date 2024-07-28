@@ -5,7 +5,7 @@ interface CreateEventData {
   eventId: string;
   title: string;
   dateText: string;
-  date: string; // Use string to handle date input
+  date: string;
   location: string;
   description: string;
   image: string;

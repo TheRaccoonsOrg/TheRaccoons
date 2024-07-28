@@ -100,24 +100,27 @@ model EventParticipant {
   eventId       String
   participant   Participant @relation(fields: [participantId], references: [id])
   participantId String
+  form          Form        @relation(fields: [formId], references: [id])
+  formId        String
   responses     Json
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @default(now())
 
-  @@unique([eventId, participantId])
+  @@unique([eventId, participantId, formId])
 }
 
 model Form {
-  id          String      @id @default(cuid())
-  typeformId  String      @unique
-  name        String
-  description String
-  eventId     String
-  event       EventEntity @relation(fields: [eventId], references: [eventId])
-  fields      FormField[]
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @default(now())
-  EventForm   EventForm[]
+  id                String             @id @default(cuid())
+  typeformId        String             @unique
+  name              String
+  description       String
+  eventId           String
+  event             EventEntity        @relation(fields: [eventId], references: [eventId])
+  fields            FormField[]
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @default(now())
+  eventForms        EventForm[]
+  eventParticipants EventParticipant[]
 }
 
 model FormField {
