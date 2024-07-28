@@ -2,8 +2,23 @@ import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { createObjectCsvStringifier } from 'csv-writer';
 import ExcelJS from 'exceljs';
+import { Prisma } from '@prisma/client';
 
-async function fetchFormAnswers(typeformId: string) {
+// Define types for form and responses
+type FormWithFields = Prisma.FormGetPayload<{
+  include: { fields: true };
+}>;
+
+type EventParticipantWithParticipant = Prisma.EventParticipantGetPayload<{
+  include: { participant: true };
+}>;
+
+type JsonObject = { [key: string]: string | number | boolean | JsonObject | JsonArray };
+type JsonArray = (string | number | boolean | JsonObject | JsonArray)[];
+
+async function fetchFormAnswers(
+  typeformId: string,
+): Promise<{ form: FormWithFields; responses: EventParticipantWithParticipant[] }> {
   // Fetch form fields (questions) by typeformId
   const form = await db.form.findUnique({
     where: { typeformId },
@@ -23,23 +38,23 @@ async function fetchFormAnswers(typeformId: string) {
   return { form, responses };
 }
 
-function formatDataForExport(form: any, responses: any[]) {
-  const headers = form.fields.map((field: any) => field.fieldLabel);
-  const data = responses.map((response: any) => {
-    const answers = response.responses;
-    return form.fields.map((field: any) => answers[field.fieldRef] || '');
+function formatDataForExport(form: FormWithFields, responses: EventParticipantWithParticipant[]) {
+  const headers = form.fields.map((field) => field.fieldLabel);
+  const data = responses.map((response) => {
+    const answers = response.responses as JsonObject;
+    return form.fields.map((field) => String(answers[field.fieldRef] ?? ''));
   });
 
   return { headers, data };
 }
 
-async function exportToCsv(headers: string[], data: any[]) {
+async function exportToCsv(headers: string[], data: string[][]) {
   const csvStringifier = createObjectCsvStringifier({
     header: headers.map((header) => ({ id: header, title: header })),
   });
 
   const records = data.map((row) => {
-    const record: any = {};
+    const record: { [key: string]: string } = {};
     headers.forEach((header, index) => {
       record[header] = row[index];
     });
@@ -47,11 +62,10 @@ async function exportToCsv(headers: string[], data: any[]) {
   });
 
   // Add headers as the first row
-  const csvData = csvStringifier.getHeaderString() + csvStringifier.stringifyRecords(records);
-  return csvData;
+  return csvStringifier.getHeaderString() + csvStringifier.stringifyRecords(records);
 }
 
-async function exportToExcel(headers: string[], data: any[]) {
+async function exportToExcel(headers: string[], data: string[][]) {
   const workbook = new ExcelJS.Workbook();
   const worksheet = workbook.addWorksheet('Form Responses');
 
@@ -60,8 +74,7 @@ async function exportToExcel(headers: string[], data: any[]) {
     worksheet.addRow(row);
   });
 
-  const buffer = await workbook.xlsx.writeBuffer();
-  return buffer;
+  return await workbook.xlsx.writeBuffer();
 }
 
 export async function GET(req: NextRequest) {

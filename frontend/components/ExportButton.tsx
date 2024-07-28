@@ -1,15 +1,35 @@
 'use client';
 
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState, useEffect, useRef } from 'react';
+
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+  DropdownMenuItem,
+} from '@/components/ui/dropdown-menu';
 
 interface DownloadButtonProps {
   typeformId: string;
 }
 
-const DownloadButton: React.FC<DownloadButtonProps> = ({ typeformId }) => {
-  const [format, setFormat] = useState<'csv' | 'excel'>('csv');
+const ExportButton: React.FC<DownloadButtonProps> = ({ typeformId }) => {
+  const [loading, setLoading] = useState<string | undefined>(undefined);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const [menuWidth, setMenuWidth] = useState<number | undefined>(undefined);
 
-  const handleDownload = async () => {
+  useEffect(() => {
+    if (triggerRef.current) {
+      setMenuWidth(triggerRef.current.offsetWidth);
+    }
+  }, []);
+
+  const handleDownload = async (format: 'csv' | 'excel') => {
+    setLoading(format);
     const response = await fetch(`/api/export?typeformId=${typeformId}&format=${format}`);
     if (response.ok) {
       const blob = await response.blob();
@@ -24,17 +44,26 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({ typeformId }) => {
     } else {
       console.error('Failed to download file');
     }
+    setLoading(undefined);
   };
 
   return (
-    <div>
-      <select value={format} onChange={(e) => setFormat(e.target.value as 'csv' | 'excel')}>
-        <option value="csv">CSV</option>
-        <option value="excel">Excel</option>
-      </select>
-      <button onClick={handleDownload}>Download</button>
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" ref={triggerRef}>
+          {loading ? 'Loading...' : 'Export data'}
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="min-w-full" style={{ width: menuWidth }}>
+        <DropdownMenuItem onClick={() => handleDownload('csv')} disabled={loading === 'csv'}>
+          CSV
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => handleDownload('excel')} disabled={loading === 'excel'}>
+          Excel
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 
-export default DownloadButton;
+export default ExportButton;
