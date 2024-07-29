@@ -206,5 +206,10 @@
     "listUUID": "4a2ddaa8-1ef2-4c31-add4-88583c96cae4",
     "successMessage": "Thank you for subscribing!",
     "apiError": "Something went wrong. Please try again later."
+  },
+  "ComingSoon": {
+    "header": "Coming soon!",
+    "eventTitle": "Hackathon 2024",
+    "buttonText": "Read more"
   }
 }

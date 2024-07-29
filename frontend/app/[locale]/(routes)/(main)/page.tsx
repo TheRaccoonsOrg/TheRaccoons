@@ -5,6 +5,7 @@ import AboutUs from '@/components/layout/AboutUs';
 import InfoSection from '@/components/layout/InfoSection';
 import { getTranslations } from 'next-intl/server';
 import NewsletterForm from '@/components/layout/NewsletterForm';
+import ComingSoon from '@/app/[locale]/(routes)/(main)/_components/coming-soon';
 
 export default async function Main() {
   const t = await getTranslations('Index');
@@ -12,6 +13,7 @@ export default async function Main() {
   const tForm = await getTranslations('Newsletter');
   return (
     <div className="flex flex-col items-center">
+      <ComingSoon />
       <HeroHeader
         firstDesc={t('firstDesc')}
         secondDesc={t('secondDesc')}

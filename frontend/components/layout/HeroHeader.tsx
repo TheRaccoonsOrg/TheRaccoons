@@ -13,8 +13,8 @@ const HeroHeader = (props: HeroHeaderProps) => {
   const [loading, setLoading] = useState(true);
 
   return (
-    <header className={`flex flex-col justify-center items-center md:flex-row gap-x-4 `}>
-      <div className="w-[345px] sm:w-[400px] md:w-[450px]">
+    <header className={`flex flex-col justify-center items-center lg:flex-row gap-x-4 `}>
+      <div className="w-[21.5625rem] sm:w-[25rem] md:w-[37.5rem] lg:w-[28.125rem]">
         <p>{props.firstDesc}</p>
         <br />
         <p>{props.secondDesc}</p>
