@@ -4,10 +4,7 @@ import { createObjectCsvStringifier } from 'csv-writer';
 import ExcelJS from 'exceljs';
 import { Prisma } from '@prisma/client';
 
-// Define types for form and responses
-type FormWithFields = Prisma.FormGetPayload<{
-  include: { fields: true };
-}>;
+type FormWithFields = Prisma.FormGetPayload<NonNullable<unknown>>;
 
 type EventParticipantWithParticipant = Prisma.EventParticipantGetPayload<{
   include: { participant: true };
@@ -19,10 +16,9 @@ type JsonArray = (string | number | boolean | JsonObject | JsonArray)[];
 async function fetchFormAnswers(
   typeformId: string,
 ): Promise<{ form: FormWithFields; responses: EventParticipantWithParticipant[] }> {
-  // Fetch form fields (questions) by typeformId
+  // Fetch form by typeformId
   const form = await db.form.findUnique({
     where: { typeformId },
-    include: { fields: true },
   });
 
   if (!form) {
@@ -39,10 +35,11 @@ async function fetchFormAnswers(
 }
 
 function formatDataForExport(form: FormWithFields, responses: EventParticipantWithParticipant[]) {
-  const headers = form.fields.map((field) => field.fieldLabel);
+  const fields = (form.content as unknown as { title: string; ref: string }[]) || [];
+  const headers = fields.map((field) => field.title);
   const data = responses.map((response) => {
     const answers = response.responses as JsonObject;
-    return form.fields.map((field) => String(answers[field.fieldRef] ?? ''));
+    return fields.map((field) => String(answers[field.ref] ?? ''));
   });
 
   return { headers, data };

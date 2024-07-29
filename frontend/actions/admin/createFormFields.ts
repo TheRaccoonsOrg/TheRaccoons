@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 'use server';
 import { db } from '@/lib/db';
+import { FormField } from '@/types';
 
 interface FormPayload {
   form_response: {
@@ -8,13 +8,7 @@ interface FormPayload {
     definition: {
       id: string;
       title: string;
-      fields: Array<{
-        id: string;
-        ref: string;
-        type: string;
-        title: string;
-        properties: any;
-      }>;
+      fields: FormField[];
     };
   };
 }
@@ -35,10 +29,10 @@ export const createFormFields = async (payload: FormPayload, eventId: string) =>
     const { form_id, definition } = form_response;
 
     // Extract form fields from the definition
-    const fields = definition.fields.map((field: any) => ({
-      fieldRef: field.ref,
-      fieldType: field.type,
-      fieldLabel: field.title,
+    const fields = definition.fields.map((field) => ({
+      ref: field.ref,
+      title: field.title,
+      type: field.type,
     }));
 
     // Create the form and its fields in the database
@@ -47,10 +41,8 @@ export const createFormFields = async (payload: FormPayload, eventId: string) =>
         typeformId: form_id,
         name: definition.title,
         description: '',
-        eventId: eventExists.eventId, // Ensure correct ID usage
-        fields: {
-          create: fields,
-        },
+        eventId: eventExists.id, // Ensure correct ID usage
+        content: fields,
       },
     });
   } catch (error) {

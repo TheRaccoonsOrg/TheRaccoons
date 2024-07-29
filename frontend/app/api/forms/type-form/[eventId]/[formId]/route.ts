@@ -3,6 +3,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { getFormFieldsByTypeformId } from '@/actions/admin/getFormFieldsByTypeformId';
 
+interface FormField {
+  ref: string;
+  title: string;
+  type: string;
+}
+
 export async function POST(
   req: NextRequest,
   { params }: { params: { eventId: string; formId: string } },
@@ -13,10 +19,6 @@ export async function POST(
     const payload = await req.json();
     const { form_response } = payload;
     const { answers } = form_response;
-
-    console.log('Payload:', JSON.stringify(payload, null, 2));
-    console.log('form_id:', formId);
-    console.log('Answers:', answers);
 
     if (!Array.isArray(answers)) {
       return NextResponse.json({ error: 'Invalid answers format' }, { status: 400 });
@@ -48,8 +50,6 @@ export async function POST(
 
     const formFields = await getFormFieldsByTypeformId(formId);
 
-    console.log('formFields:', formFields);
-
     if (!formFields || formFields.length === 0) {
       return NextResponse.json({ error: 'Form fields not found' }, { status: 404 });
     }
@@ -60,7 +60,7 @@ export async function POST(
     // Dynamically handle all answer types
     for (const answer of answers) {
       const fieldRef = answer.field.ref;
-      const formField = formFields.find((field) => field.fieldRef === fieldRef);
+      const formField = formFields.find((field: FormField) => field.ref === fieldRef);
 
       if (formField) {
         switch (answer.type) {
@@ -126,9 +126,6 @@ export async function POST(
       }
     }
 
-    console.log('Mapped participantData:', participantData);
-    console.log('Mapped responses:', responses);
-
     if (!participantData.email || !participantData.name) {
       return NextResponse.json(
         { error: 'Missing required participant information' },
@@ -160,7 +157,7 @@ export async function POST(
       });
     }
 
-    // Check if EventParticipant already exists for the same form
+    // Check if EventParticipant already exists for the same event and form
     const existingEventParticipant = await db.eventParticipant.findUnique({
       where: {
         eventId_participantId_formId: {
@@ -181,7 +178,7 @@ export async function POST(
       );
     }
 
-    const eventParticipant = await db.eventParticipant.create({
+    await db.eventParticipant.create({
       data: {
         eventId: eventExists.id,
         participantId: participant.id,
@@ -190,7 +187,7 @@ export async function POST(
       },
     });
 
-    return NextResponse.json(eventParticipant);
+    return NextResponse.json({ message: 'Form responses saved successfully' }, { status: 200 });
   } catch (error) {
     console.error('Error in POST handler:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

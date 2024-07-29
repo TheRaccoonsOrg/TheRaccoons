@@ -16,6 +16,7 @@ const CreateEventForm = () => {
     content: '',
     draftContent: '',
   });
+  const [error, setError] = useState('');
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
@@ -37,11 +38,13 @@ const CreateEventForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
 
     try {
       const event = await createEvent(formData);
       console.log('Event created successfully:', event);
     } catch (error) {
+      // setError(error.message || 'Error creating event');
       console.error('Error creating event:', error);
     }
   };
@@ -115,6 +118,7 @@ const CreateEventForm = () => {
             onChange={handleChange}
           />
         </label>
+        {error && <div className="text-red-500">{error}</div>}
         <button type="submit">Create Event</button>
       </form>
     </div>

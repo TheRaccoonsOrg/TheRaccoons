@@ -1,15 +1,26 @@
-'use server';
 import { db } from '@/lib/db';
 
-export const getFormFieldsByTypeformId = async (typeformId: string) => {
+interface FormField {
+  ref: string;
+  title: string;
+  type: string;
+}
+
+export const getFormFieldsByTypeformId = async (typeformId: string): Promise<FormField[]> => {
   const form = await db.form.findUnique({
     where: { typeformId },
-    include: { fields: true },
+    select: { content: true },
   });
 
   if (!form) {
-    throw new Error(`Form with typeformId ${typeformId} not found`);
+    return [];
   }
 
-  return form.fields;
+  const content = form.content as unknown as FormField[];
+
+  if (!Array.isArray(content)) {
+    return [];
+  }
+
+  return content;
 };

@@ -168,3 +168,9 @@ export interface LoginFormProps {
     };
   };
 }
+
+export interface FormField {
+  ref: string;
+  title: string;
+  type: string;
+}

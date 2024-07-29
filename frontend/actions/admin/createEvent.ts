@@ -29,6 +29,15 @@ export const createEvent = async (data: CreateEventData) => {
       draftContent,
     } = data;
 
+    // Check if the eventId already exists
+    const existingEvent = await db.eventEntity.findUnique({
+      where: { eventId },
+    });
+
+    if (existingEvent) {
+      throw new Error(`Event with eventId ${eventId} already exists`);
+    }
+
     return await db.eventEntity.create({
       data: {
         eventId,

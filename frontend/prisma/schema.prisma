@@ -73,10 +73,9 @@ model EventEntity {
   draftContent String
   isPublished  Boolean            @default(false)
   createdAt    DateTime           @default(now())
-  updatedAt    DateTime           @updatedAt
+  updatedAt    DateTime           @default(now())
   participants EventParticipant[]
   forms        Form[]
-  EventForm    EventForm[]
 }
 
 model Participant {
@@ -91,7 +90,7 @@ model Participant {
   country   String
   events    EventParticipant[]
   createdAt DateTime           @default(now())
-  updatedAt DateTime           @updatedAt
+  updatedAt DateTime           @default(now())
 }
 
 model EventParticipant {
@@ -111,35 +110,27 @@ model EventParticipant {
 
 model Form {
   id                String             @id @default(cuid())
-  typeformId        String             @unique
+  typeformId        String?            @unique
   name              String
   description       String
-  eventId           String
-  event             EventEntity        @relation(fields: [eventId], references: [eventId])
-  fields            FormField[]
+  content           Json               @default("[]") // JSON field for form fields
   createdAt         DateTime           @default(now())
   updatedAt         DateTime           @default(now())
-  eventForms        EventForm[]
+  eventId           String?
+  event             EventEntity?       @relation(fields: [eventId], references: [id])
+  visits            Int                @default(0)
+  submissions       Int                @default(0)
+  shareURL          String             @unique @default(uuid())
+  formSubmissions   FormSubmission[]
   eventParticipants EventParticipant[]
+
+  @@unique([name])
 }
 
-model FormField {
-  id         String @id @default(cuid())
-  form       Form   @relation(fields: [formId], references: [id])
-  formId     String
-  fieldRef   String
-  fieldType  String
-  fieldLabel String
-}
-
-model EventForm {
-  id        String      @id @default(cuid())
-  event     EventEntity @relation(fields: [eventId], references: [id])
-  eventId   String
-  form      Form        @relation(fields: [formId], references: [id])
+model FormSubmission {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
   formId    String
-  createdAt DateTime    @default(now())
-  updatedAt DateTime    @default(now())
-
-  @@unique([eventId, formId])
+  form      Form     @relation(fields: [formId], references: [id])
+  content   Json
 }
