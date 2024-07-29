@@ -50,7 +50,7 @@ export const friendsImagePaths: friendsImagePathsProps[] = [
   },
   {
     alt: 'DF SP Logo Balts',
-    src: '/images/friends/DF_SP_logo_balts.webp',
+    src: '/images/friends/datoriki_border_cut.webp',
     link: 'https://datoriki.lv',
     width: 94,
     height: 76,
