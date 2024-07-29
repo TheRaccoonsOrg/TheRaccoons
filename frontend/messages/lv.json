@@ -205,5 +205,10 @@
     "listUUID": "f0ac2134-a0e1-4de0-b43f-f56f531102d0",
     "successMessage": "Paldies par abonēšanu!",
     "apiError": "Kļūda, lūdzu mēģini vēlreiz vēlāk."
+  },
+  "ComingSoon": {
+    "header": "Drīzumā!",
+    "eventTitle": "Hakatons 2024",
+    "buttonText": "Lasīt vairāk (EN)"
   }
 }

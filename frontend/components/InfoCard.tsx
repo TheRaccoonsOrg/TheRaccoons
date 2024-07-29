@@ -10,8 +10,8 @@ import { Link } from '@/i18n';
 const InfoCard = (props: InfoCardProps) => {
   const [loading, setLoading] = useState(true);
   return (
-    <div className="w-[345px] md:w-[300px] flex flex-col justify-center items-start mb-3">
-      <div className="w-full h-[136px]">
+    <div className="flex flex-col justify-center lg:items-start items-center mb-3">
+      <div className="h-[8.5rem] w-[21.5625rem] lg:w-[18.75rem]">
         {loading && <SkeletonLoader green={false} />}
         <Image
           src={props.imagePath}
@@ -24,17 +24,19 @@ const InfoCard = (props: InfoCardProps) => {
           }`}
         />
       </div>
-      <p className="text-lg my-5">{props.text}</p>
+      <p className="text-lg my-5 w-[21.5625rem] md:w-[37.5rem] lg:w-[18.75rem] pt-4">
+        {props.text}
+      </p>
       <div className="mx-auto md:mx-0 flex flex-col justify-center items-center md:items-start">
         {props.buttonText && props.buttonHref ? (
           <GreenButton buttonText={props.buttonText} buttonHref={props.buttonHref} />
         ) : null}
-        {props.linkText && props.linkHref ? (
-          <Link href={props.linkHref} className="text-[#36f8a7] hover:underline mt-2">
-            {props.linkText}
-          </Link>
-        ) : null}
       </div>
+      {props.linkText && props.linkHref ? (
+        <Link href={props.linkHref} className="text-[#36f8a7] hover:underline mt-2">
+          {props.linkText}
+        </Link>
+      ) : null}
     </div>
   );
 };
