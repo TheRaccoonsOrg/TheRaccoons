@@ -48,7 +48,7 @@ const AdminNavigation = () => {
   };
 
   return (
-    <div className="border-accent border-b-2">
+    <div className="border-accent border-b-2 fixed top-0 w-full z-10 bg-background">
       <div className="flex h-16 items-center px-4">
         <nav className="mx-6 hidden items-center space-x-4 md:flex lg:space-x-6">
           {links.map((link) => (

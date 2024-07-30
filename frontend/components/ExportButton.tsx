@@ -7,8 +7,6 @@ import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
   DropdownMenuItem,
 } from '@/components/ui/dropdown-menu';

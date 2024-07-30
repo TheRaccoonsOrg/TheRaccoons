@@ -4,7 +4,6 @@ import { db } from './db';
 import { getPasswordResetTokenByEmail } from '@/data/passwordResetToken';
 import crypto from 'crypto';
 import { getTwoFactorTokenByEmail } from '@/data/twoFactorToken';
-import { nanoid } from 'nanoid';
 
 export const generateVerificationToken = async (email: string) => {
   const token = uuidv4();

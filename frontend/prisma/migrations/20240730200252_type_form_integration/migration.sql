@@ -67,6 +67,7 @@ CREATE TABLE "EventEntity" (
     "content" TEXT NOT NULL,
     "draftContent" TEXT NOT NULL,
     "isPublished" BOOLEAN NOT NULL DEFAULT false,
+    "requiresCancellation" BOOLEAN NOT NULL DEFAULT true,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
@@ -97,6 +98,9 @@ CREATE TABLE "EventParticipant" (
     "participantId" TEXT NOT NULL,
     "formId" TEXT NOT NULL,
     "responses" JSONB NOT NULL,
+    "emailSent" BOOLEAN NOT NULL DEFAULT false,
+    "cancelled" BOOLEAN NOT NULL DEFAULT false,
+    "cancelledAt" TIMESTAMP(3),
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
@@ -128,6 +132,18 @@ CREATE TABLE "FormSubmission" (
     "content" JSONB NOT NULL,
 
     CONSTRAINT "FormSubmission_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "CancellationToken" (
+    "id" TEXT NOT NULL,
+    "token" TEXT NOT NULL,
+    "participantId" TEXT NOT NULL,
+    "eventId" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "expiresAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "CancellationToken_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
@@ -175,6 +191,9 @@ CREATE UNIQUE INDEX "Form_shareURL_key" ON "Form"("shareURL");
 -- CreateIndex
 CREATE UNIQUE INDEX "Form_name_key" ON "Form"("name");
 
+-- CreateIndex
+CREATE UNIQUE INDEX "CancellationToken_token_key" ON "CancellationToken"("token");
+
 -- AddForeignKey
 ALTER TABLE "TwoFactorConfirmation" ADD CONSTRAINT "TwoFactorConfirmation_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
@@ -192,3 +211,9 @@ ALTER TABLE "Form" ADD CONSTRAINT "Form_eventId_fkey" FOREIGN KEY ("eventId") RE
 
 -- AddForeignKey
 ALTER TABLE "FormSubmission" ADD CONSTRAINT "FormSubmission_formId_fkey" FOREIGN KEY ("formId") REFERENCES "Form"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "CancellationToken" ADD CONSTRAINT "CancellationToken_participantId_fkey" FOREIGN KEY ("participantId") REFERENCES "Participant"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "CancellationToken" ADD CONSTRAINT "CancellationToken_eventId_fkey" FOREIGN KEY ("eventId") REFERENCES "EventEntity"("id") ON DELETE CASCADE ON UPDATE CASCADE;
