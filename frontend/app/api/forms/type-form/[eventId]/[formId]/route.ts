@@ -2,6 +2,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { getFormFieldsByTypeformId } from '@/actions/admin/getFormFieldsByTypeformId';
+import { sendCancellationEmail } from '@/lib/mail';
 
 interface FormField {
   ref: string;
@@ -158,7 +159,7 @@ export async function POST(
     }
 
     // Check if EventParticipant already exists for the same event and form
-    const existingEventParticipant = await db.eventParticipant.findUnique({
+    const eventParticipant = await db.eventParticipant.findUnique({
       where: {
         eventId_participantId_formId: {
           eventId: eventExists.id,
@@ -168,24 +169,70 @@ export async function POST(
       },
     });
 
-    if (existingEventParticipant) {
-      console.log(
-        `EventParticipant for event ${eventId}, participant ${participant.id}, and form ${formExists.id} already exists`,
-      );
+    if (eventParticipant) {
+      // If the participant has canceled, mark the new submission as canceled
+      const updatedEventParticipant = await db.eventParticipant.update({
+        where: {
+          id: eventParticipant.id,
+        },
+        data: {
+          responses: responses,
+          cancelled: eventParticipant.cancelled, // Keep the cancellation status
+          cancelledAt: eventParticipant.cancelledAt, // Keep the cancellation time
+        },
+      });
+
       return NextResponse.json(
-        { message: 'Participant already registered for this form in the event' },
-        { status: 409 },
+        { message: 'Participant form submission updated', data: updatedEventParticipant },
+        { status: 200 },
       );
     }
 
+    // Check if participant has previously canceled their participation for the event
+    const previouslyCancelled = await db.eventParticipant.findFirst({
+      where: {
+        eventId: eventExists.id,
+        participantId: participant.id,
+        cancelled: true,
+      },
+    });
+
+    // Create new EventParticipant record
     await db.eventParticipant.create({
       data: {
         eventId: eventExists.id,
         participantId: participant.id,
         formId: formExists.id,
         responses: responses,
+        cancelled: !!previouslyCancelled, // Mark as cancelled if previously cancelled
+        cancelledAt: previouslyCancelled ? previouslyCancelled.cancelledAt : null, // Retain previous cancellation time if applicable
       },
     });
+
+    // Check if an email has already been sent to this participant for this event
+    const emailSent = await db.eventParticipant.findFirst({
+      where: {
+        eventId: eventExists.id,
+        participantId: participant.id,
+        emailSent: true,
+      },
+    });
+
+    if (!emailSent && eventExists.requiresCancellation) {
+      // Send cancellation email
+      await sendCancellationEmail(participant.email, eventExists.id, participant.id);
+
+      // Mark the email as sent
+      await db.eventParticipant.updateMany({
+        where: {
+          eventId: eventExists.id,
+          participantId: participant.id,
+        },
+        data: {
+          emailSent: true,
+        },
+      });
+    }
 
     return NextResponse.json({ message: 'Form responses saved successfully' }, { status: 200 });
   } catch (error) {

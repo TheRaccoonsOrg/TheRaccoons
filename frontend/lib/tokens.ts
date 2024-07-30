@@ -4,6 +4,7 @@ import { db } from './db';
 import { getPasswordResetTokenByEmail } from '@/data/passwordResetToken';
 import crypto from 'crypto';
 import { getTwoFactorTokenByEmail } from '@/data/twoFactorToken';
+import { nanoid } from 'nanoid';
 
 export const generateVerificationToken = async (email: string) => {
   const token = uuidv4();
@@ -19,15 +20,13 @@ export const generateVerificationToken = async (email: string) => {
     });
   }
 
-  const verficationToken = await db.verificationToken.create({
+  return db.verificationToken.create({
     data: {
       email,
       token,
       expires,
     },
   });
-
-  return verficationToken;
 };
 
 export const generatePasswordResetToken = async (email: string) => {
@@ -44,15 +43,13 @@ export const generatePasswordResetToken = async (email: string) => {
     });
   }
 
-  const passwordResetToken = await db.passwordResetToken.create({
+  return db.passwordResetToken.create({
     data: {
       email,
       token,
       expires,
     },
   });
-
-  return passwordResetToken;
 };
 
 export const generateTwoFactorToken = async (email: string) => {
@@ -69,13 +66,28 @@ export const generateTwoFactorToken = async (email: string) => {
     });
   }
 
-  const twoFactorToken = await db.twoFactorToken.create({
+  return db.twoFactorToken.create({
     data: {
       email,
       token,
       expires,
     },
   });
-
-  return twoFactorToken;
 };
+
+export async function createCancellationToken(participantId: string, eventId: string) {
+  const token = uuidv4();
+  const expiresAt = new Date();
+  expiresAt.setMonth(expiresAt.getMonth() + 6); // 6 months from now // TODO: Change to expires after event start date
+
+  await db.cancellationToken.create({
+    data: {
+      token,
+      participantId,
+      eventId,
+      expiresAt,
+    },
+  });
+
+  return token;
+}

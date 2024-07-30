@@ -61,36 +61,39 @@ model TwoFactorConfirmation {
 }
 
 model EventEntity {
-  id           String             @id @default(cuid())
-  eventId      String             @unique
-  title        String
-  dateText     String
-  date         DateTime
-  location     String
-  description  String
-  image        String
-  content      String
-  draftContent String
-  isPublished  Boolean            @default(false)
-  createdAt    DateTime           @default(now())
-  updatedAt    DateTime           @default(now())
-  participants EventParticipant[]
-  forms        Form[]
+  id                   String              @id @default(cuid())
+  eventId              String              @unique
+  title                String
+  dateText             String
+  date                 DateTime
+  location             String
+  description          String
+  image                String
+  content              String
+  draftContent         String
+  isPublished          Boolean             @default(false)
+  requiresCancellation Boolean             @default(true)
+  createdAt            DateTime            @default(now())
+  updatedAt            DateTime            @default(now())
+  participants         EventParticipant[]
+  forms                Form[]
+  CancellationToken    CancellationToken[]
 }
 
 model Participant {
-  id        String             @id @default(cuid())
-  name      String
-  email     String             @unique
-  phone     String
-  address   String
-  city      String
-  state     String
-  zip       String
-  country   String
-  events    EventParticipant[]
-  createdAt DateTime           @default(now())
-  updatedAt DateTime           @default(now())
+  id                String              @id @default(cuid())
+  name              String
+  email             String              @unique
+  phone             String
+  address           String
+  city              String
+  state             String
+  zip               String
+  country           String
+  events            EventParticipant[]
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @default(now())
+  CancellationToken CancellationToken[]
 }
 
 model EventParticipant {
@@ -102,6 +105,9 @@ model EventParticipant {
   form          Form        @relation(fields: [formId], references: [id])
   formId        String
   responses     Json
+  emailSent     Boolean     @default(false)
+  cancelled     Boolean     @default(false)
+  cancelledAt   DateTime?
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @default(now())
 
@@ -133,4 +139,15 @@ model FormSubmission {
   formId    String
   form      Form     @relation(fields: [formId], references: [id])
   content   Json
+}
+
+model CancellationToken {
+  id            String      @id @default(cuid())
+  token         String      @unique
+  participantId String
+  participant   Participant @relation(fields: [participantId], references: [id], onDelete: Cascade)
+  eventId       String
+  event         EventEntity @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  createdAt     DateTime    @default(now())
+  expiresAt     DateTime
 }

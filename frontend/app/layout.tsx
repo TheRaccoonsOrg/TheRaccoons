@@ -30,7 +30,7 @@ const RootLayout = ({
   params: { locale: string };
 }) => {
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning className="h-full">
       {children}
     </html>
   );

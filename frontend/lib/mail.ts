@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
+import { createCancellationToken } from '@/lib/tokens';
 
 const transport = nodemailer.createTransport({
   host: process.env.MAIL_HOST,
@@ -56,3 +57,17 @@ export const sendTwoFactorTokenEmail = async (email: string, token: string) => {
     message: `<p>Your 2FA code: ${token}</p>`,
   });
 };
+
+export async function sendCancellationEmail(email: string, eventId: string, participantId: string) {
+  const token = await createCancellationToken(participantId, eventId);
+  const cancelUrl = `${process.env.NEXT_PUBLIC_APP_URL}/cancel?token=${token}`;
+
+  const message = `<p>You can cancel your participation in the event by clicking the following link: <a href="${cancelUrl}">${cancelUrl}</a></p>`;
+
+  await sendEmail({
+    from: 'events@yourdomain.com',
+    to: email,
+    subject: 'Event Cancellation',
+    message,
+  });
+}
