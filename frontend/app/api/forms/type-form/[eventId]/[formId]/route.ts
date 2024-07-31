@@ -19,7 +19,15 @@ export async function POST(
   try {
     const payload = await req.json();
     const { form_response } = payload;
-    const { answers } = form_response;
+
+    const { answers, form_id: payloadFormID } = form_response;
+
+    if (!payloadFormID || payloadFormID !== formId) {
+      return NextResponse.json(
+        { error: "URL and Payload Form ID doesn't match! Please check webhook URL!" },
+        { status: 400 },
+      );
+    }
 
     if (!Array.isArray(answers)) {
       return NextResponse.json({ error: 'Invalid answers format' }, { status: 400 });

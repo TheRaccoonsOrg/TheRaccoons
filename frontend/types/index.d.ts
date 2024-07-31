@@ -174,3 +174,6 @@ export interface FormField {
   title: string;
   type: string;
 }
+
+type ParticipantData = { date: string; count: number };
+type EventData = { event: string; count: number };

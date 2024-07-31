@@ -6,7 +6,12 @@ import { useEffect, useState } from 'react';
 
 import { BarLoader } from 'react-spinners';
 import { getParticipantStatistics } from '@/actions/admin/statistics/participants';
+import { getFormStatistics } from '@/actions/admin/statistics/forms';
+import { getEventAttendanceRate, getTotalEvents } from '@/actions/admin/statistics/events';
 import RecentParticipants from '@/components/statistics/RecentParticipants';
+import CancellationsPerEventBarChart from '@/components/charts/CancellationPerEventBarChart';
+import NewParticipantsAreaChart from '@/components/charts/NewParticipantsAreaChart';
+import ParticipationsPerEventAreaChart from '@/components/charts/ParticipationsPerEventAreaChart';
 
 type Statistics = {
   totalParticipants: number;
@@ -15,14 +20,25 @@ type Statistics = {
   cancelledChange: number;
   averageParticipantsPerEvent: number;
   averageParticipantCancellationsPerEvent: number;
+  totalForms: number;
+  totalFormsChange: number;
+  totalFormSubmissions: number;
+  totalFormSubmissionsChange: number;
+  totalEvents: number;
+  totalEventsChange: number;
+  attendanceRate: number;
 };
 
 export default function DashboardPage() {
   const [statistics, setStatistics] = useState<Statistics | null>(null);
+
   useEffect(() => {
     async function fetchData() {
-      const result = await getParticipantStatistics();
-      setStatistics(result);
+      const participantStats = await getParticipantStatistics();
+      const formStats = await getFormStatistics();
+      const eventStats = await getEventAttendanceRate();
+      const totalEventsStats = await getTotalEvents();
+      setStatistics({ ...participantStats, ...formStats, ...eventStats, ...totalEventsStats });
     }
 
     fetchData();
@@ -90,8 +106,56 @@ export default function DashboardPage() {
               </div>
             </CardContent>
           </Card>
+          <Card className="border-border">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Total Forms</CardTitle>
+              <BsPeople className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">{statistics.totalForms}</div>
+              <div className="text-sm text-gray-500">
+                {formatPercentage(statistics.totalFormsChange)} from last week
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="border-border">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Total Form Submissions</CardTitle>
+              <BsPeople className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">{statistics.totalFormSubmissions}</div>
+              <div className="text-sm text-gray-500">
+                {formatPercentage(statistics.totalFormSubmissionsChange)} from last week
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="border-border">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Total Events</CardTitle>
+              <BsPeople className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">{statistics.totalEvents}</div>
+              <div className="text-sm text-gray-500">
+                {formatPercentage(statistics.totalEventsChange)} from last year
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="border-border">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Event Attendance Rate</CardTitle>
+              <BsPeople className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">{statistics.attendanceRate.toFixed(2)}%</div>
+            </CardContent>
+          </Card>
         </div>
         <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-12 lg:col-span-7">
+            <ParticipationsPerEventAreaChart />
+          </div>
           <Card className="h- col-span-12 lg:col-span-5 border-border">
             <CardHeader>
               <CardTitle>Recent Participants</CardTitle>
@@ -100,6 +164,12 @@ export default function DashboardPage() {
               <RecentParticipants />
             </CardContent>
           </Card>
+          <div className="col-span-12 lg:col-span-6">
+            <NewParticipantsAreaChart />
+          </div>
+          <div className="col-span-12 lg:col-span-6">
+            <CancellationsPerEventBarChart />
+          </div>
         </div>
       </div>
     </div>
