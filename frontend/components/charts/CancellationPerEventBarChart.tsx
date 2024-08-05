@@ -11,6 +11,7 @@ import {
 import { getChartData } from '@/actions/admin/statistics/charts';
 import { useEffect, useState } from 'react';
 import { EventData } from '@/types';
+import { Skeleton } from '../ui/skeleton';
 
 const chartConfig = {
   cancellations: {
@@ -21,11 +22,13 @@ const chartConfig = {
 
 const CancellationsPerEventBarChart = () => {
   const [chartData, setChartData] = useState<EventData[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
       const data = await getChartData();
       setChartData(data.totalCancellationsPerEvent);
+      setIsLoading(false);
     }
 
     fetchData();
@@ -34,7 +37,19 @@ const CancellationsPerEventBarChart = () => {
   const maxCount = Math.max(...chartData.map((d) => d.count));
 
   const yTicks = Array.from({ length: 5 }, (_, i) => Math.ceil(maxCount / 3) * i);
-
+  if (isLoading) {
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle>Participations per Event</CardTitle>
+          <CardDescription>Showing participations for each event</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Skeleton className="h-[20rem] w-full" />
+        </CardContent>
+      </Card>
+    );
+  }
   return (
     <Card className="border-border">
       <CardHeader className="flex items-center gap-2 space-y-0 border-b border-border py-5 sm:flex-row">
@@ -43,8 +58,8 @@ const CancellationsPerEventBarChart = () => {
           <CardDescription>Showing cancellations for each event</CardDescription>
         </div>
       </CardHeader>
-      <CardContent className="px-4 pt-6 sm:px-8 sm:pt-8">
-        <ChartContainer config={chartConfig} className="aspect-auto h-[300px] w-full">
+      <CardContent className="px-2 pt-4 sm:px-6 sm:pt-6">
+        <ChartContainer config={chartConfig} className="h-[20rem] w-full">
           <BarChart data={chartData}>
             <CartesianGrid vertical={false} />
             <XAxis dataKey="event" tickLine={false} axisLine={false} tickMargin={10} />

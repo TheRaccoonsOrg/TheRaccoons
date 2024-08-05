@@ -8,7 +8,7 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
     <body className={`${InterFont.className}  bg-background `}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
         <AdminNavigation />
-        <div className="pt-20">{children}</div>
+        <div className="pt-20 px-4">{children}</div>
         <Toaster className="text-black" />
       </ThemeProvider>
     </body>

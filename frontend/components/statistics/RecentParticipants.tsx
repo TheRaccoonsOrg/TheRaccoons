@@ -38,7 +38,7 @@ const RecentParticipants = () => {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       {participants?.map((participant) => {
         return (
           <div key={participant.participantId} className="flex items-center">
@@ -56,7 +56,7 @@ const RecentParticipants = () => {
               <p className="text-sm text-muted-foreground">Event: {participant.eventName}</p>
             </div>
             <div className="ml-auto font-medium">
-              <Button>
+              <Button size="sm">
                 <Link href={`/admin/dashboard/participants/${participant.participantId}`}>
                   View Participant
                 </Link>

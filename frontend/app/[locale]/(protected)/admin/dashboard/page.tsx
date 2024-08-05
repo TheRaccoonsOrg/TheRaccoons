@@ -46,7 +46,7 @@ export default function DashboardPage() {
 
   if (!statistics) {
     return (
-      <div className="flex min-h-screen w-full items-center justify-center">
+      <div className="flex min-h-[calc(100vh-5rem)] w-full items-center justify-center">
         <BarLoader color="#36f8a7" />
       </div>
     );
@@ -58,7 +58,7 @@ export default function DashboardPage() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex-1 space-y-4 px-4">
+      <div className="flex-1 space-y-4">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <Card className="border-border">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -154,7 +154,7 @@ export default function DashboardPage() {
         </div>
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-12 lg:col-span-7">
-            <ParticipationsPerEventAreaChart />
+            <NewParticipantsAreaChart />
           </div>
           <Card className="h- col-span-12 lg:col-span-5 border-border">
             <CardHeader>
@@ -165,7 +165,7 @@ export default function DashboardPage() {
             </CardContent>
           </Card>
           <div className="col-span-12 lg:col-span-6">
-            <NewParticipantsAreaChart />
+            <ParticipationsPerEventAreaChart />
           </div>
           <div className="col-span-12 lg:col-span-6">
             <CancellationsPerEventBarChart />

@@ -18,6 +18,7 @@ import {
 import { getChartData } from '@/actions/admin/statistics/charts';
 import { useEffect, useState } from 'react';
 import { ParticipantData } from '@/types';
+import { Skeleton } from '../ui/skeleton';
 
 const chartConfig = {
   participants: {
@@ -29,11 +30,13 @@ const chartConfig = {
 const NewParticipantsAreaChart = () => {
   const [timeRange, setTimeRange] = useState('7d');
   const [chartData, setChartData] = useState<ParticipantData[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
       const data = await getChartData();
       setChartData(data.newParticipantsByDays);
+      setIsLoading(false);
     }
 
     fetchData();
@@ -53,7 +56,19 @@ const NewParticipantsAreaChart = () => {
   const maxCount = Math.max(...filteredData.map((d) => d.count));
 
   const yTicks = Array.from({ length: 4 }, (_, i) => Math.ceil(maxCount / 3) * i);
-
+  if (isLoading) {
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle>Participations per Event</CardTitle>
+          <CardDescription>Showing participations for each event</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Skeleton className="h-[20rem] w-full" />
+        </CardContent>
+      </Card>
+    );
+  }
   return (
     <Card className="border-border">
       <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row border-border">
@@ -76,14 +91,8 @@ const NewParticipantsAreaChart = () => {
         </Select>
       </CardHeader>
       <CardContent className="px-4 pt-6 sm:px-8 sm:pt-8">
-        <ChartContainer config={chartConfig} className="aspect-auto h-[300px] w-full">
+        <ChartContainer config={chartConfig} className="h-[20rem] w-full">
           <AreaChart data={filteredData}>
-            <defs>
-              <linearGradient id="fillParticipants" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="var(--color-participants)" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="var(--color-participants)" stopOpacity={0.1} />
-              </linearGradient>
-            </defs>
             <CartesianGrid vertical={false} />
             <XAxis
               dataKey="date"
@@ -114,11 +123,15 @@ const NewParticipantsAreaChart = () => {
               }
             />
             <Area
-              dataKey="count"
-              type="natural"
-              fill="url(#fillParticipants)"
-              stroke="var(--color-participants)"
-              stackId="a"
+              dataKey={(entry) => entry.count}
+              type="monotone"
+              fill={chartConfig.participants.color}
+              fillOpacity={0.4}
+              stroke={chartConfig.participants.color}
+              animationDuration={1000}
+              animateNewValues={true}
+              animationEasing={'ease-in-out'}
+              animationBegin={0}
             />
           </AreaChart>
         </ChartContainer>

@@ -27,7 +27,10 @@ import { cn } from '@/lib/utils';
 
 const links = [
   { href: '/admin/dashboard', label: 'Dashboard' },
-  { href: '/admin/settings', label: 'Settings' },
+  { href: '/admin/events', label: 'Events' },
+  { href: '/admin/forms', label: 'Forms' },
+  { href: '/admin/participants', label: 'Participants' },
+  { href: '/admin/users', label: 'Users' },
 ];
 
 const AdminNavigation = () => {
