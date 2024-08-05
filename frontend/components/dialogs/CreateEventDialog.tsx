@@ -44,11 +44,11 @@ const FormSchema = z.object({
 
 type FormSchemaType = z.infer<typeof FormSchema>;
 
-interface CreateEventFormDialogProps {
+interface CreateEventDialogProps {
   onEventCreated: () => void;
 }
 
-const CreateEventFormDialog: React.FC<CreateEventFormDialogProps> = ({ onEventCreated }) => {
+const CreateEventDialog: React.FC<CreateEventDialogProps> = ({ onEventCreated }) => {
   const form = useForm<FormSchemaType>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -256,4 +256,4 @@ const CreateEventFormDialog: React.FC<CreateEventFormDialogProps> = ({ onEventCr
   );
 };
 
-export default CreateEventFormDialog;
+export default CreateEventDialog;

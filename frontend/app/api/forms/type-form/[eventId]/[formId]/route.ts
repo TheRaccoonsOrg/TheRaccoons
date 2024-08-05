@@ -3,12 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { getFormFieldsByTypeformId } from '@/actions/admin/getFormFieldsByTypeformId';
 import { sendCancellationEmail } from '@/lib/mail';
-
-interface FormField {
-  ref: string;
-  title: string;
-  type: string;
-}
+import { FormField } from '@/types';
 
 export async function POST(
   req: NextRequest,
